@@ -1,7 +1,10 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/robot/robot"
+    "pages/login/login",
+    "pages/login/loginAccount",
+    "pages/login/loginPhone",
+    "pages/login/loginCode",
+    "pages/subPages/web-view/web-view"
   ],
   "subPackages": [],
   "window": {
@@ -10,6 +13,5 @@
     "navigationBarBackgroundColor": "#F8F8F8",
     "backgroundColor": "#F8F8F8"
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap6.json"
+  "usingComponents": {}
 }

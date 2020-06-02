@@ -1,0 +1,20 @@
+.info.data-v-62307af3 {
+  color: #333333;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 3%;
+  font-size: 28rpx;
+  text-align: center;
+}
+.info .info_break.data-v-62307af3 {
+  margin-right: 5px;
+}
+.info .info_type.word.data-v-62307af3 {
+  color: #BC2826;
+  text-decoration: underline;
+}
+.info .red.data-v-62307af3 {
+  color: #BC2826;
+}
+

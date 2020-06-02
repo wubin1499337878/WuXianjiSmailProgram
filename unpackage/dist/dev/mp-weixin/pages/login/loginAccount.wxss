@@ -1,0 +1,133 @@
+.btn.data-v-4050888f {
+  width: 650rpx;
+  margin: 130rpx auto 30% auto;
+  height: 88rpx;
+  background: #BE2A27;
+  color: #ffffff;
+  line-height: 88rpx;
+  text-align: center;
+  border-radius: 44rpx;
+  font-size: 32rpx;
+}
+.btn.disable.data-v-4050888f {
+  background: #E16D6B;
+  pointer-events: none;
+}
+.login-box.data-v-4050888f {
+  width: 100%;
+  margin-top: 150rpx;
+  position: relative;
+}
+.login-box .stroge-phone.data-v-4050888f {
+  width: 100%;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  top: 120rpx;
+  z-index: 5;
+}
+.login-box .stroge-phone .list.data-v-4050888f {
+  width: 560rpx;
+  height: 88rpx;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.login-box .stroge-phone .list .left.data-v-4050888f {
+  font-size: 34rpx;
+  color: #888888;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.login-box .stroge-phone .list .phone-num.data-v-4050888f {
+  margin-right: 15rpx;
+}
+.login-box-item.data-v-4050888f {
+  width: 560rpx;
+  height: 120rpx;
+  margin: 0 auto;
+  border-bottom: 1rpx solid #DFDFDD;
+  margin-bottom: 6rpx;
+  position: relative;
+}
+.login-box-item .input-clum.data-v-4050888f {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.login-box-item .input-clum .right.data-v-4050888f {
+  width: 200rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.login-box-item .input-clum .right .forget.data-v-4050888f {
+  color: #bc2826;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.login-box-item .find-password.data-v-4050888f {
+  padding-left: 20rpx;
+  border-left: 2rpx solid #CCCCCC;
+  font-size: 28rpx;
+  color: #666666;
+  margin-top: -15rpx;
+}
+.login-box-item .arrow.data-v-4050888f {
+  position: absolute;
+  right: 0;
+  top: 35rpx;
+  color: #666666;
+}
+.login-box-item .input.data-v-4050888f {
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+}
+.login-box-item .input-password.data-v-4050888f {
+  width: 300rpx;
+}
+.login-box-item .title.data-v-4050888f {
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: left;
+}
+.login-box-item .title text.data-v-4050888f {
+  font-size: 28rpx;
+  color: #888888;
+}
+.login-box-item .nav_icon.data-v-4050888f {
+  width: 55rpx;
+  margin-top: -15rpx;
+  color: #666666;
+}
+

@@ -1,0 +1,11 @@
+.logo.data-v-07b2cb49 {
+  width: 162rpx;
+  height: 162rpx;
+  padding-top: 100rpx;
+  margin: 0 auto 197rpx auto;
+}
+.logo .img.data-v-07b2cb49 {
+  max-width: 100%;
+  max-height: 100%;
+}
+

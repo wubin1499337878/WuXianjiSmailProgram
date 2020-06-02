@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "账号登录",
+  "usingComponents": {
+    "uni-icons": "/components/uni-icons/uni-icons",
+    "logo": "/pages/login/components/logo",
+    "user-agree": "/pages/login/components/userAgree",
+    "storage-account": "/pages/login/components/storageAccount"
+  }
+}

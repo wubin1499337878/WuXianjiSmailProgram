@@ -7611,9 +7611,9 @@ module.exports = g;
 
 /***/ }),
 /* 4 */
-/*!********************************************!*\
-  !*** D:/HBildX/WuXianJiProduct/pages.json ***!
-  \********************************************/
+/*!*****************************************************!*\
+  !*** D:/莹酱/project/智能客服/customerService/pages.json ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8518,25 +8518,25 @@ module.exports = {"_from":"@dcloudio/uni-stat@next","_id":"@dcloudio/uni-stat@2.
 
 /***/ }),
 /* 7 */
-/*!*************************************************************!*\
-  !*** D:/HBildX/WuXianJiProduct/pages.json?{"type":"style"} ***!
-  \*************************************************************/
+/*!**********************************************************************!*\
+  !*** D:/莹酱/project/智能客服/customerService/pages.json?{"type":"style"} ***!
+  \**********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/index/index": { "navigationBarTitleText": "uni-app", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/robot/robot": { "navigationBarTitleText": "uni-app", "usingComponents": {}, "usingAutoImportComponents": {} } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#F8F8F8", "backgroundColor": "#F8F8F8" } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/login/login": { "navigationBarTitleText": "登录" }, "pages/login/loginAccount": { "navigationBarTitleText": "账号登录" }, "pages/login/loginPhone": { "navigationBarTitleText": "手机号登录" }, "pages/login/loginCode": { "navigationBarTitleText": "手机号登录" }, "pages/subPages/web-view/web-view": { "navigationBarTitleText": "" } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#F8F8F8", "backgroundColor": "#F8F8F8" } };exports.default = _default;
 
 /***/ }),
 /* 8 */
-/*!************************************************************!*\
-  !*** D:/HBildX/WuXianJiProduct/pages.json?{"type":"stat"} ***!
-  \************************************************************/
+/*!*********************************************************************!*\
+  !*** D:/莹酱/project/智能客服/customerService/pages.json?{"type":"stat"} ***!
+  \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "appid": "" };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "appid": "__UNI__5B5AF1A" };exports.default = _default;
 
 /***/ }),
 /* 9 */,
@@ -8665,66 +8665,1491 @@ function normalizeComponent (
 
 /***/ }),
 /* 15 */
-/*!************************************************!*\
-  !*** D:/HBildX/WuXianJiProduct/common/http.js ***!
-  \************************************************/
+/*!**************************************************************!*\
+  !*** D:/莹酱/project/智能客服/customerService/common/js/common.js ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; // created by wangyong for uni-app request 2019.11.22
-var baseURL = 'https://demo.faqrobot.net/servlet/appChat';
-var http = function http(options) {
-  return new Promise(function (resolve, reject) {
-    uni.showLoading({
-      title: '加载中...',
-      mask: options.load || false // 默认遮罩出现可以继续操作
-    });
-    try {
-      uni.request({
-        url: (options.baseURL || baseURL) + options.url,
-        method: options.method || 'POST', // 默认为POST请求
-        data: options.data, //请求超时在manifest.json配置
-        header: {
-          'v-token': '333333',
-          'Content-Type': options.header == 'form' ? 'application/x-www-form-urlencoded' : 'application/json' },
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //打开外部链接
+var openUrl = function openUrl(obj) {var _obj$url =
+  obj.url,url = _obj$url === void 0 ? '' : _obj$url,_obj$inWhiteList = obj.inWhiteList,inWhiteList = _obj$inWhiteList === void 0 ? '' : _obj$inWhiteList,_obj$isExternal = obj.isExternal,isExternal = _obj$isExternal === void 0 ? '' : _obj$isExternal,_obj$type = obj.type,type = _obj$type === void 0 ? 'navigate' : _obj$type,_obj$title = obj.title,title = _obj$title === void 0 ? '' : _obj$title;
 
-        success: function success(res) {
-          resolve(res.data);
-        },
-        fail: function fail(err) {
-          reject(err.data);
-          console.log(err);
-          uni.showToast({
-            title: '请检查网络连接',
-            icon: 'none' });
+  // type = type == 'redirect' ? 'redirect' : 'navigate'
+  if (isExternal) {
 
-          /*错误码处理
-                             let code = err.data.code; 
-                             switch (code) {
-                                 case 1000:
-                                     break;
-                                 default:
-                                     break;
-                             } */
-        },
-        complete: function complete() {
-          uni.hideLoading();
-        } });
 
-    } catch (e) {
-      uni.hideLoading();
-      uni.showToast({
-        title: '服务端异常',
-        icon: 'none' });
+
+
+
+
+
+
+    if (inWhiteList) {//如果在小程序的网址白名单中，会走内置webview打开，否则会复制网址提示在外部浏览器打开
+
+      uni[type + 'To']({
+        url: '/pages/subPages/web-view/web-view?url=' + encodeURIComponent(JSON.stringify(url)) + '&title=' + title });
+
+    } else {
+      uni.setClipboardData({
+        data: url });
+
+      uni.showModal({
+        content: '本网址无法直接在小程序内打开。已自动复制网址，请在手机浏览器里粘贴该网址',
+        showCancel: false });
 
     }
 
+  } else {
+    uni[type + 'To']({
+      url: url });
+
+  }
+};
+
+var showToast = function showToast(title) {
+  uni.showToast({
+    title: title,
+    icon: 'none',
+    duration: 2000 });
+
+};
+
+var common = {
+  openUrl: openUrl,
+  showToast: showToast };var _default =
+
+
+common;exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 16 */,
+/* 17 */,
+/* 18 */,
+/* 19 */,
+/* 20 */,
+/* 21 */,
+/* 22 */
+/*!*****************************************************************!*\
+  !*** D:/莹酱/project/智能客服/customerService/pages/assets/js/env.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.baseImagesUrlpublic = exports.baseImagesUrl = exports.appKeyUim = exports.appKeyGataway = exports.addressKey = exports.weappAppId = exports.gatawaySignKey = exports.uimSignKey = exports.staticDomain = exports.token = exports.wwwPwd = exports.domain = void 0; /**
+                                                                                                                                                                                                                                                                                                                                                       * @type {string} domain 为所有域名变量
+                                                                                                                                                                                                                                                                                                                                                       */
+
+// 生产
+
+var appidType = {
+  dev: 'wx09a271cded04343d',
+  staging: 'wxdb2e1f9c1a7a8db1',
+  production: 'wxc2f54fd68b4ab465' };
+
+var env = 'production';
+var domain = 'https://mdealer-dev.infinitus.com.cn';exports.domain = domain;
+var wwwPwd = 'password123';exports.wwwPwd = wwwPwd;
+var staticDomain = 'https://static-cdn.infinitus.com.cn';exports.staticDomain = staticDomain;
+var token = '2eaffc2a031340cbbef51bb120c27718';exports.token = token;
+var baseImagesUrl = 'https://storageqn-staging.infinitus.com.cn/dlpm-public/jf/img/applet/';exports.baseImagesUrl = baseImagesUrl;
+var baseImagesUrlpublic = 'https://storageqn-staging.infinitus.com.cn/dlpm-public/jf/img/';
+
+// 签名key
+//uim key
+exports.baseImagesUrlpublic = baseImagesUrlpublic;var appKeyUim = 'openapi_cc';exports.appKeyUim = appKeyUim;
+var uimSignKey = 'openapi_cc';
+//gateway key
+exports.uimSignKey = uimSignKey;var appKeyGataway = 'openapi_cc';exports.appKeyGataway = appKeyGataway;
+var gatawaySignKey = "5OOD}wUd-9}73iJU7xDe:t]g'0rSFt";exports.gatawaySignKey = gatawaySignKey;
+var weappAppId = appidType[env];exports.weappAppId = weappAppId;
+var addressKey = 'HFFBZ-T5ICG-QKXQF-IPZ57-JC375-LKFBQ'; // 腾讯地址key
+exports.addressKey = addressKey;var accountInfo = uni.getAccountInfoSync();
+var appid = accountInfo.miniProgram.appId;
+if (appid === appidType.dev) {
+  // 工具或者真机 开发环境
+  console.log('开发环境');
+  env = 'dev';
+} else if (appid === appidType.staging) {
+  // 测试环境(体验版)
+  console.log('准生产环境');
+  env = 'staging';
+} else if (appid === appidType.production) {
+  // 正式环境
+  console.log('生产环境');
+  env = 'production';
+}
+
+switch (env) {
+  case 'dev': // 开发环境
+    exports.domain = domain = 'https://mdealer-dev.infinitus.com.cn';
+    exports.wwwPwd = wwwPwd = 'abc123';
+    exports.token = token = '18267c1ac10245e5906496d83f62480e';
+    exports.staticDomain = staticDomain = 'https://static-cdn-test.infinitus.com.cn';
+    exports.appKeyUim = appKeyUim = 'openapi_cc';
+    exports.uimSignKey = uimSignKey = 'openapi_cc';
+    exports.appKeyGataway = appKeyGataway = 'openapi_cc';
+    exports.gatawaySignKey = gatawaySignKey = "5OOD}wUd-9}73iJU7xDe:t]g'0rSFt";
+    exports.weappAppId = weappAppId = appidType[env];
+    exports.addressKey = addressKey = 'OEXBZ-TH5WX-YY347-7EJVK-FSCKQ-QEFL6';
+    break;
+  // case 'test': // 测试环境
+  //   domain = 'https://mdealer-test.infinitus.com.cn';
+  //   wwwPwd = 'abc123';
+  //   token = 'fa11a46b780f4fe8ba0783a742e2e906';
+  //   staticDomain = 'https://static-cdn-test.infinitus.com.cn';
+  //   uimSignKey = 'wechat-weapp-mall';
+  //   gatawaySignKey = 'gateway-weapp';
+  //   weappAppId = appidType[env];
+  //   addressKey = 'OEXBZ-TH5WX-YY347-7EJVK-FSCKQ-QEFL6';
+  //   appKeyGataway = 'gateway-weapp';
+  //   appKeyUim = 'wechat-weapp-mall';
+  //   break;
+  case 'staging': // 准生产
+    exports.domain = domain = 'https://mdealer-staging.infinitus.com.cn';
+    exports.wwwPwd = wwwPwd = 'abc123';
+    exports.token = token = '18267c1ac10245e5906496d83f62480e';
+    exports.staticDomain = staticDomain = 'https://static-cdn-test.infinitus.com.cn';
+    exports.uimSignKey = uimSignKey = 'wechat-weapp-mall';
+    exports.gatawaySignKey = gatawaySignKey = 'gateway-weapp';
+    exports.weappAppId = weappAppId = appidType[env];
+    exports.addressKey = addressKey = '7VRBZ-WEYKX-WJG45-TCL54-U7ZE6-GOBXD';
+    exports.appKeyGataway = appKeyGataway = 'gateway-weapp';
+    exports.appKeyUim = appKeyUim = 'wechat-weapp-mall';
+    break;
+  default:
+    break;}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 23 */
+/*!**************************************************************************!*\
+  !*** D:/莹酱/project/智能客服/customerService/pages/login/utils/ajax/index.js ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
+var _util = _interopRequireDefault(__webpack_require__(/*! ../util.js */ 24));
+var _request = _interopRequireDefault(__webpack_require__(/*! ../../../utils/js/request.js */ 30));
+var _interceptors = _interopRequireDefault(__webpack_require__(/*! ./interceptors.js */ 31));
+var _config = _interopRequireDefault(__webpack_require__(/*! ../../../assets/js/config.js */ 32));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+var Ajax = function Ajax(option) {
+  return AjaxFn(option);
+};
+
+Ajax.post = function () {for (var _len = arguments.length, option = new Array(_len), _key = 0; _key < _len; _key++) {option[_key] = arguments[_key];}
+  var parament = _util.default._formatParameter.apply(_util.default, ['post'].concat(option));
+  parament.method = 'post';
+  return Ajax(parament);
+};
+
+Ajax.get = function () {for (var _len2 = arguments.length, option = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {option[_key2] = arguments[_key2];}
+  var parament = _util.default._formatParameter.apply(_util.default, ['get'].concat(option));
+  parament.method = 'get';
+  return Ajax(parament);
+};
+
+var AjaxFn = function AjaxFn(option) {
+  var method = typeof option === String ? option : null;
+  var parament = _util.default._formatParameter(option);
+  parament.method = method || parament.method;
+
+  //请求前拦截-添加参数
+  if (parament.isIntercept) {
+    parament = AjaxFn.interceptors.request(parament);
+  }
+
+
+  return new Promise(function (res, rej) {
+    (0, _request.default)(parament).then(function (data) {
+      res(AjaxFn.interceptors.response({ parament: parament, data: data }));
+    }).catch(function (error) {
+      rej(AjaxFn.interceptors.response({ parament: parament, error: error }));
+    });
+  });
+};
+
+// 前后拦截
+AjaxFn.interceptors = {};
+
+// 拦截器
+AjaxFn.interceptors.request = function (config) {
+  return _interceptors.default.before(config);
+};
+
+AjaxFn.interceptors.response = function (data) {
+  return _interceptors.default.after(data);
+};var _default =
+
+
+
+
+Ajax;exports.default = _default;
+
+/***/ }),
+/* 24 */
+/*!********************************************************************!*\
+  !*** D:/莹酱/project/智能客服/customerService/pages/login/utils/util.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _md = _interopRequireDefault(__webpack_require__(/*! md5 */ 25));
+var _jsBase = __webpack_require__(/*! js-base64 */ 29);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _slicedToArray(arr, i) {return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();}function _nonIterableRest() {throw new TypeError("Invalid attempt to destructure non-iterable instance");}function _iterableToArrayLimit(arr, i) {var _arr = [];var _n = true;var _d = false;var _e = undefined;try {for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {_arr.push(_s.value);if (i && _arr.length === i) break;}} catch (err) {_d = true;_e = err;} finally {try {if (!_n && _i["return"] != null) _i["return"]();} finally {if (_d) throw _e;}}return _arr;}function _arrayWithHoles(arr) {if (Array.isArray(arr)) return arr;}
+var util = {
+  _formatParameter: function _formatParameter() {
+    var option = null;
+    //判断是不是对象
+    if (typeof arguments[0] !== 'string') {
+      option = arguments[0];
+    } else {
+      option = Array.prototype.slice.call(arguments);
+      // 是否隐藏loding框
+      var _option$filter = option.filter(function (item) {
+        if (item && item.hideLoading) return item;
+      }),_option$filter2 = _slicedToArray(_option$filter, 1),_option$filter2$ = _option$filter2[0];_option$filter2$ = _option$filter2$ === void 0 ? { hideLoading: false } : _option$filter2$;var _hideLoading = _option$filter2$.hideLoading;var _option$filter3 =
+      option.filter(function (item) {
+        if (item && item.cancelHide) return item;
+      }),_option$filter4 = _slicedToArray(_option$filter3, 1),_option$filter4$ = _option$filter4[0];_option$filter4$ = _option$filter4$ === void 0 ? { cancelHide: false } : _option$filter4$;var _cancelHide = _option$filter4$.cancelHide;
+      // 是否返回全部值
+      var _option$filter5 = option.filter(function (item) {
+        if (item && item.returnAll) return item;
+      }),_option$filter6 = _slicedToArray(_option$filter5, 1),_option$filter6$ = _option$filter6[0];_option$filter6$ = _option$filter6$ === void 0 ? { returnAll: false } : _option$filter6$;var _returnAll = _option$filter6$.returnAll;
+      // 是否返回接口成功的data值
+      var _option$filter7 = option.filter(function (item) {
+        if (item && item.returnData) return item;
+      }),_option$filter8 = _slicedToArray(_option$filter7, 1),_option$filter8$ = _option$filter8[0];_option$filter8$ = _option$filter8$ === void 0 ? { returnData: false } : _option$filter8$;var _returnData = _option$filter8$.returnData;
+      // contentType
+      var _option$filter9 = option.filter(function (item) {
+        if (item && item.contentType) return item;
+      }),_option$filter10 = _slicedToArray(_option$filter9, 1),_option$filter10$ = _option$filter10[0];_option$filter10$ = _option$filter10$ === void 0 ? { contentType: 'json' } : _option$filter10$;var _contentType = _option$filter10$.contentType;var _option$filter11 =
+      option.filter(function (item) {
+        if (item && item.isIntercept !== undefined) return item;
+      }),_option$filter12 = _slicedToArray(_option$filter11, 1),_option$filter12$ = _option$filter12[0];_option$filter12$ = _option$filter12$ === void 0 ? { isIntercept: true } : _option$filter12$;var _isIntercept = _option$filter12$.isIntercept;
+      option = {
+        method: arguments[0],
+        url: arguments[1] || {},
+        data: arguments[2] || {},
+        returnAll: _returnAll,
+        returnData: _returnData,
+        hideLoading: _hideLoading,
+        contentType: _contentType,
+        isIntercept: _isIntercept,
+        cancelHide: _cancelHide };
+
+    }
+    /**
+       * @method get 默认get
+       * @url 地址
+       * @name data 传参默认空
+       * @name returnAll 是否返回所有数据
+       * @name returnData 是否返回接口成功的data值
+       * @name hideLoading 是否不需要loading框
+       * @name contentType 传参类型
+       */var _option =
+    option,_option$method = _option.method,method = _option$method === void 0 ? 'get' : _option$method,_option$url = _option.url,url = _option$url === void 0 ? '' : _option$url,_option$data = _option.data,data = _option$data === void 0 ? {} : _option$data,_option$returnAll = _option.returnAll,returnAll = _option$returnAll === void 0 ? false : _option$returnAll,_option$returnData = _option.returnData,returnData = _option$returnData === void 0 ? false : _option$returnData,_option$hideLoading = _option.hideLoading,hideLoading = _option$hideLoading === void 0 ? false : _option$hideLoading,_option$contentType = _option.contentType,contentType = _option$contentType === void 0 ? 'json' : _option$contentType,_option$dataType = _option.dataType,dataType = _option$dataType === void 0 ? 'json' : _option$dataType,_option$responseType = _option.responseType,responseType = _option$responseType === void 0 ? 'text' : _option$responseType,_option$header = _option.header,header = _option$header === void 0 ? { 'content-type': 'application/json' } : _option$header,_option$isIntercept = _option.isIntercept,isIntercept = _option$isIntercept === void 0 ? true : _option$isIntercept,_option$cancelHide = _option.cancelHide,cancelHide = _option$cancelHide === void 0 ? false : _option$cancelHide;
+    var optionArry = { url: url, data: data, method: method, returnAll: returnAll, returnData: returnData, hideLoading: hideLoading, contentType: contentType, dataType: dataType, responseType: responseType, header: header, isIntercept: isIntercept, cancelHide: cancelHide };
+    return optionArry;
+  },
+  getToken: function getToken() {
+    return uni.getStorageSync('token');
+  },
+  // 是否调用uim
+  isUim: function isUim(url) {
+    return url.indexOf('uim') !== -1;
+  },
+  // 是否gataeway
+  isGateway: function isGateway(url) {
+    return url.indexOf('://gateway') !== -1;
+  },
+  // 获取游客token
+  getAnonymousToken: function getAnonymousToken(time) {
+    var openId = uni.getStorageSync('wx_openid') || '';
+    var token = "".concat(time, "##ANONYMOUS##").concat(openId);
+    token = _jsBase.Base64.encode(token);
+    return token;
+  },
+  // 生成MD5
+  md5Signature: function md5Signature(parameters, secret) {
+    var result = secret;var _iteratorNormalCompletion = true;var _didIteratorError = false;var _iteratorError = undefined;try {
+      for (var _iterator = Object.keys(parameters).sort()[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {var key = _step.value;
+        result = "".concat(result).concat(key).concat(parameters[key]);
+      }} catch (err) {_didIteratorError = true;_iteratorError = err;} finally {try {if (!_iteratorNormalCompletion && _iterator.return != null) {_iterator.return();}} finally {if (_didIteratorError) {throw _iteratorError;}}}
+    result += secret;
+    var keyt = (0, _md.default)(result).toUpperCase();
+    return keyt;
+  } };var _default =
+
+
+util;exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 25 */
+/*!******************************************************************!*\
+  !*** D:/莹酱/project/智能客服/customerService/node_modules/md5/md5.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+(function () {
+  var crypt = __webpack_require__(/*! crypt */ 26),
+  utf8 = __webpack_require__(/*! charenc */ 27).utf8,
+  isBuffer = __webpack_require__(/*! is-buffer */ 28),
+  bin = __webpack_require__(/*! charenc */ 27).bin,
+
+  // The core
+  md5 = function md5(message, options) {
+    // Convert to byte array
+    if (message.constructor == String) {
+      if (options && options.encoding === 'binary')
+      message = bin.stringToBytes(message);else
+
+      message = utf8.stringToBytes(message);} else
+    if (isBuffer(message))
+    message = Array.prototype.slice.call(message, 0);else
+    if (!Array.isArray(message))
+    message = message.toString();
+    // else, assume byte array already
+
+    var m = crypt.bytesToWords(message),
+    l = message.length * 8,
+    a = 1732584193,
+    b = -271733879,
+    c = -1732584194,
+    d = 271733878;
+
+    // Swap endian
+    for (var i = 0; i < m.length; i++) {
+      m[i] = (m[i] << 8 | m[i] >>> 24) & 0x00FF00FF |
+      (m[i] << 24 | m[i] >>> 8) & 0xFF00FF00;
+    }
+
+    // Padding
+    m[l >>> 5] |= 0x80 << l % 32;
+    m[(l + 64 >>> 9 << 4) + 14] = l;
+
+    // Method shortcuts
+    var FF = md5._ff,
+    GG = md5._gg,
+    HH = md5._hh,
+    II = md5._ii;
+
+    for (var i = 0; i < m.length; i += 16) {
+
+      var aa = a,
+      bb = b,
+      cc = c,
+      dd = d;
+
+      a = FF(a, b, c, d, m[i + 0], 7, -680876936);
+      d = FF(d, a, b, c, m[i + 1], 12, -389564586);
+      c = FF(c, d, a, b, m[i + 2], 17, 606105819);
+      b = FF(b, c, d, a, m[i + 3], 22, -1044525330);
+      a = FF(a, b, c, d, m[i + 4], 7, -176418897);
+      d = FF(d, a, b, c, m[i + 5], 12, 1200080426);
+      c = FF(c, d, a, b, m[i + 6], 17, -1473231341);
+      b = FF(b, c, d, a, m[i + 7], 22, -45705983);
+      a = FF(a, b, c, d, m[i + 8], 7, 1770035416);
+      d = FF(d, a, b, c, m[i + 9], 12, -1958414417);
+      c = FF(c, d, a, b, m[i + 10], 17, -42063);
+      b = FF(b, c, d, a, m[i + 11], 22, -1990404162);
+      a = FF(a, b, c, d, m[i + 12], 7, 1804603682);
+      d = FF(d, a, b, c, m[i + 13], 12, -40341101);
+      c = FF(c, d, a, b, m[i + 14], 17, -1502002290);
+      b = FF(b, c, d, a, m[i + 15], 22, 1236535329);
+
+      a = GG(a, b, c, d, m[i + 1], 5, -165796510);
+      d = GG(d, a, b, c, m[i + 6], 9, -1069501632);
+      c = GG(c, d, a, b, m[i + 11], 14, 643717713);
+      b = GG(b, c, d, a, m[i + 0], 20, -373897302);
+      a = GG(a, b, c, d, m[i + 5], 5, -701558691);
+      d = GG(d, a, b, c, m[i + 10], 9, 38016083);
+      c = GG(c, d, a, b, m[i + 15], 14, -660478335);
+      b = GG(b, c, d, a, m[i + 4], 20, -405537848);
+      a = GG(a, b, c, d, m[i + 9], 5, 568446438);
+      d = GG(d, a, b, c, m[i + 14], 9, -1019803690);
+      c = GG(c, d, a, b, m[i + 3], 14, -187363961);
+      b = GG(b, c, d, a, m[i + 8], 20, 1163531501);
+      a = GG(a, b, c, d, m[i + 13], 5, -1444681467);
+      d = GG(d, a, b, c, m[i + 2], 9, -51403784);
+      c = GG(c, d, a, b, m[i + 7], 14, 1735328473);
+      b = GG(b, c, d, a, m[i + 12], 20, -1926607734);
+
+      a = HH(a, b, c, d, m[i + 5], 4, -378558);
+      d = HH(d, a, b, c, m[i + 8], 11, -2022574463);
+      c = HH(c, d, a, b, m[i + 11], 16, 1839030562);
+      b = HH(b, c, d, a, m[i + 14], 23, -35309556);
+      a = HH(a, b, c, d, m[i + 1], 4, -1530992060);
+      d = HH(d, a, b, c, m[i + 4], 11, 1272893353);
+      c = HH(c, d, a, b, m[i + 7], 16, -155497632);
+      b = HH(b, c, d, a, m[i + 10], 23, -1094730640);
+      a = HH(a, b, c, d, m[i + 13], 4, 681279174);
+      d = HH(d, a, b, c, m[i + 0], 11, -358537222);
+      c = HH(c, d, a, b, m[i + 3], 16, -722521979);
+      b = HH(b, c, d, a, m[i + 6], 23, 76029189);
+      a = HH(a, b, c, d, m[i + 9], 4, -640364487);
+      d = HH(d, a, b, c, m[i + 12], 11, -421815835);
+      c = HH(c, d, a, b, m[i + 15], 16, 530742520);
+      b = HH(b, c, d, a, m[i + 2], 23, -995338651);
+
+      a = II(a, b, c, d, m[i + 0], 6, -198630844);
+      d = II(d, a, b, c, m[i + 7], 10, 1126891415);
+      c = II(c, d, a, b, m[i + 14], 15, -1416354905);
+      b = II(b, c, d, a, m[i + 5], 21, -57434055);
+      a = II(a, b, c, d, m[i + 12], 6, 1700485571);
+      d = II(d, a, b, c, m[i + 3], 10, -1894986606);
+      c = II(c, d, a, b, m[i + 10], 15, -1051523);
+      b = II(b, c, d, a, m[i + 1], 21, -2054922799);
+      a = II(a, b, c, d, m[i + 8], 6, 1873313359);
+      d = II(d, a, b, c, m[i + 15], 10, -30611744);
+      c = II(c, d, a, b, m[i + 6], 15, -1560198380);
+      b = II(b, c, d, a, m[i + 13], 21, 1309151649);
+      a = II(a, b, c, d, m[i + 4], 6, -145523070);
+      d = II(d, a, b, c, m[i + 11], 10, -1120210379);
+      c = II(c, d, a, b, m[i + 2], 15, 718787259);
+      b = II(b, c, d, a, m[i + 9], 21, -343485551);
+
+      a = a + aa >>> 0;
+      b = b + bb >>> 0;
+      c = c + cc >>> 0;
+      d = d + dd >>> 0;
+    }
+
+    return crypt.endian([a, b, c, d]);
+  };
+
+  // Auxiliary functions
+  md5._ff = function (a, b, c, d, x, s, t) {
+    var n = a + (b & c | ~b & d) + (x >>> 0) + t;
+    return (n << s | n >>> 32 - s) + b;
+  };
+  md5._gg = function (a, b, c, d, x, s, t) {
+    var n = a + (b & d | c & ~d) + (x >>> 0) + t;
+    return (n << s | n >>> 32 - s) + b;
+  };
+  md5._hh = function (a, b, c, d, x, s, t) {
+    var n = a + (b ^ c ^ d) + (x >>> 0) + t;
+    return (n << s | n >>> 32 - s) + b;
+  };
+  md5._ii = function (a, b, c, d, x, s, t) {
+    var n = a + (c ^ (b | ~d)) + (x >>> 0) + t;
+    return (n << s | n >>> 32 - s) + b;
+  };
+
+  // Package private blocksize
+  md5._blocksize = 16;
+  md5._digestsize = 16;
+
+  module.exports = function (message, options) {
+    if (message === undefined || message === null)
+    throw new Error('Illegal argument ' + message);
+
+    var digestbytes = crypt.wordsToBytes(md5(message, options));
+    return options && options.asBytes ? digestbytes :
+    options && options.asString ? bin.bytesToString(digestbytes) :
+    crypt.bytesToHex(digestbytes);
+  };
+
+})();
+
+/***/ }),
+/* 26 */
+/*!**********************************************************************!*\
+  !*** D:/莹酱/project/智能客服/customerService/node_modules/crypt/crypt.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+(function () {
+  var base64map =
+  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/',
+
+  crypt = {
+    // Bit-wise rotation left
+    rotl: function rotl(n, b) {
+      return n << b | n >>> 32 - b;
+    },
+
+    // Bit-wise rotation right
+    rotr: function rotr(n, b) {
+      return n << 32 - b | n >>> b;
+    },
+
+    // Swap big-endian to little-endian and vice versa
+    endian: function endian(n) {
+      // If number given, swap endian
+      if (n.constructor == Number) {
+        return crypt.rotl(n, 8) & 0x00FF00FF | crypt.rotl(n, 24) & 0xFF00FF00;
+      }
+
+      // Else, assume array and swap all items
+      for (var i = 0; i < n.length; i++) {
+        n[i] = crypt.endian(n[i]);}
+      return n;
+    },
+
+    // Generate an array of any length of random bytes
+    randomBytes: function randomBytes(n) {
+      for (var bytes = []; n > 0; n--) {
+        bytes.push(Math.floor(Math.random() * 256));}
+      return bytes;
+    },
+
+    // Convert a byte array to big-endian 32-bit words
+    bytesToWords: function bytesToWords(bytes) {
+      for (var words = [], i = 0, b = 0; i < bytes.length; i++, b += 8) {
+        words[b >>> 5] |= bytes[i] << 24 - b % 32;}
+      return words;
+    },
+
+    // Convert big-endian 32-bit words to a byte array
+    wordsToBytes: function wordsToBytes(words) {
+      for (var bytes = [], b = 0; b < words.length * 32; b += 8) {
+        bytes.push(words[b >>> 5] >>> 24 - b % 32 & 0xFF);}
+      return bytes;
+    },
+
+    // Convert a byte array to a hex string
+    bytesToHex: function bytesToHex(bytes) {
+      for (var hex = [], i = 0; i < bytes.length; i++) {
+        hex.push((bytes[i] >>> 4).toString(16));
+        hex.push((bytes[i] & 0xF).toString(16));
+      }
+      return hex.join('');
+    },
+
+    // Convert a hex string to a byte array
+    hexToBytes: function hexToBytes(hex) {
+      for (var bytes = [], c = 0; c < hex.length; c += 2) {
+        bytes.push(parseInt(hex.substr(c, 2), 16));}
+      return bytes;
+    },
+
+    // Convert a byte array to a base-64 string
+    bytesToBase64: function bytesToBase64(bytes) {
+      for (var base64 = [], i = 0; i < bytes.length; i += 3) {
+        var triplet = bytes[i] << 16 | bytes[i + 1] << 8 | bytes[i + 2];
+        for (var j = 0; j < 4; j++) {
+          if (i * 8 + j * 6 <= bytes.length * 8)
+          base64.push(base64map.charAt(triplet >>> 6 * (3 - j) & 0x3F));else
+
+          base64.push('=');}
+      }
+      return base64.join('');
+    },
+
+    // Convert a base-64 string to a byte array
+    base64ToBytes: function base64ToBytes(base64) {
+      // Remove non-base-64 characters
+      base64 = base64.replace(/[^A-Z0-9+\/]/ig, '');
+
+      for (var bytes = [], i = 0, imod4 = 0; i < base64.length;
+      imod4 = ++i % 4) {
+        if (imod4 == 0) continue;
+        bytes.push((base64map.indexOf(base64.charAt(i - 1)) &
+        Math.pow(2, -2 * imod4 + 8) - 1) << imod4 * 2 |
+        base64map.indexOf(base64.charAt(i)) >>> 6 - imod4 * 2);
+      }
+      return bytes;
+    } };
+
+
+  module.exports = crypt;
+})();
+
+/***/ }),
+/* 27 */
+/*!**************************************************************************!*\
+  !*** D:/莹酱/project/智能客服/customerService/node_modules/charenc/charenc.js ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+var charenc = {
+  // UTF-8 encoding
+  utf8: {
+    // Convert a string to a byte array
+    stringToBytes: function stringToBytes(str) {
+      return charenc.bin.stringToBytes(unescape(encodeURIComponent(str)));
+    },
+
+    // Convert a byte array to a string
+    bytesToString: function bytesToString(bytes) {
+      return decodeURIComponent(escape(charenc.bin.bytesToString(bytes)));
+    } },
+
+
+  // Binary encoding
+  bin: {
+    // Convert a string to a byte array
+    stringToBytes: function stringToBytes(str) {
+      for (var bytes = [], i = 0; i < str.length; i++) {
+        bytes.push(str.charCodeAt(i) & 0xFF);}
+      return bytes;
+    },
+
+    // Convert a byte array to a string
+    bytesToString: function bytesToString(bytes) {
+      for (var str = [], i = 0; i < bytes.length; i++) {
+        str.push(String.fromCharCode(bytes[i]));}
+      return str.join('');
+    } } };
+
+
+
+module.exports = charenc;
+
+/***/ }),
+/* 28 */
+/*!*****************************************!*\
+  !*** ./node_modules/is-buffer/index.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/*!
+ * Determine if an object is a Buffer
+ *
+ * @author   Feross Aboukhadijeh <https://feross.org>
+ * @license  MIT
+ */
+
+// The _isBuffer check is for Safari 5-7 support, because it's missing
+// Object.prototype.constructor. Remove this eventually
+module.exports = function (obj) {
+  return obj != null && (isBuffer(obj) || isSlowBuffer(obj) || !!obj._isBuffer)
+}
+
+function isBuffer (obj) {
+  return !!obj.constructor && typeof obj.constructor.isBuffer === 'function' && obj.constructor.isBuffer(obj)
+}
+
+// For Node v0.10 support. Remove this eventually.
+function isSlowBuffer (obj) {
+  return typeof obj.readFloatLE === 'function' && typeof obj.slice === 'function' && isBuffer(obj.slice(0, 0))
+}
+
+
+/***/ }),
+/* 29 */
+/*!***************************************************************************!*\
+  !*** D:/莹酱/project/智能客服/customerService/node_modules/js-base64/base64.js ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(global) {var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__; /*
+               *  base64.js
+               *
+               *  Licensed under the BSD 3-Clause License.
+               *    http://opensource.org/licenses/BSD-3-Clause
+               *
+               *  References:
+               *    http://en.wikipedia.org/wiki/Base64
+               */
+;(function (global, factory) {
+   true ?
+  module.exports = factory(global) :
+  undefined;
+})(
+typeof self !== 'undefined' ? self :
+typeof window !== 'undefined' ? window :
+typeof global !== 'undefined' ? global : void 0,
+
+function (global) {
+  'use strict';
+  // existing version for noConflict()
+  global = global || {};
+  var _Base64 = global.Base64;
+  var version = "2.5.2";
+  // if node.js and NOT React Native, we use Buffer
+  var buffer;
+  if ( true && module.exports) {
+    try {
+      buffer = eval("require('buffer').Buffer");
+    } catch (err) {
+      buffer = undefined;
+    }
+  }
+  // constants
+  var b64chars =
+  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
+  var b64tab = function (bin) {
+    var t = {};
+    for (var i = 0, l = bin.length; i < l; i++) {t[bin.charAt(i)] = i;}
+    return t;
+  }(b64chars);
+  var fromCharCode = String.fromCharCode;
+  // encoder stuff
+  var cb_utob = function cb_utob(c) {
+    if (c.length < 2) {
+      var cc = c.charCodeAt(0);
+      return cc < 0x80 ? c :
+      cc < 0x800 ? fromCharCode(0xc0 | cc >>> 6) +
+      fromCharCode(0x80 | cc & 0x3f) :
+      fromCharCode(0xe0 | cc >>> 12 & 0x0f) +
+      fromCharCode(0x80 | cc >>> 6 & 0x3f) +
+      fromCharCode(0x80 | cc & 0x3f);
+    } else {
+      var cc = 0x10000 +
+      (c.charCodeAt(0) - 0xD800) * 0x400 + (
+      c.charCodeAt(1) - 0xDC00);
+      return fromCharCode(0xf0 | cc >>> 18 & 0x07) +
+      fromCharCode(0x80 | cc >>> 12 & 0x3f) +
+      fromCharCode(0x80 | cc >>> 6 & 0x3f) +
+      fromCharCode(0x80 | cc & 0x3f);
+    }
+  };
+  var re_utob = /[\uD800-\uDBFF][\uDC00-\uDFFFF]|[^\x00-\x7F]/g;
+  var utob = function utob(u) {
+    return u.replace(re_utob, cb_utob);
+  };
+  var cb_encode = function cb_encode(ccc) {
+    var padlen = [0, 2, 1][ccc.length % 3],
+    ord = ccc.charCodeAt(0) << 16 |
+    (ccc.length > 1 ? ccc.charCodeAt(1) : 0) << 8 | (
+    ccc.length > 2 ? ccc.charCodeAt(2) : 0),
+    chars = [
+    b64chars.charAt(ord >>> 18),
+    b64chars.charAt(ord >>> 12 & 63),
+    padlen >= 2 ? '=' : b64chars.charAt(ord >>> 6 & 63),
+    padlen >= 1 ? '=' : b64chars.charAt(ord & 63)];
+
+    return chars.join('');
+  };
+  var btoa = global.btoa ? function (b) {
+    return global.btoa(b);
+  } : function (b) {
+    return b.replace(/[\s\S]{1,3}/g, cb_encode);
+  };
+  var _encode = function _encode(u) {
+    var isUint8Array = Object.prototype.toString.call(u) === '[object Uint8Array]';
+    return isUint8Array ? u.toString('base64') :
+    btoa(utob(String(u)));
+  };
+  var encode = function encode(u, urisafe) {
+    return !urisafe ?
+    _encode(u) :
+    _encode(String(u)).replace(/[+\/]/g, function (m0) {
+      return m0 == '+' ? '-' : '_';
+    }).replace(/=/g, '');
+  };
+  var encodeURI = function encodeURI(u) {return encode(u, true);};
+  // decoder stuff
+  var re_btou = /[\xC0-\xDF][\x80-\xBF]|[\xE0-\xEF][\x80-\xBF]{2}|[\xF0-\xF7][\x80-\xBF]{3}/g;
+  var cb_btou = function cb_btou(cccc) {
+    switch (cccc.length) {
+      case 4:
+        var cp = (0x07 & cccc.charCodeAt(0)) << 18 |
+        (0x3f & cccc.charCodeAt(1)) << 12 |
+        (0x3f & cccc.charCodeAt(2)) << 6 |
+        0x3f & cccc.charCodeAt(3),
+        offset = cp - 0x10000;
+        return fromCharCode((offset >>> 10) + 0xD800) +
+        fromCharCode((offset & 0x3FF) + 0xDC00);
+      case 3:
+        return fromCharCode(
+        (0x0f & cccc.charCodeAt(0)) << 12 |
+        (0x3f & cccc.charCodeAt(1)) << 6 |
+        0x3f & cccc.charCodeAt(2));
+
+      default:
+        return fromCharCode(
+        (0x1f & cccc.charCodeAt(0)) << 6 |
+        0x3f & cccc.charCodeAt(1));}
+
+
+  };
+  var btou = function btou(b) {
+    return b.replace(re_btou, cb_btou);
+  };
+  var cb_decode = function cb_decode(cccc) {
+    var len = cccc.length,
+    padlen = len % 4,
+    n = (len > 0 ? b64tab[cccc.charAt(0)] << 18 : 0) | (
+    len > 1 ? b64tab[cccc.charAt(1)] << 12 : 0) | (
+    len > 2 ? b64tab[cccc.charAt(2)] << 6 : 0) | (
+    len > 3 ? b64tab[cccc.charAt(3)] : 0),
+    chars = [
+    fromCharCode(n >>> 16),
+    fromCharCode(n >>> 8 & 0xff),
+    fromCharCode(n & 0xff)];
+
+    chars.length -= [0, 0, 2, 1][padlen];
+    return chars.join('');
+  };
+  var _atob = global.atob ? function (a) {
+    return global.atob(a);
+  } : function (a) {
+    return a.replace(/\S{1,4}/g, cb_decode);
+  };
+  var atob = function atob(a) {
+    return _atob(String(a).replace(/[^A-Za-z0-9\+\/]/g, ''));
+  };
+  var _decode = buffer ?
+  buffer.from && Uint8Array && buffer.from !== Uint8Array.from ?
+  function (a) {
+    return (a.constructor === buffer.constructor ?
+    a : buffer.from(a, 'base64')).toString();
+  } :
+  function (a) {
+    return (a.constructor === buffer.constructor ?
+    a : new buffer(a, 'base64')).toString();
+  } :
+  function (a) {return btou(_atob(a));};
+  var decode = function decode(a) {
+    return _decode(
+    String(a).replace(/[-_]/g, function (m0) {return m0 == '-' ? '+' : '/';}).
+    replace(/[^A-Za-z0-9\+\/]/g, ''));
+
+  };
+  var noConflict = function noConflict() {
+    var Base64 = global.Base64;
+    global.Base64 = _Base64;
+    return Base64;
+  };
+  // export Base64
+  global.Base64 = {
+    VERSION: version,
+    atob: atob,
+    btoa: btoa,
+    fromBase64: decode,
+    toBase64: encode,
+    utob: utob,
+    encode: encode,
+    encodeURI: encodeURI,
+    btou: btou,
+    decode: decode,
+    noConflict: noConflict,
+    __buffer__: buffer };
+
+  // if ES5 is available, make Base64.extendString() available
+  if (typeof Object.defineProperty === 'function') {
+    var noEnum = function noEnum(v) {
+      return { value: v, enumerable: false, writable: true, configurable: true };
+    };
+    global.Base64.extendString = function () {
+      Object.defineProperty(
+      String.prototype, 'fromBase64', noEnum(function () {
+        return decode(this);
+      }));
+      Object.defineProperty(
+      String.prototype, 'toBase64', noEnum(function (urisafe) {
+        return encode(this, urisafe);
+      }));
+      Object.defineProperty(
+      String.prototype, 'toBase64URI', noEnum(function () {
+        return encode(this, true);
+      }));
+    };
+  }
+  //
+  // export Base64 to the namespace
+  //
+  if (global['Meteor']) {// Meteor.js
+    Base64 = global.Base64;
+  }
+  // module.exports and AMD are mutually exclusive.
+  // module.exports has precedence.
+  if ( true && module.exports) {
+    module.exports.Base64 = global.Base64;
+  } else
+  if (true) {
+    // AMD. Register as an anonymous module.
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function () {return global.Base64;}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+  }
+  // that's it!
+  return { Base64: global.Base64 };
+});
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../../downloads/HBuilderX/plugins/uniapp-cli/node_modules/webpack/buildin/global.js */ 3)))
+
+/***/ }),
+/* 30 */
+/*!********************************************************************!*\
+  !*** D:/莹酱/project/智能客服/customerService/pages/utils/js/request.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var request = function request(option) {
+  var hideLoading = function hideLoading(cancelHide) {
+    if (!cancelHide) {
+      uni.hideLoading();
+    }
+  };
+  return new Promise(function (res, rej) {
+    if (!option.hideLoading) {
+      uni.showLoading({
+        title: '加载中' });
+
+    }
+
+    option.success = function (data) {
+      // 关闭Loading框
+      hideLoading(option.cancelHide);
+      res(data);
+    };
+
+    option.fail = function (error) {
+      // 关闭Loading框
+      hideLoading(option.cancelHide);
+      res(error);
+    };
+
+    uni.request(option);
   });
 };var _default =
 
-http;exports.default = _default;
+request;exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 31 */
+/*!*********************************************************************************!*\
+  !*** D:/莹酱/project/智能客服/customerService/pages/login/utils/ajax/interceptors.js ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _util = _interopRequireDefault(__webpack_require__(/*! ../util.js */ 24));
+var _env = __webpack_require__(/*! ../../../assets/js/env */ 22);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+
+var init = function init(params) {
+  var obj = {
+    method: 'GET',
+    dataType: 'json',
+    hideLoading: false,
+    contentType: 'json' };
+
+  params = _objectSpread({},
+  obj,
+  params);
+
+  params.header['content-type'] = 'application/json';
+  params.method = params.method;
+  if (params.contentType === 'form') {
+    params.header['content-type'] = 'application/x-www-form-urlencoded';
+  }
+  // uim接口设置请求头
+  if (params.contentType === 'X-Requested-With') {
+    params.header['X-Requested-With'] = 'OpenAPIRequest';
+  }
+  if (params.method.toUpperCase() === 'POST') {
+    // uim不需要这种设置
+    if (!_util.default.isUim(params.url)) {
+      params.data = Object.assign(params.data ? params.data : {}, {
+        model: "6" });
+
+    }
+  } else {
+    params.url.includes('?') ? params.url += '&model=6' : params.url += '?model=6';
+  }
+  if (params.contentType === 'json' && params.method !== 'get') {
+    params.data = JSON.stringify(params.data);
+  }
+  return params;
+};
+
+var sigin = function sigin(option) {
+  var now = new Date().getTime();
+  var token = _util.default.getToken() || _util.default.getAnonymousToken(now);
+  var signParam = {
+    app_key: _env.appKeyGataway,
+    timestamp: now,
+    locale: 'zh_CN',
+    format: 'json',
+    sign_method: 'md5',
+    access_token: token };
+
+  // uim加密参数
+  if (_util.default.isUim(option.url)) {
+    delete signParam.access_token;
+    signParam['app_key'] = _env.appKeyUim;
+    signParam['wechatToken'] = token;
+  }
+  option = init(option);
+  var getParam = {};
+  if (option.url.indexOf('?') !== -1) {
+    var list = option.url.split('?')[1].split('&');
+    list.map(function (item) {
+      var key = item.split('=')[0];
+      var value = item.split('=')[1];
+      getParam[key] = value;
+    });
+  }
+  var signKey = _env.gatawaySignKey;
+
+  // 登录uim的 signKey
+  if (_util.default.isUim(option.url)) {
+    signKey = _env.uimSignKey;
+  }
+  var postParam;
+  if (option.method == 'post') {
+    // uim不需要做这种处理
+    postParam = option.contentType === 'json' ? {
+      openApiBodyString: option.data } :
+    option.data;
+  } else {
+    postParam = option.data;
+  }
+  var parameters = _objectSpread({},
+  postParam,
+  signParam,
+  getParam);
+
+  // console.log(parameters, signKey);
+  var sign = _util.default.md5Signature(parameters, signKey);
+  if (option.url.indexOf('?') !== -1) {
+    option.url += '&';
+  } else {
+    option.url += '?';
+  }
+  option.url = "".concat(option.url, "sign=").concat(sign);
+  for (var key in signParam) {
+    option.url = "".concat(option.url, "&").concat(key, "=").concat(encodeURIComponent(signParam[key]));
+  }
+  return option;
+};
+
+var before = function before(config) {
+  //uim签名
+  if (_util.default.isUim(config.url)) {
+    return sigin(config);
+  }
+  // gateway签名
+  if (_util.default.isGateway(config.url)) {
+    // 签名
+    config.header['x-fcs-appoint'] = 'weapp';
+    return sigin(config);
+  }
+  return sigin(config);
+};
+// 请求后拦截
+var after = function after(res, callBack) {
+  if (res.data) {
+    // 成功
+    var data = res.data;
+    var parameter = res.parament;
+    var resCode = data.statusCode;
+    // let {returnObject} = data.data; resCode === 401 && data.data.exceptionCode === 'param.71'
+    if (resCode === 401 && data.data.exceptionCode === 'param.71') {
+      uni.removeStorageSync('token'); //移除token
+      var now = new Date().getTime();
+      _util.default.getAnonymousToken(now);
+      if (callBack && typeof callBack == 'function') {
+        callBack();
+      }
+      return Promise.reject(false);
+    }
+    if (resCode === 503) {
+      uni.showToast({
+        title: '目前系统访问人数较多，请稍后再试',
+        icon: 'none',
+        duration: 2000 });
+
+      return Promise.reject(data);
+    }
+    if (resCode === 504) {
+      uni.showToast({
+        title: '应用系统访问超时，请稍后再试',
+        icon: 'none',
+        duration: 2000 });
+
+      return Promise.reject(data);
+    }
+    if (resCode === 500 || resCode === 501 || resCode === 502) {
+      uni.showToast({
+        title: '服务端异常，请稍后再试',
+        icon: 'none',
+        duration: 2000 });
+
+      return Promise.reject(data);
+    }
+    if (_util.default.isUim(parameter.url)) {
+      return Promise.resolve(data);
+    } else if (parameter.returnAll) {// 返回所有
+      return Promise.resolve(data);
+    } else if (parameter.returnData) {// 返回请求内容(data部分)
+      return Promise.resolve(data.data);
+    } else if (!_util.default.isGateway(parameter.url)) {// 不是gateway接口,返回内容
+      return Promise.resolve(data.data);
+    } else if (data.data.exceptionMessage || data.data.errorMessage) {// 统一弹出报错信息
+      uni.showToast({
+        title: data.data.exceptionMessage || data.data.errorMessage,
+        icon: 'none',
+        duration: 2000 });
+
+      return Promise.reject(data);
+    } else if (data.data.success) {// 接口成功
+      return Promise.resolve(data.data.returnObject);
+    } else if (data.data.success === false) {
+      uni.showToast({
+        title: '接口请求异常',
+        icon: 'none',
+        duration: 2000 });
+
+    } else {
+      return Promise.resolve(data.data);
+    }
+  } else {
+    // 接口请求失败
+    return Promise.reject(res.error);
+  }
+};
+
+var interceptor = {
+  before: before,
+  after: after };var _default =
+
+
+interceptor;exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 32 */
+/*!********************************************************************!*\
+  !*** D:/莹酱/project/智能客服/customerService/pages/assets/js/config.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _require =
+__webpack_require__(/*! ./domain */ 33),gatewayUrl = _require.gatewayUrl,mdealerUrl = _require.mdealerUrl,uim = _require.uim;
+
+var config = {
+  /**
+                  * 登录接口
+                  */
+  'login': "".concat(uim, "/oauth20/wechatToken"),
+  //判断用户是否已经绑卡
+  'typeAndUserNo': "".concat(gatewayUrl, "/api/common/user/typeAndUserNo"),
+  //获取用户信息
+  'getUserInfo': "".concat(uim, "/oauth20/profile"),
+  // 短信验证码
+  'getMsmCode': "".concat(uim, "/oauth20/sendmobilecode"),
+  // 注册时验证手机号是否可用
+  'checkMobilePhone': "".concat(gatewayUrl, "/api/common/user/customer/checkMobilePhone"),
+  'checkMobilePhoneNew': "".concat(gatewayUrl, "/api/myaccount/dealer/guest"),
+  /**
+                                                                                  * 智能小极
+                                                                                  */
+  'xiaoJi': 'http://v4u.faqrobot.net/robot/infinitusWechat.html?sysNum=3000000&&receiveId=&sourceId=3' };var _default =
+
+
+config;exports.default = _default;
+
+/***/ }),
+/* 33 */
+/*!********************************************************************!*\
+  !*** D:/莹酱/project/智能客服/customerService/pages/assets/js/domain.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+var _require = __webpack_require__(/*! ./env */ 22),domain = _require.domain,token = _require.token,wwwPwd = _require.wwwPwd;
+var mdealerUrl = domain;
+var gatewayUrl = mdealerUrl.replace('//mdealer', '//gateway');
+var uim = mdealerUrl.replace('//mdealer', '//uim');
+module.exports = {
+  gatewayUrl: gatewayUrl,
+  mdealerUrl: mdealerUrl,
+  token: token,
+  uim: uim };
+
+/***/ }),
+/* 34 */
+/*!*********************************************************************!*\
+  !*** D:/莹酱/project/智能客服/customerService/pages/login/utils/login.js ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.getUserInfoData = exports.login = void 0;var _index = _interopRequireDefault(__webpack_require__(/*! ./ajax/index.js */ 23));
+var _config = _interopRequireDefault(__webpack_require__(/*! ../../assets/js/config.js */ 32));
+var _common = _interopRequireDefault(__webpack_require__(/*! ../../../common/js/common.js */ 15));var _this = void 0;function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+var login = function login(data, type) {
+  (0, _index.default)({
+    url: _config.default.login,
+    method: 'post',
+    contentType: 'form',
+    data: data }).
+  then(function (res) {
+    if (!res.data.error_code) {
+      if (res.data.access_token) {
+        // 缓存数据
+        uni.setStorageSync('token', res.data.access_token);
+        //缓存过期时间- 一年
+        var expirationTime = new Date();
+        expirationTime.setFullYear(expirationTime.getFullYear() + 1);
+        expirationTime = Date.parse(expirationTime);
+        uni.setStorageSync('expirationTime', expirationTime);
+
+        // let nowTime = new Date().getTime();
+        // let loginAccout = []
+        // let loginObj = {
+        // 	account: data.username, //账户
+        // 	time: nowTime
+        // }
+        // let storageLoginAccout = uni.getStorageSync('loginAccout');
+        // loginAccout = storageLoginAccout.filter((item) => {
+        // 	return item.account != data.username
+        // })
+        // loginAccout.push(loginObj)
+        // uni.setStorageSync('loginAccout', loginAccout);
+        //緩存結束
+        getUserInfoData(res.data.access_token);
+      }
+    } else {
+      //微信一键登录
+      var mobile = data.error_mobile_no;
+      var userName = data.error_username;
+      if (type == 'wechatPhone' && mobile && userName) {
+        _this.common.openUrl({
+          url: '/pages/login/loginCode?phoneVal=' + mobile });
+
+      } else {
+        var toastMsg = res.data.exception_code ? res.data.exception_code : res.data.error_msg;
+        if (toastMsg) {
+          _common.default.showToast(toastMsg);
+        }
+      }
+    }
+  });
+};
+//获取用户信息
+exports.login = login;var getUserInfoData = function getUserInfoData(token) {
+  var url = _config.default.getUserInfo + '/' + token;
+  _index.default.post(url, {
+    hideLoading: false,
+    returnAll: true }).
+  then(function (res) {
+    if (res.data.success) {
+      var dealerNO = res.data.returnObject.name;
+      var robotInitParams = _common.default.robotInitParams;
+      _common.default.openUrl({
+        url: _config.default.xiaoJi + '&dealerNO=' + dealerNO + robotInitParams,
+        type: 'redirect',
+        title: '',
+        inWhiteList: true,
+        isExternal: true });
+
+    } else {
+      uni.removeStorageSync('token');
+      uni.removeStorageSync('expirationTime');
+      _common.default.showToast('没有该用户的会员信息！请重新登录');
+      _common.default.openUrl({
+        url: '../login',
+        type: 'redirect' });
+
+    }
+  }).catch(function (e) {
+    uni.removeStorageSync('token');
+    uni.removeStorageSync('expirationTime');
+    _common.default.openUrl({
+      url: '../login',
+      type: 'redirect' });
+
+  });
+};exports.getUserInfoData = getUserInfoData;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 35 */,
+/* 36 */,
+/* 37 */,
+/* 38 */,
+/* 39 */,
+/* 40 */,
+/* 41 */,
+/* 42 */,
+/* 43 */,
+/* 44 */,
+/* 45 */,
+/* 46 */,
+/* 47 */,
+/* 48 */,
+/* 49 */,
+/* 50 */,
+/* 51 */,
+/* 52 */,
+/* 53 */,
+/* 54 */,
+/* 55 */,
+/* 56 */,
+/* 57 */,
+/* 58 */,
+/* 59 */,
+/* 60 */,
+/* 61 */,
+/* 62 */,
+/* 63 */,
+/* 64 */,
+/* 65 */,
+/* 66 */,
+/* 67 */,
+/* 68 */,
+/* 69 */,
+/* 70 */,
+/* 71 */,
+/* 72 */
+/*!************************************************************************!*\
+  !*** D:/莹酱/project/智能客服/customerService/components/uni-icons/icons.js ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  "pulldown": "\uE588",
+  "refreshempty": "\uE461",
+  "back": "\uE471",
+  "forward": "\uE470",
+  "more": "\uE507",
+  "more-filled": "\uE537",
+  "scan": "\uE612",
+  "qq": "\uE264",
+  "weibo": "\uE260",
+  "weixin": "\uE261",
+  "pengyouquan": "\uE262",
+  "loop": "\uE565",
+  "refresh": "\uE407",
+  "refresh-filled": "\uE437",
+  "arrowthindown": "\uE585",
+  "arrowthinleft": "\uE586",
+  "arrowthinright": "\uE587",
+  "arrowthinup": "\uE584",
+  "undo-filled": "\uE7D6",
+  "undo": "\uE406",
+  "redo": "\uE405",
+  "redo-filled": "\uE7D9",
+  "bars": "\uE563",
+  "chatboxes": "\uE203",
+  "camera": "\uE301",
+  "chatboxes-filled": "\uE233",
+  "camera-filled": "\uE7EF",
+  "cart-filled": "\uE7F4",
+  "cart": "\uE7F5",
+  "checkbox-filled": "\uE442",
+  "checkbox": "\uE7FA",
+  "arrowleft": "\uE582",
+  "arrowdown": "\uE581",
+  "arrowright": "\uE583",
+  "smallcircle-filled": "\uE801",
+  "arrowup": "\uE580",
+  "circle": "\uE411",
+  "eye-filled": "\uE568",
+  "eye-slash-filled": "\uE822",
+  "eye-slash": "\uE823",
+  "eye": "\uE824",
+  "flag-filled": "\uE825",
+  "flag": "\uE508",
+  "gear-filled": "\uE532",
+  "reload": "\uE462",
+  "gear": "\uE502",
+  "hand-thumbsdown-filled": "\uE83B",
+  "hand-thumbsdown": "\uE83C",
+  "hand-thumbsup-filled": "\uE83D",
+  "heart-filled": "\uE83E",
+  "hand-thumbsup": "\uE83F",
+  "heart": "\uE840",
+  "home": "\uE500",
+  "info": "\uE504",
+  "home-filled": "\uE530",
+  "info-filled": "\uE534",
+  "circle-filled": "\uE441",
+  "chat-filled": "\uE847",
+  "chat": "\uE263",
+  "mail-open-filled": "\uE84D",
+  "email-filled": "\uE231",
+  "mail-open": "\uE84E",
+  "email": "\uE201",
+  "checkmarkempty": "\uE472",
+  "list": "\uE562",
+  "locked-filled": "\uE856",
+  "locked": "\uE506",
+  "map-filled": "\uE85C",
+  "map-pin": "\uE85E",
+  "map-pin-ellipse": "\uE864",
+  "map": "\uE364",
+  "minus-filled": "\uE440",
+  "mic-filled": "\uE332",
+  "minus": "\uE410",
+  "micoff": "\uE360",
+  "mic": "\uE302",
+  "clear": "\uE434",
+  "smallcircle": "\uE868",
+  "close": "\uE404",
+  "closeempty": "\uE460",
+  "paperclip": "\uE567",
+  "paperplane": "\uE503",
+  "paperplane-filled": "\uE86E",
+  "person-filled": "\uE131",
+  "contact-filled": "\uE130",
+  "person": "\uE101",
+  "contact": "\uE100",
+  "images-filled": "\uE87A",
+  "phone": "\uE200",
+  "images": "\uE87B",
+  "image": "\uE363",
+  "image-filled": "\uE877",
+  "location-filled": "\uE333",
+  "location": "\uE303",
+  "plus-filled": "\uE439",
+  "plus": "\uE409",
+  "plusempty": "\uE468",
+  "help-filled": "\uE535",
+  "help": "\uE505",
+  "navigate-filled": "\uE884",
+  "navigate": "\uE501",
+  "mic-slash-filled": "\uE892",
+  "search": "\uE466",
+  "settings": "\uE560",
+  "sound": "\uE590",
+  "sound-filled": "\uE8A1",
+  "spinner-cycle": "\uE465",
+  "download-filled": "\uE8A4",
+  "personadd-filled": "\uE132",
+  "videocam-filled": "\uE8AF",
+  "personadd": "\uE102",
+  "upload": "\uE402",
+  "upload-filled": "\uE8B1",
+  "starhalf": "\uE463",
+  "star-filled": "\uE438",
+  "star": "\uE408",
+  "trash": "\uE401",
+  "phone-filled": "\uE230",
+  "compose": "\uE400",
+  "videocam": "\uE300",
+  "trash-filled": "\uE8DC",
+  "download": "\uE403",
+  "chatbubble-filled": "\uE232",
+  "chatbubble": "\uE202",
+  "cloud-download": "\uE8E4",
+  "cloud-upload-filled": "\uE8E5",
+  "cloud-upload": "\uE8E6",
+  "cloud-download-filled": "\uE8E9",
+  "headphones": "\uE8BF",
+  "shop": "\uE609" };exports.default = _default;
 
 /***/ })
 ]]);

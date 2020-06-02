@@ -1,6 +1,6 @@
 {
-    "name" : "WuXianJiProduct",
-    "appid" : "",
+    "name" : "customerService",
+    "appid" : "__UNI__5B5AF1A",
     "description" : "",
     "versionName" : "1.0.0",
     "versionCode" : "100",
@@ -57,7 +57,8 @@
     "quickapp" : {},
     /* 小程序特有相关 */
     "mp-weixin" : {
-        "appid" : "wx308fa310a7b27cab",
+        "appid" : "wx09a271cded04343d",
+				"cloudfunctionRoot": "common/cloudfunctions/",
         "setting" : {
             "urlCheck" : false
         },
@@ -71,30 +72,5 @@
     },
     "mp-toutiao" : {
         "usingComponents" : true
-    },
-    "h5" : {
-        "devServer" : {
-            "port" : 80, //端口号
-            "disableHostCheck" : true,
-            "proxy" : {
-                "/servlet/appChat" : {
-                    "target" : "http://192.168.1.124", //目标接口域名
-                    "changeOrigin" : true, //是否跨域
-                    "secure" : false // 设置支持https协议的代理
-                }
-            },
-            "https" : false
-        },
-        "router" : {
-            "base" : "/h5/",
-            "mode" : "history"
-        },
-        "domain" : "http://v4u.faqrobot.net",
-        "title" : "WuXianJiProduct",
-        "optimization" : {
-            "treeShaking" : {
-                "enable" : true
-            }
-        }
     }
 }

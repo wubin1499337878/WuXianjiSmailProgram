@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "手机号登录",
+  "usingComponents": {
+    "logo": "/pages/login/components/logo",
+    "user-agree": "/pages/login/components/userAgree"
+  }
+}
