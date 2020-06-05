@@ -142,21 +142,26 @@ var _default =
   data: function data() {
     return {
       url: '',
-      title: '' };
+      options: '' };
 
   },
   onLoad: function onLoad(options) {
+    this.options = options;
     if (options && options.url) {
       this.url = JSON.parse(decodeURIComponent(options.url));
     }
-    if (options.title) {
-      this.title = options.title;
-    }
   },
   onReady: function onReady() {
-    uni.setNavigationBarTitle({
-      title: this.title });
+    if (this.options.title) {
+      uni.setNavigationBarTitle({
+        title: this.options.title });
 
+    }
+  },
+  onShow: function onShow() {
+    if (this.options.hideHomeButton) {
+      uni.hideHomeButton();
+    }
   },
   methods: {
     getMessage: function getMessage(event) {

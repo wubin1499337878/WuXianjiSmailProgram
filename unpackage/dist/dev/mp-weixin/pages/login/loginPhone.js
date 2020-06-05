@@ -159,8 +159,8 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
-var _index = _interopRequireDefault(__webpack_require__(/*! ./utils/ajax/index.js */ 23));
-var _config = _interopRequireDefault(__webpack_require__(/*! ../assets/js/config.js */ 32));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
+var _index = _interopRequireDefault(__webpack_require__(/*! ./utils/ajax/index.js */ 25));
+var _config = _interopRequireDefault(__webpack_require__(/*! ../assets/js/config.js */ 33));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
 //
 //
 //
@@ -185,27 +185,17 @@ var _config = _interopRequireDefault(__webpack_require__(/*! ../assets/js/config
 //
 //
 //
-var logo = function logo() {return __webpack_require__.e(/*! import() | pages/login/components/logo */ "pages/login/components/logo").then(__webpack_require__.bind(null, /*! ./components/logo.vue */ 75));};var userAgree = function userAgree() {return __webpack_require__.e(/*! import() | pages/login/components/userAgree */ "pages/login/components/userAgree").then(__webpack_require__.bind(null, /*! ./components/userAgree.vue */ 82));};var storageAccount = function storageAccount() {return __webpack_require__.e(/*! import() | pages/login/components/storageAccount */ "pages/login/components/storageAccount").then(__webpack_require__.bind(null, /*! ./components/storageAccount.vue */ 89));};var _default = { components: { logo: logo, userAgree: userAgree, storageAccount: storageAccount }, data: function data() {return { phoneVal: '', IsAccount: false };}, methods: { bindFocus: function bindFocus() {var that = this;setTimeout(function () {that.IsAccount = that.phoneVal == '' ? true : false;});}, bindinput: function bindinput(e, type) {this.setValue(type, e.detail.value);
-      var phoneVal = this.phoneVal = e.detail.value;
-      var isPhoneVal = /^1{1}/.test(phoneVal);
+var logo = function logo() {return __webpack_require__.e(/*! import() | pages/login/components/logo */ "pages/login/components/logo").then(__webpack_require__.bind(null, /*! ./components/logo.vue */ 75));};var userAgree = function userAgree() {return __webpack_require__.e(/*! import() | pages/login/components/userAgree */ "pages/login/components/userAgree").then(__webpack_require__.bind(null, /*! ./components/userAgree.vue */ 82));};var storageAccount = function storageAccount() {return __webpack_require__.e(/*! import() | pages/login/components/storageAccount */ "pages/login/components/storageAccount").then(__webpack_require__.bind(null, /*! ./components/storageAccount.vue */ 89));};var _default = { components: { logo: logo, userAgree: userAgree, storageAccount: storageAccount }, data: function data() {return { phoneVal: '', IsAccount: false };}, methods: { bindFocus: function bindFocus() {var that = this;setTimeout(function () {that.IsAccount = that.phoneVal == '' ? true : false;});}, bindinput: function bindinput(e, type) {var phoneVal = this.phoneVal = e.detail.value;
       this.IsAccount = phoneVal == '' ? true : false;
-      var phoneLength = phoneVal.toString().length == 11 ? false : true;
-      if (!phoneLength) {
+      var phoneLength = phoneVal.toString().length;
+      if (phoneLength == 11) {
         var phoneValData = phoneVal.substr(0, 3) + " " + phoneVal.substr(3, 4) + " " + phoneVal.substr(7, 4);
+      } else if (phoneLength == 13) {
+        var phoneValData = phoneVal;
       } else {
         var phoneValData = phoneVal.replace(/\s*/g, "");
       }
       this.phoneVal = phoneValData;
-    },
-    // 按钮显示隐藏&赋值
-    setValue: function setValue(type, value) {
-      var close_key = "".concat(type, "Close");
-      var val_key = "".concat(type, "Val");
-      this[close_key] = true;
-      this[val_key] = value;
-      if (value.length == 0) {
-        this[close_key] = false;
-      }
     },
     bindblurHander: function bindblurHander() {
       this.IsAccount = false;

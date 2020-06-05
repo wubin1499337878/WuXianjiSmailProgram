@@ -2,7 +2,7 @@ import Ajax from './ajax/index.js'
 import config from '../../assets/js/config.js'
 import common from '../../../common/js/common.js'
 
-const login = (data, type) => {
+const login = (data, type, callback) => {
 	Ajax({
 		url: config.login,
 		method: 'post',
@@ -15,10 +15,10 @@ const login = (data, type) => {
 				uni.setStorageSync('token', res.data.access_token)
 				//缓存过期时间- 一年
 				let expirationTime = new Date();
-				expirationTime.setFullYear(expirationTime.getFullYear()+1);
+				expirationTime.setFullYear(expirationTime.getFullYear() + 1);
 				expirationTime = Date.parse(expirationTime)
 				uni.setStorageSync('expirationTime', expirationTime)
-				
+
 				// let nowTime = new Date().getTime();
 				// let loginAccout = []
 				// let loginObj = {
@@ -40,7 +40,7 @@ const login = (data, type) => {
 			let userName = data.error_username;
 			if (type == 'wechatPhone' && mobile && userName) {
 				this.common.openUrl({
-					url:'/pages/login/loginCode?phoneVal=' + mobile
+					url: '/pages/login/loginCode?phoneVal=' + mobile
 				})
 			} else {
 				let toastMsg = res.data.exception_code ? res.data.exception_code : res.data.error_msg
@@ -64,27 +64,32 @@ const getUserInfoData = (token) => {
 			common.openUrl({
 				url: config.xiaoJi + '&dealerNO=' + dealerNO + robotInitParams,
 				type: 'redirect',
-				title: '',
 				inWhiteList: true,
-				isExternal: true
+				isExternal: true,
+				hideHomeButton: true
 			})
 		} else {
 			uni.removeStorageSync('token');
 			uni.removeStorageSync('expirationTime');
 			common.showToast('没有该用户的会员信息！请重新登录')
 			common.openUrl({
-				url:'../login',
-				type:'redirect',
+				url: '../login',
+				type: 'redirect',
+				hideHomeButton: true
 			})
 		}
 	}).catch(e => {
 		uni.removeStorageSync('token');
 		uni.removeStorageSync('expirationTime');
 		common.openUrl({
-			url:'../login',
-			type:'redirect',
-			})
+			url: '../login',
+			type: 'redirect',
+			hideHomeButton: true
+		})
 	});
 }
 
-export { login , getUserInfoData }
+export {
+	login,
+	getUserInfoData
+}

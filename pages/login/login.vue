@@ -6,7 +6,7 @@
 				<uni-icons type="weixin" color="#fff" size="20" class="WeChat" name="WeChat"></uni-icons>
 				<text class="phoneName">微信手机号登录</text>
 			</button>
-			<button v-else @click="this.common.openUrl({url:'./loginPhone'})" data-type='phone' class="btn">手机号登录</button>
+			<button v-else @click="this.common.openUrl({url:'./loginPhone'})" class="btn">手机号登录</button>
 			<view class="login_or"><text class="x" selectable="false" space="false" decode="false">或</text></view>
 			<view class="login_num" :class="!infoModel?'justifyCenter':''">
 				<view class="left" @click="this.common.openUrl({url:'./loginPhone'})" v-if="infoModel">
@@ -25,7 +25,9 @@
 </template>
 
 <script>
-	import { staticDomain } from '../assets/js/env';
+	import { Base64 } from 'js-base64'
+	import { gatewayUrl } from '../assets/js/domain.js';
+	import { staticDomain, weappAppId  } from '../assets/js/env';
 	import Ajax from './utils/ajax/index.js'
 	import {login, getUserInfoData} from './utils/login.js'
 	import uniIcons from '@/components/uni-icons/uni-icons.vue'
@@ -88,17 +90,33 @@
 			    return;
 			  }else{
 					this.common.showToast('授权成功')
-					let data = {
-					  wxEncryptedData: encryptedData,
-					  username: uni.getStorageSync('wx_openid'),
-					  password: 'password',
-					  terminalType: 'WEAPP',
-					  rememberMe: true,
-					  loginType: 'wechat_phone_one_touch',
-					  wxIv: iv
-					}
-					login(data,'wechatPhone')
+					let _this = this
+					// 在回调中先使用 checkSession 进行登录态检查，避免 login 刷新登录态
+					wx.checkSession({
+					  success() {
+					    // session_key 未过期，并且在本生命周期一直有效
+							_this.wechatLogin(encryptedData,iv)
+					  },
+					  fail() {
+					    // session_key 已经失效，需要重新执行登录流程
+					    _this.login(function(){
+								_this.wechatLogin(encryptedData,iv)
+							});
+					  }
+					});
 				}
+			},
+			wechatLogin(wxEncryptedData,wxIv){
+				let data = {
+				    wxEncryptedData: wxEncryptedData,
+				    username: uni.getStorageSync('wx_openid'),
+				    password: 'password',
+				    terminalType: 'WEAPP',
+				    rememberMe: true,
+				    loginType: 'wechat_phone_one_touch',
+				    wxIv: wxIv
+				  }
+				  login(data,'wechatPhone',this.login)
 			},
 			getOpenId(){
 				wx.cloud.init();
@@ -108,7 +126,36 @@
 						uni.setStorageSync('wx_openid',res.result.openid)
 					},
 				})
-			}
+			},
+			// 登录
+			login(callback) {
+			  // 登录
+			  wx.login({
+			    success: res => {
+			      // 发送 res.code 到后台换取 openId, sessionKey, unionId
+			      // 通知gatway
+			      if (res.code) {
+			        // 发起网络请求
+							let token = uni.getStorageSync('token');
+							let enCode = '';
+							if (token) {
+							  token = Base64.decode(token);
+							  enCode = token.match(/##.+.##/) ? token.match(/##.+.##/)[0] : '';
+							  enCode = enCode.replace(/##/g, '');
+							}
+			        Ajax.get(`${gatewayUrl}/api/common/wechat/weapp/code2session/${res.code}`, { weappAppId }, { returnAll: true }).then(resd => {
+								if (resd.data.success) {
+									if (callback) callback();
+			          } else {
+			            this.common.showToast('微信一键登录失败');
+			          }
+			        });
+			      } else {
+			        this.common.showToast('微信一键登录失败');
+			      }
+			    }
+			  });
+			},
 		}
 	}
 </script>

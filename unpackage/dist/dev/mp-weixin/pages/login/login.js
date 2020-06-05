@@ -182,8 +182,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _env = __webpack_require__(/*! ../assets/js/env */ 22);
-var _index = _interopRequireDefault(__webpack_require__(/*! ./utils/ajax/index.js */ 23));
+var _jsBase = __webpack_require__(/*! js-base64 */ 22);
+var _domain = __webpack_require__(/*! ../assets/js/domain.js */ 23);
+var _env = __webpack_require__(/*! ../assets/js/env */ 24);
+var _index = _interopRequireDefault(__webpack_require__(/*! ./utils/ajax/index.js */ 25));
 var _login = __webpack_require__(/*! ./utils/login.js */ 34);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
 //
 //
@@ -245,17 +247,33 @@ var uniIcons = function uniIcons() {return Promise.all(/*! import() | components
         return;
       } else {
         this.common.showToast('授权成功');
-        var data = {
-          wxEncryptedData: encryptedData,
-          username: uni.getStorageSync('wx_openid'),
-          password: 'password',
-          terminalType: 'WEAPP',
-          rememberMe: true,
-          loginType: 'wechat_phone_one_touch',
-          wxIv: iv };
+        var _this = this;
+        // 在回调中先使用 checkSession 进行登录态检查，避免 login 刷新登录态
+        wx.checkSession({
+          success: function success() {
+            // session_key 未过期，并且在本生命周期一直有效
+            _this.wechatLogin(encryptedData, iv);
+          },
+          fail: function fail() {
+            // session_key 已经失效，需要重新执行登录流程
+            _this.login(function () {
+              _this.wechatLogin(encryptedData, iv);
+            });
+          } });
 
-        (0, _login.login)(data, 'wechatPhone');
       }
+    },
+    wechatLogin: function wechatLogin(wxEncryptedData, wxIv) {
+      var data = {
+        wxEncryptedData: wxEncryptedData,
+        username: uni.getStorageSync('wx_openid'),
+        password: 'password',
+        terminalType: 'WEAPP',
+        rememberMe: true,
+        loginType: 'wechat_phone_one_touch',
+        wxIv: wxIv };
+
+      (0, _login.login)(data, 'wechatPhone', this.login);
     },
     getOpenId: function getOpenId() {
       wx.cloud.init();
@@ -263,6 +281,35 @@ var uniIcons = function uniIcons() {return Promise.all(/*! import() | components
         name: 'add',
         complete: function complete(res) {
           uni.setStorageSync('wx_openid', res.result.openid);
+        } });
+
+    },
+    // 登录
+    login: function login(callback) {var _this2 = this;
+      // 登录
+      wx.login({
+        success: function success(res) {
+          // 发送 res.code 到后台换取 openId, sessionKey, unionId
+          // 通知gatway
+          if (res.code) {
+            // 发起网络请求
+            var token = uni.getStorageSync('token');
+            var enCode = '';
+            if (token) {
+              token = _jsBase.Base64.decode(token);
+              enCode = token.match(/##.+.##/) ? token.match(/##.+.##/)[0] : '';
+              enCode = enCode.replace(/##/g, '');
+            }
+            _index.default.get("".concat(_domain.gatewayUrl, "/api/common/wechat/weapp/code2session/").concat(res.code), { weappAppId: _env.weappAppId }, { returnAll: true }).then(function (resd) {
+              if (resd.data.success) {
+                if (callback) callback();
+              } else {
+                _this2.common.showToast('微信一键登录失败');
+              }
+            });
+          } else {
+            _this2.common.showToast('微信一键登录失败');
+          }
         } });
 
     } } };exports.default = _default;

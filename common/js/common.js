@@ -1,8 +1,6 @@
 //打开外部链接
 const openUrl = (obj) =>{
-	let {url='',inWhiteList='',isExternal='',type='navigate',title=''} = obj
-	
-	// type = type == 'redirect' ? 'redirect' : 'navigate'
+	let {url='',inWhiteList=false,isExternal=false,type='navigate',title='',hideHomeButton=false} = obj
 	if(isExternal){
 		// #ifdef APP-PLUS
 		plus.runtime.openURL(url) //这里默认使用外部浏览器打开而不是内部web-view组件打开
@@ -13,9 +11,8 @@ const openUrl = (obj) =>{
 		// #ifdef MP-WEIXIN
 		
 		if (inWhiteList) { //如果在小程序的网址白名单中，会走内置webview打开，否则会复制网址提示在外部浏览器打开
-		
 			uni[type+'To']({
-				url: '/pages/subPages/web-view/web-view?url=' + encodeURIComponent(JSON.stringify(url)) + '&title=' + title
+				url: '/pages/subPages/web-view/web-view?url=' + encodeURIComponent(JSON.stringify(url)) + '&title=' + title + '&hideHomeButton=' + hideHomeButton
 			});
 		} else {
 			uni.setClipboardData({
@@ -29,7 +26,7 @@ const openUrl = (obj) =>{
 		// #endif
 	}else{
 		uni[type+'To']({
-			url: url
+			url: url + '?&title=' + title + '&hideHomeButton=' + hideHomeButton
 		});
 	}
 }

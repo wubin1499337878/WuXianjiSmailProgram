@@ -171,9 +171,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
-var _domain = __webpack_require__(/*! ../assets/js/domain.js */ 33);
-var _index = _interopRequireDefault(__webpack_require__(/*! ./utils/ajax/index.js */ 23));
-var _util = _interopRequireDefault(__webpack_require__(/*! ./utils/util.js */ 24));
+var _domain = __webpack_require__(/*! ../assets/js/domain.js */ 23);
+var _index = _interopRequireDefault(__webpack_require__(/*! ./utils/ajax/index.js */ 25));
+var _util = _interopRequireDefault(__webpack_require__(/*! ./utils/util.js */ 26));
 var _login = __webpack_require__(/*! ./utils/login.js */ 34);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
 //
 //
@@ -209,30 +209,21 @@ var _login = __webpack_require__(/*! ./utils/login.js */ 34);function _interopRe
 //
 //
 var logo = function logo() {return __webpack_require__.e(/*! import() | pages/login/components/logo */ "pages/login/components/logo").then(__webpack_require__.bind(null, /*! ./components/logo.vue */ 75));};var userAgree = function userAgree() {return __webpack_require__.e(/*! import() | pages/login/components/userAgree */ "pages/login/components/userAgree").then(__webpack_require__.bind(null, /*! ./components/userAgree.vue */ 82));};var storageAccount = function storageAccount() {return __webpack_require__.e(/*! import() | pages/login/components/storageAccount */ "pages/login/components/storageAccount").then(__webpack_require__.bind(null, /*! ./components/storageAccount.vue */ 89));};var uniIcons = function uniIcons() {return Promise.all(/*! import() | components/uni-icons/uni-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/uni-icons/uni-icons")]).then(__webpack_require__.bind(null, /*! @/components/uni-icons/uni-icons.vue */ 67));};var _default = { components: { logo: logo, uniIcons: uniIcons, userAgree: userAgree, storageAccount: storageAccount }, data: function data() {return { isPassWord: true, passwordVal: '', accountVal: '', IsAccount: false, //是否显示记录
-      token: '' };}, methods: { bindFocus: function bindFocus() {var that = this;setTimeout(function () {that.IsAccount = that.phoneVal == '' ? true : false;});}, bindblurHander: function bindblurHander() {this.IsAccount = false;}, bindinput: function bindinput(e, type) {this["".concat(type, "Val")] = e.detail.value;this.setValue(type, this["".concat(type, "Val")]);var accountVal = e.detail.value;
-      if (type == 'account') {
-        var phoneLength = accountVal.toString().length;
-        if (phoneLength == '11') {
-          var phoneValData = accountVal.substr(0, 3) + " " + accountVal.substr(3, 4) + " " + accountVal.substr(7, 4);
-        } else if (phoneLength == '9') {
-          var phoneValData = accountVal.substr(0, 3) + " " + accountVal.substr(3, 3) + " " + accountVal.substr(6, 3);
+      token: '' };}, methods: { bindFocus: function bindFocus() {var that = this;setTimeout(function () {that.IsAccount = that.phoneVal == '' ? true : false;});}, bindblurHander: function bindblurHander() {this.IsAccount = false;}, bindinput: function bindinput(e, type) {this["".concat(type, "Val")] = e.detail.value;if (type == 'account') {var accountVal = this.accountVal;
+        var accountLength = accountVal.toString().length;
+        if (accountLength == '9') {
+          var accountValData = accountVal.substr(0, 3) + " " + accountVal.substr(3, 3) + " " + accountVal.substr(6, 3);
+        } else if (accountLength == '11') {
+          var accountValData = accountVal.substr(0, 3) + " " + accountVal.substr(3, 4) + " " + accountVal.substr(7, 4);
+        } else if (accountLength == '13') {
+          var accountValData = accountVal;
         } else {
-          var phoneValData = accountVal.replace(/\s*/g, "");
+          var accountValData = accountVal.replace(/\s*/g, "");
         }
-        this.accountVal = phoneValData;
+        this.accountVal = accountValData;
         this.IsAccount = this.accountVal == '' ? true : false;
       } else {
         this.IsAccount = false;
-      }
-    },
-    // 按钮显示隐藏&赋值
-    setValue: function setValue(type, value) {
-      var close_key = "".concat(type, "Close");
-      var val_key = "".concat(type, "Val");
-      this[close_key] = true;
-      this[val_key] = value;
-      if (value.length == 0) {
-        this[close_key] = false;
       }
     },
     isPassWordShow: function isPassWordShow() {
