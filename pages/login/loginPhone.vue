@@ -89,7 +89,7 @@
 					returnAll: true,
 				}).then(res => {
 					if (res.data.returnObject) { // 该手机号码注册
-						this.common.openUrl({
+						uni.navigateTo({
 							url:`/pages/login/loginCode?phoneVal=${mobileNo}`
 						})
 					} else { // 该手机没注册

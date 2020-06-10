@@ -95,10 +95,8 @@
 				const anyMouseToken = util.getAnonymousToken();
 				const url = `${mdealerUrl}/html/dealerMember/password.html#/beforeForgetPassword?miniToken=${anyMouseToken}&fromWhere=wxminiProgram`;
 				this.common.openUrl({
-					url:url,
-					inWhiteList:true,
-					isExternal:true
-					})
+					url:url
+				})
 			},
 			checkInfo() {
 				let passwordVal = this.passwordVal

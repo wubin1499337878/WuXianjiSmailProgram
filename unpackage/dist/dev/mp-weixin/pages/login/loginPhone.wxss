@@ -1,34 +1,34 @@
-.login-phone-wraper.data-v-dd568460 {
+.login-phone-wraper.data-v-369ec12a {
   width: 100%;
   height: 100rpx;
   position: relative;
 }
-.login-phone-wraper .login-phone-box.data-v-dd568460 {
+.login-phone-wraper .login-phone-box.data-v-369ec12a {
   width: 560rpx;
   margin: 0 auto;
   height: 100rpx;
   position: relative;
 }
-.login-phone-wraper .login-phone-box .login-phone-boxInner.data-v-dd568460 {
+.login-phone-wraper .login-phone-box .login-phone-boxInner.data-v-369ec12a {
   border-bottom: 1rpx solid #DFDFDD;
 }
-.login-phone-wraper .login-phone-box .phone-text.data-v-dd568460 {
+.login-phone-wraper .login-phone-box .phone-text.data-v-369ec12a {
   width: 100%;
   height: 40rpx;
   line-height: 40rpx;
 }
-.login-phone-wraper .login-phone-box .phone-text text.data-v-dd568460 {
+.login-phone-wraper .login-phone-box .phone-text text.data-v-369ec12a {
   font-size: 28rpx;
   color: #888888;
 }
-.login-phone-wraper .login-phone-box .input.data-v-dd568460 {
+.login-phone-wraper .login-phone-box .input.data-v-369ec12a {
   width: 100%;
   height: 60rpx;
   font-size: 32rpx;
   font-weight: 400;
   line-height: 60rpx;
 }
-.btn.data-v-dd568460 {
+.btn.data-v-369ec12a {
   width: 650rpx;
   height: 88rpx;
   background: #BE2A27;
@@ -39,7 +39,7 @@
   font-size: 32rpx;
   margin: 50rpx auto 0 auto;
 }
-.btn.disable.data-v-dd568460 {
+.btn.disable.data-v-369ec12a {
   pointer-events: none;
   background: #E16D6B;
 }

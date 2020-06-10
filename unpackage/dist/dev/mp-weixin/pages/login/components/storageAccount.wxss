@@ -1,8 +1,8 @@
-.stroge-phone-ctn.data-v-5e84ac60 {
+.stroge-phone-ctn.data-v-9dd57194 {
   position: relative;
   width: 100%;
 }
-.stroge-phone-ctn .stroge-phone.data-v-5e84ac60 {
+.stroge-phone-ctn .stroge-phone.data-v-9dd57194 {
   position: absolute;
   top: 0;
   left: 0;
@@ -14,7 +14,7 @@
   overflow-y: scroll;
   padding-top: 15rpx;
 }
-.stroge-phone-ctn .stroge-phone .list.data-v-5e84ac60 {
+.stroge-phone-ctn .stroge-phone .list.data-v-9dd57194 {
   width: 100%;
   padding: 15rpx;
   display: -webkit-box;
@@ -26,8 +26,8 @@
   font-size: 28rpx;
   color: #484848;
 }
-.stroge-phone-ctn .stroge-phone .list .phone-num.data-v-5e84ac60,
-.stroge-phone-ctn .stroge-phone .list .name.data-v-5e84ac60 {
+.stroge-phone-ctn .stroge-phone .list .phone-num.data-v-9dd57194,
+.stroge-phone-ctn .stroge-phone .list .name.data-v-9dd57194 {
   margin-left: 15rpx;
 }
 

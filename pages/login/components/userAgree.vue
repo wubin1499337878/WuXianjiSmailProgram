@@ -28,9 +28,7 @@
 				const mproductUrl =
 					`${domain}/html/dealerMember/register.html#/agreement?miniToken=${anyMouseToken}&miniprogram=${miniprogram}`;
 				this.common.openUrl({
-					url:mproductUrl,
-					inWhiteList:true,
-					isExternal:true
+					url:mproductUrl
 				})
 			}
 		}

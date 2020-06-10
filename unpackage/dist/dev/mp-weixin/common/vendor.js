@@ -754,7 +754,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -7083,7 +7083,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -7104,14 +7104,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -7187,7 +7187,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -7611,9 +7611,9 @@ module.exports = g;
 
 /***/ }),
 /* 4 */
-/*!*****************************************************!*\
-  !*** D:/莹酱/project/智能客服/customerService/pages.json ***!
-  \*****************************************************/
+/*!******************************************************************!*\
+  !*** D:/莹酱/yunwen/无限极/wxjWechat/WuXianjiSmailProgram/pages.json ***!
+  \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8518,20 +8518,20 @@ module.exports = {"_from":"@dcloudio/uni-stat@next","_id":"@dcloudio/uni-stat@2.
 
 /***/ }),
 /* 7 */
-/*!**********************************************************************!*\
-  !*** D:/莹酱/project/智能客服/customerService/pages.json?{"type":"style"} ***!
-  \**********************************************************************/
+/*!***********************************************************************************!*\
+  !*** D:/莹酱/yunwen/无限极/wxjWechat/WuXianjiSmailProgram/pages.json?{"type":"style"} ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/login/login": { "navigationBarTitleText": "登录", "usingComponents": { "logo": "/pages/login/components/logo", "uni-icons": "/components/uni-icons/uni-icons", "user-agree": "/pages/login/components/userAgree" }, "usingAutoImportComponents": { "uni-icons": "/components/uni-icons/uni-icons" } }, "pages/login/loginAccount": { "navigationBarTitleText": "账号登录", "usingComponents": { "logo": "/pages/login/components/logo", "uni-icons": "/components/uni-icons/uni-icons", "user-agree": "/pages/login/components/userAgree", "storage-account": "/pages/login/components/storageAccount" }, "usingAutoImportComponents": { "uni-icons": "/components/uni-icons/uni-icons" } }, "pages/login/loginPhone": { "navigationBarTitleText": "手机号登录", "usingComponents": { "logo": "/pages/login/components/logo", "user-agree": "/pages/login/components/userAgree", "storage-account": "/pages/login/components/storageAccount" }, "usingAutoImportComponents": {} }, "pages/login/loginCode": { "navigationBarTitleText": "手机号登录", "usingComponents": { "logo": "/pages/login/components/logo", "user-agree": "/pages/login/components/userAgree" }, "usingAutoImportComponents": {} }, "pages/subPages/web-view/web-view": { "navigationBarTitleText": "", "usingComponents": {}, "usingAutoImportComponents": {} } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#F8F8F8", "backgroundColor": "#F8F8F8" } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/login/login": { "navigationBarTitleText": "登录", "usingComponents": { "logo": "/pages/login/components/logo", "uni-icons": "/components/uni-icons/uni-icons", "user-agree": "/pages/login/components/userAgree" }, "usingAutoImportComponents": { "uni-icons": "/components/uni-icons/uni-icons" } }, "pages/login/loginAccount": { "navigationBarTitleText": "账号登录", "usingComponents": { "logo": "/pages/login/components/logo", "uni-icons": "/components/uni-icons/uni-icons", "user-agree": "/pages/login/components/userAgree", "storage-account": "/pages/login/components/storageAccount" }, "usingAutoImportComponents": { "uni-icons": "/components/uni-icons/uni-icons" } }, "pages/login/loginPhone": { "navigationBarTitleText": "手机号登录", "usingComponents": { "logo": "/pages/login/components/logo", "user-agree": "/pages/login/components/userAgree", "storage-account": "/pages/login/components/storageAccount" }, "usingAutoImportComponents": {} }, "pages/login/loginCode": { "navigationBarTitleText": "手机号登录", "usingComponents": { "logo": "/pages/login/components/logo", "user-agree": "/pages/login/components/userAgree" }, "usingAutoImportComponents": {} }, "pages/xiaoJi/xiaoJi": { "navigationStyle": "custom", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/subPages/web-view/web-view": { "navigationBarTitleText": "", "usingComponents": {}, "usingAutoImportComponents": {} } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#F8F8F8", "backgroundColor": "#F8F8F8" } };exports.default = _default;
 
 /***/ }),
 /* 8 */
-/*!*********************************************************************!*\
-  !*** D:/莹酱/project/智能客服/customerService/pages.json?{"type":"stat"} ***!
-  \*********************************************************************/
+/*!**********************************************************************************!*\
+  !*** D:/莹酱/yunwen/无限极/wxjWechat/WuXianjiSmailProgram/pages.json?{"type":"stat"} ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8665,17 +8665,16 @@ function normalizeComponent (
 
 /***/ }),
 /* 15 */
-/*!**************************************************************!*\
-  !*** D:/莹酱/project/智能客服/customerService/common/js/common.js ***!
-  \**************************************************************/
+/*!***************************************************************************!*\
+  !*** D:/莹酱/yunwen/无限极/wxjWechat/WuXianjiSmailProgram/common/js/common.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //打开外部链接
 var openUrl = function openUrl(obj) {var _obj$url =
-  obj.url,url = _obj$url === void 0 ? '' : _obj$url,_obj$inWhiteList = obj.inWhiteList,inWhiteList = _obj$inWhiteList === void 0 ? false : _obj$inWhiteList,_obj$isExternal = obj.isExternal,isExternal = _obj$isExternal === void 0 ? false : _obj$isExternal,_obj$type = obj.type,type = _obj$type === void 0 ? 'navigate' : _obj$type,_obj$title = obj.title,title = _obj$title === void 0 ? '' : _obj$title,_obj$hideHomeButton = obj.hideHomeButton,hideHomeButton = _obj$hideHomeButton === void 0 ? false : _obj$hideHomeButton;
-  if (isExternal) {
+  obj.url,url = _obj$url === void 0 ? '' : _obj$url,_obj$inWhiteList = obj.inWhiteList,inWhiteList = _obj$inWhiteList === void 0 ? true : _obj$inWhiteList,_obj$type = obj.type,type = _obj$type === void 0 ? 'navigate' : _obj$type,_obj$title = obj.title,title = _obj$title === void 0 ? '' : _obj$title,_obj$hideHomeButton = obj.hideHomeButton,hideHomeButton = _obj$hideHomeButton === void 0 ? false : _obj$hideHomeButton;
 
 
 
@@ -8683,26 +8682,21 @@ var openUrl = function openUrl(obj) {var _obj$url =
 
 
 
-
-    if (inWhiteList) {//如果在小程序的网址白名单中，会走内置webview打开，否则会复制网址提示在外部浏览器打开
-      uni[type + 'To']({
-        url: '/pages/subPages/web-view/web-view?url=' + encodeURIComponent(JSON.stringify(url)) + '&title=' + title + '&hideHomeButton=' + hideHomeButton });
-
-    } else {
-      uni.setClipboardData({
-        data: url });
-
-      uni.showModal({
-        content: '本网址无法直接在小程序内打开。已自动复制网址，请在手机浏览器里粘贴该网址',
-        showCancel: false });
-
-    }
+  if (inWhiteList) {//如果在小程序的网址白名单中，会走内置webview打开，否则会复制网址提示在外部浏览器打开
+    uni[type + 'To']({
+      url: '/pages/subPages/web-view/web-view?url=' + encodeURIComponent(JSON.stringify(url)) + '&title=' + title +
+      '&hideHomeButton=' + hideHomeButton });
 
   } else {
-    uni[type + 'To']({
-      url: url + '?&title=' + title + '&hideHomeButton=' + hideHomeButton });
+    uni.setClipboardData({
+      data: url });
+
+    uni.showModal({
+      content: '本网址无法直接在小程序内打开。已自动复制网址，请在手机浏览器里粘贴该网址',
+      showCancel: false });
 
   }
+
 };
 
 var showToast = function showToast(title) {
@@ -8729,9 +8723,643 @@ common;exports.default = _default;
 /* 20 */,
 /* 21 */,
 /* 22 */
-/*!***************************************************************************!*\
-  !*** D:/莹酱/project/智能客服/customerService/node_modules/js-base64/base64.js ***!
-  \***************************************************************************/
+/*!*********************************************************************************!*\
+  !*** D:/莹酱/yunwen/无限极/wxjWechat/WuXianjiSmailProgram/pages/assets/js/domain.js ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+var _require = __webpack_require__(/*! ./env */ 23),domain = _require.domain,token = _require.token,wwwPwd = _require.wwwPwd,robotUrl = _require.robotUrl;
+var mdealerUrl = domain;
+var gatewayUrl = mdealerUrl.replace('//mdealer', '//gateway');
+var uim = mdealerUrl.replace('//mdealer', '//uim');
+module.exports = {
+  gatewayUrl: gatewayUrl,
+  mdealerUrl: mdealerUrl,
+  token: token,
+  uim: uim,
+  robotUrl: robotUrl };
+
+/***/ }),
+/* 23 */
+/*!******************************************************************************!*\
+  !*** D:/莹酱/yunwen/无限极/wxjWechat/WuXianjiSmailProgram/pages/assets/js/env.js ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.robotUrl = exports.baseImagesUrlpublic = exports.baseImagesUrl = exports.appKeyUim = exports.appKeyGataway = exports.addressKey = exports.weappAppId = exports.gatawaySignKey = exports.uimSignKey = exports.staticDomain = exports.token = exports.wwwPwd = exports.domain = void 0; /**
+                                                                                                                                                                                                                                                                                                                                                                          * @type {string} domain 为所有域名变量
+                                                                                                                                                                                                                                                                                                                                                                          */
+
+// 生产
+
+var appidType = {
+  dev: 'wx09a271cded04343d',
+  staging: 'wxdb2e1f9c1a7a8db1',
+  production: 'wxc2f54fd68b4ab465' };
+
+var env = 'production';
+var domain = 'https://mdealer-dev.infinitus.com.cn';exports.domain = domain;
+var wwwPwd = 'password123';exports.wwwPwd = wwwPwd;
+var staticDomain = 'https://static-cdn.infinitus.com.cn';exports.staticDomain = staticDomain;
+var token = '2eaffc2a031340cbbef51bb120c27718';exports.token = token;
+var baseImagesUrl = 'https://storageqn-staging.infinitus.com.cn/dlpm-public/jf/img/applet/';exports.baseImagesUrl = baseImagesUrl;
+var baseImagesUrlpublic = 'https://storageqn-staging.infinitus.com.cn/dlpm-public/jf/img/';exports.baseImagesUrlpublic = baseImagesUrlpublic;
+var robotUrl = 'https://robot-staging.infinitus.com.cn';
+
+// 签名key
+//uim key
+exports.robotUrl = robotUrl;var appKeyUim = 'openapi_cc';exports.appKeyUim = appKeyUim;
+var uimSignKey = 'openapi_cc';
+//gateway key
+exports.uimSignKey = uimSignKey;var appKeyGataway = 'openapi_cc';exports.appKeyGataway = appKeyGataway;
+var gatawaySignKey = "5OOD}wUd-9}73iJU7xDe:t]g'0rSFt";exports.gatawaySignKey = gatawaySignKey;
+var weappAppId = appidType[env];exports.weappAppId = weappAppId;
+var addressKey = 'HFFBZ-T5ICG-QKXQF-IPZ57-JC375-LKFBQ'; // 腾讯地址key
+exports.addressKey = addressKey;var accountInfo = uni.getAccountInfoSync();
+var appid = accountInfo.miniProgram.appId;
+if (appid === appidType.dev) {
+  // 工具或者真机 开发环境
+  console.log('开发环境');
+  env = 'dev';
+} else if (appid === appidType.staging) {
+  // 测试环境(体验版)
+  console.log('准生产环境');
+  env = 'staging';
+} else if (appid === appidType.production) {
+  // 正式环境
+  console.log('生产环境');
+  env = 'production';
+}
+
+switch (env) {
+  case 'dev': // 开发环境
+    exports.domain = domain = 'https://mdealer-dev.infinitus.com.cn';
+    exports.wwwPwd = wwwPwd = 'abc123';
+    exports.token = token = '18267c1ac10245e5906496d83f62480e';
+    exports.staticDomain = staticDomain = 'https://static-cdn-test.infinitus.com.cn';
+    exports.appKeyUim = appKeyUim = 'openapi_cc';
+    exports.uimSignKey = uimSignKey = 'openapi_cc';
+    exports.appKeyGataway = appKeyGataway = 'openapi_cc';
+    exports.gatawaySignKey = gatawaySignKey = "5OOD}wUd-9}73iJU7xDe:t]g'0rSFt";
+    exports.weappAppId = weappAppId = appidType[env];
+    exports.addressKey = addressKey = 'OEXBZ-TH5WX-YY347-7EJVK-FSCKQ-QEFL6';
+    exports.robotUrl = robotUrl = 'https://robot-staging.infinitus.com.cn';
+    break;
+  // case 'test': // 测试环境
+  //   domain = 'https://mdealer-test.infinitus.com.cn';
+  //   wwwPwd = 'abc123';
+  //   token = 'fa11a46b780f4fe8ba0783a742e2e906';
+  //   staticDomain = 'https://static-cdn-test.infinitus.com.cn';
+  //   uimSignKey = 'wechat-weapp-mall';
+  //   gatawaySignKey = 'gateway-weapp';
+  //   weappAppId = appidType[env];
+  //   addressKey = 'OEXBZ-TH5WX-YY347-7EJVK-FSCKQ-QEFL6';
+  //   appKeyGataway = 'gateway-weapp';
+  //   appKeyUim = 'wechat-weapp-mall';
+  //   break;
+  case 'staging': // 准生产
+    exports.domain = domain = 'https://mdealer-staging.infinitus.com.cn';
+    exports.wwwPwd = wwwPwd = 'abc123';
+    exports.token = token = '18267c1ac10245e5906496d83f62480e';
+    exports.staticDomain = staticDomain = 'https://static-cdn-test.infinitus.com.cn';
+    exports.uimSignKey = uimSignKey = 'wechat-weapp-mall';
+    exports.gatawaySignKey = gatawaySignKey = 'gateway-weapp';
+    exports.weappAppId = weappAppId = appidType[env];
+    exports.addressKey = addressKey = '7VRBZ-WEYKX-WJG45-TCL54-U7ZE6-GOBXD';
+    exports.appKeyGataway = appKeyGataway = 'gateway-weapp';
+    exports.appKeyUim = appKeyUim = 'wechat-weapp-mall';
+    break;
+  default:
+    break;}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 24 */
+/*!***************************************************************************************!*\
+  !*** D:/莹酱/yunwen/无限极/wxjWechat/WuXianjiSmailProgram/pages/login/utils/ajax/index.js ***!
+  \***************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
+var _util = _interopRequireDefault(__webpack_require__(/*! ../util.js */ 25));
+var _request = _interopRequireDefault(__webpack_require__(/*! ../../../utils/js/request.js */ 31));
+var _interceptors = _interopRequireDefault(__webpack_require__(/*! ./interceptors.js */ 32));
+var _config = _interopRequireDefault(__webpack_require__(/*! ../../../assets/js/config.js */ 33));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+var Ajax = function Ajax(option) {
+  return AjaxFn(option);
+};
+
+Ajax.post = function () {for (var _len = arguments.length, option = new Array(_len), _key = 0; _key < _len; _key++) {option[_key] = arguments[_key];}
+  var parament = _util.default._formatParameter.apply(_util.default, ['post'].concat(option));
+  parament.method = 'post';
+  return Ajax(parament);
+};
+
+Ajax.get = function () {for (var _len2 = arguments.length, option = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {option[_key2] = arguments[_key2];}
+  var parament = _util.default._formatParameter.apply(_util.default, ['get'].concat(option));
+  parament.method = 'get';
+  return Ajax(parament);
+};
+
+var AjaxFn = function AjaxFn(option) {
+  var method = typeof option === String ? option : null;
+  var parament = _util.default._formatParameter(option);
+  parament.method = method || parament.method;
+
+  //请求前拦截-添加参数
+  if (parament.isIntercept) {
+    parament = AjaxFn.interceptors.request(parament);
+  }
+
+
+  return new Promise(function (res, rej) {
+    (0, _request.default)(parament).then(function (data) {
+      res(AjaxFn.interceptors.response({ parament: parament, data: data }));
+    }).catch(function (error) {
+      rej(AjaxFn.interceptors.response({ parament: parament, error: error }));
+    });
+  });
+};
+
+// 前后拦截
+AjaxFn.interceptors = {};
+
+// 拦截器
+AjaxFn.interceptors.request = function (config) {
+  return _interceptors.default.before(config);
+};
+
+AjaxFn.interceptors.response = function (data) {
+  return _interceptors.default.after(data);
+};var _default =
+
+
+
+
+Ajax;exports.default = _default;
+
+/***/ }),
+/* 25 */
+/*!*********************************************************************************!*\
+  !*** D:/莹酱/yunwen/无限极/wxjWechat/WuXianjiSmailProgram/pages/login/utils/util.js ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _md = _interopRequireDefault(__webpack_require__(/*! md5 */ 26));
+var _jsBase = __webpack_require__(/*! js-base64 */ 30);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _slicedToArray(arr, i) {return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();}function _nonIterableRest() {throw new TypeError("Invalid attempt to destructure non-iterable instance");}function _iterableToArrayLimit(arr, i) {var _arr = [];var _n = true;var _d = false;var _e = undefined;try {for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {_arr.push(_s.value);if (i && _arr.length === i) break;}} catch (err) {_d = true;_e = err;} finally {try {if (!_n && _i["return"] != null) _i["return"]();} finally {if (_d) throw _e;}}return _arr;}function _arrayWithHoles(arr) {if (Array.isArray(arr)) return arr;}
+var util = {
+  _formatParameter: function _formatParameter() {
+    var option = null;
+    //判断是不是对象
+    if (typeof arguments[0] !== 'string') {
+      option = arguments[0];
+    } else {
+      option = Array.prototype.slice.call(arguments);
+      // 是否隐藏loding框
+      var _option$filter = option.filter(function (item) {
+        if (item && item.hideLoading) return item;
+      }),_option$filter2 = _slicedToArray(_option$filter, 1),_option$filter2$ = _option$filter2[0];_option$filter2$ = _option$filter2$ === void 0 ? { hideLoading: false } : _option$filter2$;var _hideLoading = _option$filter2$.hideLoading;var _option$filter3 =
+      option.filter(function (item) {
+        if (item && item.cancelHide) return item;
+      }),_option$filter4 = _slicedToArray(_option$filter3, 1),_option$filter4$ = _option$filter4[0];_option$filter4$ = _option$filter4$ === void 0 ? { cancelHide: false } : _option$filter4$;var _cancelHide = _option$filter4$.cancelHide;
+      // 是否返回全部值
+      var _option$filter5 = option.filter(function (item) {
+        if (item && item.returnAll) return item;
+      }),_option$filter6 = _slicedToArray(_option$filter5, 1),_option$filter6$ = _option$filter6[0];_option$filter6$ = _option$filter6$ === void 0 ? { returnAll: false } : _option$filter6$;var _returnAll = _option$filter6$.returnAll;
+      // 是否返回接口成功的data值
+      var _option$filter7 = option.filter(function (item) {
+        if (item && item.returnData) return item;
+      }),_option$filter8 = _slicedToArray(_option$filter7, 1),_option$filter8$ = _option$filter8[0];_option$filter8$ = _option$filter8$ === void 0 ? { returnData: false } : _option$filter8$;var _returnData = _option$filter8$.returnData;
+      // contentType
+      var _option$filter9 = option.filter(function (item) {
+        if (item && item.contentType) return item;
+      }),_option$filter10 = _slicedToArray(_option$filter9, 1),_option$filter10$ = _option$filter10[0];_option$filter10$ = _option$filter10$ === void 0 ? { contentType: 'json' } : _option$filter10$;var _contentType = _option$filter10$.contentType;var _option$filter11 =
+      option.filter(function (item) {
+        if (item && item.isIntercept !== undefined) return item;
+      }),_option$filter12 = _slicedToArray(_option$filter11, 1),_option$filter12$ = _option$filter12[0];_option$filter12$ = _option$filter12$ === void 0 ? { isIntercept: true } : _option$filter12$;var _isIntercept = _option$filter12$.isIntercept;
+      option = {
+        method: arguments[0],
+        url: arguments[1] || {},
+        data: arguments[2] || {},
+        returnAll: _returnAll,
+        returnData: _returnData,
+        hideLoading: _hideLoading,
+        contentType: _contentType,
+        isIntercept: _isIntercept,
+        cancelHide: _cancelHide };
+
+    }
+    /**
+       * @method get 默认get
+       * @url 地址
+       * @name data 传参默认空
+       * @name returnAll 是否返回所有数据
+       * @name returnData 是否返回接口成功的data值
+       * @name hideLoading 是否不需要loading框
+       * @name contentType 传参类型
+       */var _option =
+    option,_option$method = _option.method,method = _option$method === void 0 ? 'get' : _option$method,_option$url = _option.url,url = _option$url === void 0 ? '' : _option$url,_option$data = _option.data,data = _option$data === void 0 ? {} : _option$data,_option$returnAll = _option.returnAll,returnAll = _option$returnAll === void 0 ? false : _option$returnAll,_option$returnData = _option.returnData,returnData = _option$returnData === void 0 ? false : _option$returnData,_option$hideLoading = _option.hideLoading,hideLoading = _option$hideLoading === void 0 ? false : _option$hideLoading,_option$contentType = _option.contentType,contentType = _option$contentType === void 0 ? 'json' : _option$contentType,_option$dataType = _option.dataType,dataType = _option$dataType === void 0 ? 'json' : _option$dataType,_option$responseType = _option.responseType,responseType = _option$responseType === void 0 ? 'text' : _option$responseType,_option$header = _option.header,header = _option$header === void 0 ? { 'content-type': 'application/json' } : _option$header,_option$isIntercept = _option.isIntercept,isIntercept = _option$isIntercept === void 0 ? true : _option$isIntercept,_option$cancelHide = _option.cancelHide,cancelHide = _option$cancelHide === void 0 ? false : _option$cancelHide;
+    var optionArry = { url: url, data: data, method: method, returnAll: returnAll, returnData: returnData, hideLoading: hideLoading, contentType: contentType, dataType: dataType, responseType: responseType, header: header, isIntercept: isIntercept, cancelHide: cancelHide };
+    return optionArry;
+  },
+  getToken: function getToken() {
+    return uni.getStorageSync('token');
+  },
+  // 是否调用uim
+  isUim: function isUim(url) {
+    return url.indexOf('uim') !== -1;
+  },
+  // 是否gataeway
+  isGateway: function isGateway(url) {
+    return url.indexOf('://gateway') !== -1;
+  },
+  // 获取游客token
+  getAnonymousToken: function getAnonymousToken(time) {
+    var openId = uni.getStorageSync('wx_openid') || '';
+    var token = "".concat(time, "##ANONYMOUS##").concat(openId);
+    token = _jsBase.Base64.encode(token);
+    return token;
+  },
+  // 生成MD5
+  md5Signature: function md5Signature(parameters, secret) {
+    var result = secret;var _iteratorNormalCompletion = true;var _didIteratorError = false;var _iteratorError = undefined;try {
+      for (var _iterator = Object.keys(parameters).sort()[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {var key = _step.value;
+        result = "".concat(result).concat(key).concat(parameters[key]);
+      }} catch (err) {_didIteratorError = true;_iteratorError = err;} finally {try {if (!_iteratorNormalCompletion && _iterator.return != null) {_iterator.return();}} finally {if (_didIteratorError) {throw _iteratorError;}}}
+    result += secret;
+    var keyt = (0, _md.default)(result).toUpperCase();
+    return keyt;
+  } };var _default =
+
+
+util;exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 26 */
+/*!*******************************************************************************!*\
+  !*** D:/莹酱/yunwen/无限极/wxjWechat/WuXianjiSmailProgram/node_modules/md5/md5.js ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+(function () {
+  var crypt = __webpack_require__(/*! crypt */ 27),
+  utf8 = __webpack_require__(/*! charenc */ 28).utf8,
+  isBuffer = __webpack_require__(/*! is-buffer */ 29),
+  bin = __webpack_require__(/*! charenc */ 28).bin,
+
+  // The core
+  md5 = function md5(message, options) {
+    // Convert to byte array
+    if (message.constructor == String) {
+      if (options && options.encoding === 'binary')
+      message = bin.stringToBytes(message);else
+
+      message = utf8.stringToBytes(message);} else
+    if (isBuffer(message))
+    message = Array.prototype.slice.call(message, 0);else
+    if (!Array.isArray(message))
+    message = message.toString();
+    // else, assume byte array already
+
+    var m = crypt.bytesToWords(message),
+    l = message.length * 8,
+    a = 1732584193,
+    b = -271733879,
+    c = -1732584194,
+    d = 271733878;
+
+    // Swap endian
+    for (var i = 0; i < m.length; i++) {
+      m[i] = (m[i] << 8 | m[i] >>> 24) & 0x00FF00FF |
+      (m[i] << 24 | m[i] >>> 8) & 0xFF00FF00;
+    }
+
+    // Padding
+    m[l >>> 5] |= 0x80 << l % 32;
+    m[(l + 64 >>> 9 << 4) + 14] = l;
+
+    // Method shortcuts
+    var FF = md5._ff,
+    GG = md5._gg,
+    HH = md5._hh,
+    II = md5._ii;
+
+    for (var i = 0; i < m.length; i += 16) {
+
+      var aa = a,
+      bb = b,
+      cc = c,
+      dd = d;
+
+      a = FF(a, b, c, d, m[i + 0], 7, -680876936);
+      d = FF(d, a, b, c, m[i + 1], 12, -389564586);
+      c = FF(c, d, a, b, m[i + 2], 17, 606105819);
+      b = FF(b, c, d, a, m[i + 3], 22, -1044525330);
+      a = FF(a, b, c, d, m[i + 4], 7, -176418897);
+      d = FF(d, a, b, c, m[i + 5], 12, 1200080426);
+      c = FF(c, d, a, b, m[i + 6], 17, -1473231341);
+      b = FF(b, c, d, a, m[i + 7], 22, -45705983);
+      a = FF(a, b, c, d, m[i + 8], 7, 1770035416);
+      d = FF(d, a, b, c, m[i + 9], 12, -1958414417);
+      c = FF(c, d, a, b, m[i + 10], 17, -42063);
+      b = FF(b, c, d, a, m[i + 11], 22, -1990404162);
+      a = FF(a, b, c, d, m[i + 12], 7, 1804603682);
+      d = FF(d, a, b, c, m[i + 13], 12, -40341101);
+      c = FF(c, d, a, b, m[i + 14], 17, -1502002290);
+      b = FF(b, c, d, a, m[i + 15], 22, 1236535329);
+
+      a = GG(a, b, c, d, m[i + 1], 5, -165796510);
+      d = GG(d, a, b, c, m[i + 6], 9, -1069501632);
+      c = GG(c, d, a, b, m[i + 11], 14, 643717713);
+      b = GG(b, c, d, a, m[i + 0], 20, -373897302);
+      a = GG(a, b, c, d, m[i + 5], 5, -701558691);
+      d = GG(d, a, b, c, m[i + 10], 9, 38016083);
+      c = GG(c, d, a, b, m[i + 15], 14, -660478335);
+      b = GG(b, c, d, a, m[i + 4], 20, -405537848);
+      a = GG(a, b, c, d, m[i + 9], 5, 568446438);
+      d = GG(d, a, b, c, m[i + 14], 9, -1019803690);
+      c = GG(c, d, a, b, m[i + 3], 14, -187363961);
+      b = GG(b, c, d, a, m[i + 8], 20, 1163531501);
+      a = GG(a, b, c, d, m[i + 13], 5, -1444681467);
+      d = GG(d, a, b, c, m[i + 2], 9, -51403784);
+      c = GG(c, d, a, b, m[i + 7], 14, 1735328473);
+      b = GG(b, c, d, a, m[i + 12], 20, -1926607734);
+
+      a = HH(a, b, c, d, m[i + 5], 4, -378558);
+      d = HH(d, a, b, c, m[i + 8], 11, -2022574463);
+      c = HH(c, d, a, b, m[i + 11], 16, 1839030562);
+      b = HH(b, c, d, a, m[i + 14], 23, -35309556);
+      a = HH(a, b, c, d, m[i + 1], 4, -1530992060);
+      d = HH(d, a, b, c, m[i + 4], 11, 1272893353);
+      c = HH(c, d, a, b, m[i + 7], 16, -155497632);
+      b = HH(b, c, d, a, m[i + 10], 23, -1094730640);
+      a = HH(a, b, c, d, m[i + 13], 4, 681279174);
+      d = HH(d, a, b, c, m[i + 0], 11, -358537222);
+      c = HH(c, d, a, b, m[i + 3], 16, -722521979);
+      b = HH(b, c, d, a, m[i + 6], 23, 76029189);
+      a = HH(a, b, c, d, m[i + 9], 4, -640364487);
+      d = HH(d, a, b, c, m[i + 12], 11, -421815835);
+      c = HH(c, d, a, b, m[i + 15], 16, 530742520);
+      b = HH(b, c, d, a, m[i + 2], 23, -995338651);
+
+      a = II(a, b, c, d, m[i + 0], 6, -198630844);
+      d = II(d, a, b, c, m[i + 7], 10, 1126891415);
+      c = II(c, d, a, b, m[i + 14], 15, -1416354905);
+      b = II(b, c, d, a, m[i + 5], 21, -57434055);
+      a = II(a, b, c, d, m[i + 12], 6, 1700485571);
+      d = II(d, a, b, c, m[i + 3], 10, -1894986606);
+      c = II(c, d, a, b, m[i + 10], 15, -1051523);
+      b = II(b, c, d, a, m[i + 1], 21, -2054922799);
+      a = II(a, b, c, d, m[i + 8], 6, 1873313359);
+      d = II(d, a, b, c, m[i + 15], 10, -30611744);
+      c = II(c, d, a, b, m[i + 6], 15, -1560198380);
+      b = II(b, c, d, a, m[i + 13], 21, 1309151649);
+      a = II(a, b, c, d, m[i + 4], 6, -145523070);
+      d = II(d, a, b, c, m[i + 11], 10, -1120210379);
+      c = II(c, d, a, b, m[i + 2], 15, 718787259);
+      b = II(b, c, d, a, m[i + 9], 21, -343485551);
+
+      a = a + aa >>> 0;
+      b = b + bb >>> 0;
+      c = c + cc >>> 0;
+      d = d + dd >>> 0;
+    }
+
+    return crypt.endian([a, b, c, d]);
+  };
+
+  // Auxiliary functions
+  md5._ff = function (a, b, c, d, x, s, t) {
+    var n = a + (b & c | ~b & d) + (x >>> 0) + t;
+    return (n << s | n >>> 32 - s) + b;
+  };
+  md5._gg = function (a, b, c, d, x, s, t) {
+    var n = a + (b & d | c & ~d) + (x >>> 0) + t;
+    return (n << s | n >>> 32 - s) + b;
+  };
+  md5._hh = function (a, b, c, d, x, s, t) {
+    var n = a + (b ^ c ^ d) + (x >>> 0) + t;
+    return (n << s | n >>> 32 - s) + b;
+  };
+  md5._ii = function (a, b, c, d, x, s, t) {
+    var n = a + (c ^ (b | ~d)) + (x >>> 0) + t;
+    return (n << s | n >>> 32 - s) + b;
+  };
+
+  // Package private blocksize
+  md5._blocksize = 16;
+  md5._digestsize = 16;
+
+  module.exports = function (message, options) {
+    if (message === undefined || message === null)
+    throw new Error('Illegal argument ' + message);
+
+    var digestbytes = crypt.wordsToBytes(md5(message, options));
+    return options && options.asBytes ? digestbytes :
+    options && options.asString ? bin.bytesToString(digestbytes) :
+    crypt.bytesToHex(digestbytes);
+  };
+
+})();
+
+/***/ }),
+/* 27 */
+/*!***********************************************************************************!*\
+  !*** D:/莹酱/yunwen/无限极/wxjWechat/WuXianjiSmailProgram/node_modules/crypt/crypt.js ***!
+  \***********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+(function () {
+  var base64map =
+  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/',
+
+  crypt = {
+    // Bit-wise rotation left
+    rotl: function rotl(n, b) {
+      return n << b | n >>> 32 - b;
+    },
+
+    // Bit-wise rotation right
+    rotr: function rotr(n, b) {
+      return n << 32 - b | n >>> b;
+    },
+
+    // Swap big-endian to little-endian and vice versa
+    endian: function endian(n) {
+      // If number given, swap endian
+      if (n.constructor == Number) {
+        return crypt.rotl(n, 8) & 0x00FF00FF | crypt.rotl(n, 24) & 0xFF00FF00;
+      }
+
+      // Else, assume array and swap all items
+      for (var i = 0; i < n.length; i++) {
+        n[i] = crypt.endian(n[i]);}
+      return n;
+    },
+
+    // Generate an array of any length of random bytes
+    randomBytes: function randomBytes(n) {
+      for (var bytes = []; n > 0; n--) {
+        bytes.push(Math.floor(Math.random() * 256));}
+      return bytes;
+    },
+
+    // Convert a byte array to big-endian 32-bit words
+    bytesToWords: function bytesToWords(bytes) {
+      for (var words = [], i = 0, b = 0; i < bytes.length; i++, b += 8) {
+        words[b >>> 5] |= bytes[i] << 24 - b % 32;}
+      return words;
+    },
+
+    // Convert big-endian 32-bit words to a byte array
+    wordsToBytes: function wordsToBytes(words) {
+      for (var bytes = [], b = 0; b < words.length * 32; b += 8) {
+        bytes.push(words[b >>> 5] >>> 24 - b % 32 & 0xFF);}
+      return bytes;
+    },
+
+    // Convert a byte array to a hex string
+    bytesToHex: function bytesToHex(bytes) {
+      for (var hex = [], i = 0; i < bytes.length; i++) {
+        hex.push((bytes[i] >>> 4).toString(16));
+        hex.push((bytes[i] & 0xF).toString(16));
+      }
+      return hex.join('');
+    },
+
+    // Convert a hex string to a byte array
+    hexToBytes: function hexToBytes(hex) {
+      for (var bytes = [], c = 0; c < hex.length; c += 2) {
+        bytes.push(parseInt(hex.substr(c, 2), 16));}
+      return bytes;
+    },
+
+    // Convert a byte array to a base-64 string
+    bytesToBase64: function bytesToBase64(bytes) {
+      for (var base64 = [], i = 0; i < bytes.length; i += 3) {
+        var triplet = bytes[i] << 16 | bytes[i + 1] << 8 | bytes[i + 2];
+        for (var j = 0; j < 4; j++) {
+          if (i * 8 + j * 6 <= bytes.length * 8)
+          base64.push(base64map.charAt(triplet >>> 6 * (3 - j) & 0x3F));else
+
+          base64.push('=');}
+      }
+      return base64.join('');
+    },
+
+    // Convert a base-64 string to a byte array
+    base64ToBytes: function base64ToBytes(base64) {
+      // Remove non-base-64 characters
+      base64 = base64.replace(/[^A-Z0-9+\/]/ig, '');
+
+      for (var bytes = [], i = 0, imod4 = 0; i < base64.length;
+      imod4 = ++i % 4) {
+        if (imod4 == 0) continue;
+        bytes.push((base64map.indexOf(base64.charAt(i - 1)) &
+        Math.pow(2, -2 * imod4 + 8) - 1) << imod4 * 2 |
+        base64map.indexOf(base64.charAt(i)) >>> 6 - imod4 * 2);
+      }
+      return bytes;
+    } };
+
+
+  module.exports = crypt;
+})();
+
+/***/ }),
+/* 28 */
+/*!***************************************************************************************!*\
+  !*** D:/莹酱/yunwen/无限极/wxjWechat/WuXianjiSmailProgram/node_modules/charenc/charenc.js ***!
+  \***************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+var charenc = {
+  // UTF-8 encoding
+  utf8: {
+    // Convert a string to a byte array
+    stringToBytes: function stringToBytes(str) {
+      return charenc.bin.stringToBytes(unescape(encodeURIComponent(str)));
+    },
+
+    // Convert a byte array to a string
+    bytesToString: function bytesToString(bytes) {
+      return decodeURIComponent(escape(charenc.bin.bytesToString(bytes)));
+    } },
+
+
+  // Binary encoding
+  bin: {
+    // Convert a string to a byte array
+    stringToBytes: function stringToBytes(str) {
+      for (var bytes = [], i = 0; i < str.length; i++) {
+        bytes.push(str.charCodeAt(i) & 0xFF);}
+      return bytes;
+    },
+
+    // Convert a byte array to a string
+    bytesToString: function bytesToString(bytes) {
+      for (var str = [], i = 0; i < bytes.length; i++) {
+        str.push(String.fromCharCode(bytes[i]));}
+      return str.join('');
+    } } };
+
+
+
+module.exports = charenc;
+
+/***/ }),
+/* 29 */
+/*!*****************************************!*\
+  !*** ./node_modules/is-buffer/index.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/*!
+ * Determine if an object is a Buffer
+ *
+ * @author   Feross Aboukhadijeh <https://feross.org>
+ * @license  MIT
+ */
+
+// The _isBuffer check is for Safari 5-7 support, because it's missing
+// Object.prototype.constructor. Remove this eventually
+module.exports = function (obj) {
+  return obj != null && (isBuffer(obj) || isSlowBuffer(obj) || !!obj._isBuffer)
+}
+
+function isBuffer (obj) {
+  return !!obj.constructor && typeof obj.constructor.isBuffer === 'function' && obj.constructor.isBuffer(obj)
+}
+
+// For Node v0.10 support. Remove this eventually.
+function isSlowBuffer (obj) {
+  return typeof obj.readFloatLE === 'function' && typeof obj.slice === 'function' && isBuffer(obj.slice(0, 0))
+}
+
+
+/***/ }),
+/* 30 */
+/*!****************************************************************************************!*\
+  !*** D:/莹酱/yunwen/无限极/wxjWechat/WuXianjiSmailProgram/node_modules/js-base64/base64.js ***!
+  \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8960,644 +9588,13 @@ function (global) {
   // that's it!
   return { Base64: global.Base64 };
 });
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../../downloads/HBuilderX/plugins/uniapp-cli/node_modules/webpack/buildin/global.js */ 3)))
-
-/***/ }),
-/* 23 */
-/*!********************************************************************!*\
-  !*** D:/莹酱/project/智能客服/customerService/pages/assets/js/domain.js ***!
-  \********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-var _require = __webpack_require__(/*! ./env */ 24),domain = _require.domain,token = _require.token,wwwPwd = _require.wwwPwd;
-var mdealerUrl = domain;
-var gatewayUrl = mdealerUrl.replace('//mdealer', '//gateway');
-var uim = mdealerUrl.replace('//mdealer', '//uim');
-module.exports = {
-  gatewayUrl: gatewayUrl,
-  mdealerUrl: mdealerUrl,
-  token: token,
-  uim: uim };
-
-/***/ }),
-/* 24 */
-/*!*****************************************************************!*\
-  !*** D:/莹酱/project/智能客服/customerService/pages/assets/js/env.js ***!
-  \*****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.baseImagesUrlpublic = exports.baseImagesUrl = exports.appKeyUim = exports.appKeyGataway = exports.addressKey = exports.weappAppId = exports.gatawaySignKey = exports.uimSignKey = exports.staticDomain = exports.token = exports.wwwPwd = exports.domain = void 0; /**
-                                                                                                                                                                                                                                                                                                                                                       * @type {string} domain 为所有域名变量
-                                                                                                                                                                                                                                                                                                                                                       */
-
-// 生产
-
-var appidType = {
-  dev: 'wx09a271cded04343d',
-  staging: 'wxdb2e1f9c1a7a8db1',
-  production: 'wxc2f54fd68b4ab465' };
-
-var env = 'production';
-var domain = 'https://mdealer-dev.infinitus.com.cn';exports.domain = domain;
-var wwwPwd = 'password123';exports.wwwPwd = wwwPwd;
-var staticDomain = 'https://static-cdn.infinitus.com.cn';exports.staticDomain = staticDomain;
-var token = '2eaffc2a031340cbbef51bb120c27718';exports.token = token;
-var baseImagesUrl = 'https://storageqn-staging.infinitus.com.cn/dlpm-public/jf/img/applet/';exports.baseImagesUrl = baseImagesUrl;
-var baseImagesUrlpublic = 'https://storageqn-staging.infinitus.com.cn/dlpm-public/jf/img/';
-
-// 签名key
-//uim key
-exports.baseImagesUrlpublic = baseImagesUrlpublic;var appKeyUim = 'openapi_cc';exports.appKeyUim = appKeyUim;
-var uimSignKey = 'openapi_cc';
-//gateway key
-exports.uimSignKey = uimSignKey;var appKeyGataway = 'openapi_cc';exports.appKeyGataway = appKeyGataway;
-var gatawaySignKey = "5OOD}wUd-9}73iJU7xDe:t]g'0rSFt";exports.gatawaySignKey = gatawaySignKey;
-var weappAppId = appidType[env];exports.weappAppId = weappAppId;
-var addressKey = 'HFFBZ-T5ICG-QKXQF-IPZ57-JC375-LKFBQ'; // 腾讯地址key
-exports.addressKey = addressKey;var accountInfo = uni.getAccountInfoSync();
-var appid = accountInfo.miniProgram.appId;
-if (appid === appidType.dev) {
-  // 工具或者真机 开发环境
-  console.log('开发环境');
-  env = 'dev';
-} else if (appid === appidType.staging) {
-  // 测试环境(体验版)
-  console.log('准生产环境');
-  env = 'staging';
-} else if (appid === appidType.production) {
-  // 正式环境
-  console.log('生产环境');
-  env = 'production';
-}
-
-switch (env) {
-  case 'dev': // 开发环境
-    exports.domain = domain = 'https://mdealer-dev.infinitus.com.cn';
-    exports.wwwPwd = wwwPwd = 'abc123';
-    exports.token = token = '18267c1ac10245e5906496d83f62480e';
-    exports.staticDomain = staticDomain = 'https://static-cdn-test.infinitus.com.cn';
-    exports.appKeyUim = appKeyUim = 'openapi_cc';
-    exports.uimSignKey = uimSignKey = 'openapi_cc';
-    exports.appKeyGataway = appKeyGataway = 'openapi_cc';
-    exports.gatawaySignKey = gatawaySignKey = "5OOD}wUd-9}73iJU7xDe:t]g'0rSFt";
-    exports.weappAppId = weappAppId = appidType[env];
-    exports.addressKey = addressKey = 'OEXBZ-TH5WX-YY347-7EJVK-FSCKQ-QEFL6';
-    break;
-  // case 'test': // 测试环境
-  //   domain = 'https://mdealer-test.infinitus.com.cn';
-  //   wwwPwd = 'abc123';
-  //   token = 'fa11a46b780f4fe8ba0783a742e2e906';
-  //   staticDomain = 'https://static-cdn-test.infinitus.com.cn';
-  //   uimSignKey = 'wechat-weapp-mall';
-  //   gatawaySignKey = 'gateway-weapp';
-  //   weappAppId = appidType[env];
-  //   addressKey = 'OEXBZ-TH5WX-YY347-7EJVK-FSCKQ-QEFL6';
-  //   appKeyGataway = 'gateway-weapp';
-  //   appKeyUim = 'wechat-weapp-mall';
-  //   break;
-  case 'staging': // 准生产
-    exports.domain = domain = 'https://mdealer-staging.infinitus.com.cn';
-    exports.wwwPwd = wwwPwd = 'abc123';
-    exports.token = token = '18267c1ac10245e5906496d83f62480e';
-    exports.staticDomain = staticDomain = 'https://static-cdn-test.infinitus.com.cn';
-    exports.uimSignKey = uimSignKey = 'wechat-weapp-mall';
-    exports.gatawaySignKey = gatawaySignKey = 'gateway-weapp';
-    exports.weappAppId = weappAppId = appidType[env];
-    exports.addressKey = addressKey = '7VRBZ-WEYKX-WJG45-TCL54-U7ZE6-GOBXD';
-    exports.appKeyGataway = appKeyGataway = 'gateway-weapp';
-    exports.appKeyUim = appKeyUim = 'wechat-weapp-mall';
-    break;
-  default:
-    break;}
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-/* 25 */
-/*!**************************************************************************!*\
-  !*** D:/莹酱/project/智能客服/customerService/pages/login/utils/ajax/index.js ***!
-  \**************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
-
-var _util = _interopRequireDefault(__webpack_require__(/*! ../util.js */ 26));
-var _request = _interopRequireDefault(__webpack_require__(/*! ../../../utils/js/request.js */ 31));
-var _interceptors = _interopRequireDefault(__webpack_require__(/*! ./interceptors.js */ 32));
-var _config = _interopRequireDefault(__webpack_require__(/*! ../../../assets/js/config.js */ 33));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-
-var Ajax = function Ajax(option) {
-  return AjaxFn(option);
-};
-
-Ajax.post = function () {for (var _len = arguments.length, option = new Array(_len), _key = 0; _key < _len; _key++) {option[_key] = arguments[_key];}
-  var parament = _util.default._formatParameter.apply(_util.default, ['post'].concat(option));
-  parament.method = 'post';
-  return Ajax(parament);
-};
-
-Ajax.get = function () {for (var _len2 = arguments.length, option = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {option[_key2] = arguments[_key2];}
-  var parament = _util.default._formatParameter.apply(_util.default, ['get'].concat(option));
-  parament.method = 'get';
-  return Ajax(parament);
-};
-
-var AjaxFn = function AjaxFn(option) {
-  var method = typeof option === String ? option : null;
-  var parament = _util.default._formatParameter(option);
-  parament.method = method || parament.method;
-
-  //请求前拦截-添加参数
-  if (parament.isIntercept) {
-    parament = AjaxFn.interceptors.request(parament);
-  }
-
-
-  return new Promise(function (res, rej) {
-    (0, _request.default)(parament).then(function (data) {
-      res(AjaxFn.interceptors.response({ parament: parament, data: data }));
-    }).catch(function (error) {
-      rej(AjaxFn.interceptors.response({ parament: parament, error: error }));
-    });
-  });
-};
-
-// 前后拦截
-AjaxFn.interceptors = {};
-
-// 拦截器
-AjaxFn.interceptors.request = function (config) {
-  return _interceptors.default.before(config);
-};
-
-AjaxFn.interceptors.response = function (data) {
-  return _interceptors.default.after(data);
-};var _default =
-
-
-
-
-Ajax;exports.default = _default;
-
-/***/ }),
-/* 26 */
-/*!********************************************************************!*\
-  !*** D:/莹酱/project/智能客服/customerService/pages/login/utils/util.js ***!
-  \********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _md = _interopRequireDefault(__webpack_require__(/*! md5 */ 27));
-var _jsBase = __webpack_require__(/*! js-base64 */ 22);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _slicedToArray(arr, i) {return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();}function _nonIterableRest() {throw new TypeError("Invalid attempt to destructure non-iterable instance");}function _iterableToArrayLimit(arr, i) {var _arr = [];var _n = true;var _d = false;var _e = undefined;try {for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {_arr.push(_s.value);if (i && _arr.length === i) break;}} catch (err) {_d = true;_e = err;} finally {try {if (!_n && _i["return"] != null) _i["return"]();} finally {if (_d) throw _e;}}return _arr;}function _arrayWithHoles(arr) {if (Array.isArray(arr)) return arr;}
-var util = {
-  _formatParameter: function _formatParameter() {
-    var option = null;
-    //判断是不是对象
-    if (typeof arguments[0] !== 'string') {
-      option = arguments[0];
-    } else {
-      option = Array.prototype.slice.call(arguments);
-      // 是否隐藏loding框
-      var _option$filter = option.filter(function (item) {
-        if (item && item.hideLoading) return item;
-      }),_option$filter2 = _slicedToArray(_option$filter, 1),_option$filter2$ = _option$filter2[0];_option$filter2$ = _option$filter2$ === void 0 ? { hideLoading: false } : _option$filter2$;var _hideLoading = _option$filter2$.hideLoading;var _option$filter3 =
-      option.filter(function (item) {
-        if (item && item.cancelHide) return item;
-      }),_option$filter4 = _slicedToArray(_option$filter3, 1),_option$filter4$ = _option$filter4[0];_option$filter4$ = _option$filter4$ === void 0 ? { cancelHide: false } : _option$filter4$;var _cancelHide = _option$filter4$.cancelHide;
-      // 是否返回全部值
-      var _option$filter5 = option.filter(function (item) {
-        if (item && item.returnAll) return item;
-      }),_option$filter6 = _slicedToArray(_option$filter5, 1),_option$filter6$ = _option$filter6[0];_option$filter6$ = _option$filter6$ === void 0 ? { returnAll: false } : _option$filter6$;var _returnAll = _option$filter6$.returnAll;
-      // 是否返回接口成功的data值
-      var _option$filter7 = option.filter(function (item) {
-        if (item && item.returnData) return item;
-      }),_option$filter8 = _slicedToArray(_option$filter7, 1),_option$filter8$ = _option$filter8[0];_option$filter8$ = _option$filter8$ === void 0 ? { returnData: false } : _option$filter8$;var _returnData = _option$filter8$.returnData;
-      // contentType
-      var _option$filter9 = option.filter(function (item) {
-        if (item && item.contentType) return item;
-      }),_option$filter10 = _slicedToArray(_option$filter9, 1),_option$filter10$ = _option$filter10[0];_option$filter10$ = _option$filter10$ === void 0 ? { contentType: 'json' } : _option$filter10$;var _contentType = _option$filter10$.contentType;var _option$filter11 =
-      option.filter(function (item) {
-        if (item && item.isIntercept !== undefined) return item;
-      }),_option$filter12 = _slicedToArray(_option$filter11, 1),_option$filter12$ = _option$filter12[0];_option$filter12$ = _option$filter12$ === void 0 ? { isIntercept: true } : _option$filter12$;var _isIntercept = _option$filter12$.isIntercept;
-      option = {
-        method: arguments[0],
-        url: arguments[1] || {},
-        data: arguments[2] || {},
-        returnAll: _returnAll,
-        returnData: _returnData,
-        hideLoading: _hideLoading,
-        contentType: _contentType,
-        isIntercept: _isIntercept,
-        cancelHide: _cancelHide };
-
-    }
-    /**
-       * @method get 默认get
-       * @url 地址
-       * @name data 传参默认空
-       * @name returnAll 是否返回所有数据
-       * @name returnData 是否返回接口成功的data值
-       * @name hideLoading 是否不需要loading框
-       * @name contentType 传参类型
-       */var _option =
-    option,_option$method = _option.method,method = _option$method === void 0 ? 'get' : _option$method,_option$url = _option.url,url = _option$url === void 0 ? '' : _option$url,_option$data = _option.data,data = _option$data === void 0 ? {} : _option$data,_option$returnAll = _option.returnAll,returnAll = _option$returnAll === void 0 ? false : _option$returnAll,_option$returnData = _option.returnData,returnData = _option$returnData === void 0 ? false : _option$returnData,_option$hideLoading = _option.hideLoading,hideLoading = _option$hideLoading === void 0 ? false : _option$hideLoading,_option$contentType = _option.contentType,contentType = _option$contentType === void 0 ? 'json' : _option$contentType,_option$dataType = _option.dataType,dataType = _option$dataType === void 0 ? 'json' : _option$dataType,_option$responseType = _option.responseType,responseType = _option$responseType === void 0 ? 'text' : _option$responseType,_option$header = _option.header,header = _option$header === void 0 ? { 'content-type': 'application/json' } : _option$header,_option$isIntercept = _option.isIntercept,isIntercept = _option$isIntercept === void 0 ? true : _option$isIntercept,_option$cancelHide = _option.cancelHide,cancelHide = _option$cancelHide === void 0 ? false : _option$cancelHide;
-    var optionArry = { url: url, data: data, method: method, returnAll: returnAll, returnData: returnData, hideLoading: hideLoading, contentType: contentType, dataType: dataType, responseType: responseType, header: header, isIntercept: isIntercept, cancelHide: cancelHide };
-    return optionArry;
-  },
-  getToken: function getToken() {
-    return uni.getStorageSync('token');
-  },
-  // 是否调用uim
-  isUim: function isUim(url) {
-    return url.indexOf('uim') !== -1;
-  },
-  // 是否gataeway
-  isGateway: function isGateway(url) {
-    return url.indexOf('://gateway') !== -1;
-  },
-  // 获取游客token
-  getAnonymousToken: function getAnonymousToken(time) {
-    var openId = uni.getStorageSync('wx_openid') || '';
-    var token = "".concat(time, "##ANONYMOUS##").concat(openId);
-    token = _jsBase.Base64.encode(token);
-    return token;
-  },
-  // 生成MD5
-  md5Signature: function md5Signature(parameters, secret) {
-    var result = secret;var _iteratorNormalCompletion = true;var _didIteratorError = false;var _iteratorError = undefined;try {
-      for (var _iterator = Object.keys(parameters).sort()[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {var key = _step.value;
-        result = "".concat(result).concat(key).concat(parameters[key]);
-      }} catch (err) {_didIteratorError = true;_iteratorError = err;} finally {try {if (!_iteratorNormalCompletion && _iterator.return != null) {_iterator.return();}} finally {if (_didIteratorError) {throw _iteratorError;}}}
-    result += secret;
-    var keyt = (0, _md.default)(result).toUpperCase();
-    return keyt;
-  } };var _default =
-
-
-util;exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-/* 27 */
-/*!******************************************************************!*\
-  !*** D:/莹酱/project/智能客服/customerService/node_modules/md5/md5.js ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-(function () {
-  var crypt = __webpack_require__(/*! crypt */ 28),
-  utf8 = __webpack_require__(/*! charenc */ 29).utf8,
-  isBuffer = __webpack_require__(/*! is-buffer */ 30),
-  bin = __webpack_require__(/*! charenc */ 29).bin,
-
-  // The core
-  md5 = function md5(message, options) {
-    // Convert to byte array
-    if (message.constructor == String) {
-      if (options && options.encoding === 'binary')
-      message = bin.stringToBytes(message);else
-
-      message = utf8.stringToBytes(message);} else
-    if (isBuffer(message))
-    message = Array.prototype.slice.call(message, 0);else
-    if (!Array.isArray(message))
-    message = message.toString();
-    // else, assume byte array already
-
-    var m = crypt.bytesToWords(message),
-    l = message.length * 8,
-    a = 1732584193,
-    b = -271733879,
-    c = -1732584194,
-    d = 271733878;
-
-    // Swap endian
-    for (var i = 0; i < m.length; i++) {
-      m[i] = (m[i] << 8 | m[i] >>> 24) & 0x00FF00FF |
-      (m[i] << 24 | m[i] >>> 8) & 0xFF00FF00;
-    }
-
-    // Padding
-    m[l >>> 5] |= 0x80 << l % 32;
-    m[(l + 64 >>> 9 << 4) + 14] = l;
-
-    // Method shortcuts
-    var FF = md5._ff,
-    GG = md5._gg,
-    HH = md5._hh,
-    II = md5._ii;
-
-    for (var i = 0; i < m.length; i += 16) {
-
-      var aa = a,
-      bb = b,
-      cc = c,
-      dd = d;
-
-      a = FF(a, b, c, d, m[i + 0], 7, -680876936);
-      d = FF(d, a, b, c, m[i + 1], 12, -389564586);
-      c = FF(c, d, a, b, m[i + 2], 17, 606105819);
-      b = FF(b, c, d, a, m[i + 3], 22, -1044525330);
-      a = FF(a, b, c, d, m[i + 4], 7, -176418897);
-      d = FF(d, a, b, c, m[i + 5], 12, 1200080426);
-      c = FF(c, d, a, b, m[i + 6], 17, -1473231341);
-      b = FF(b, c, d, a, m[i + 7], 22, -45705983);
-      a = FF(a, b, c, d, m[i + 8], 7, 1770035416);
-      d = FF(d, a, b, c, m[i + 9], 12, -1958414417);
-      c = FF(c, d, a, b, m[i + 10], 17, -42063);
-      b = FF(b, c, d, a, m[i + 11], 22, -1990404162);
-      a = FF(a, b, c, d, m[i + 12], 7, 1804603682);
-      d = FF(d, a, b, c, m[i + 13], 12, -40341101);
-      c = FF(c, d, a, b, m[i + 14], 17, -1502002290);
-      b = FF(b, c, d, a, m[i + 15], 22, 1236535329);
-
-      a = GG(a, b, c, d, m[i + 1], 5, -165796510);
-      d = GG(d, a, b, c, m[i + 6], 9, -1069501632);
-      c = GG(c, d, a, b, m[i + 11], 14, 643717713);
-      b = GG(b, c, d, a, m[i + 0], 20, -373897302);
-      a = GG(a, b, c, d, m[i + 5], 5, -701558691);
-      d = GG(d, a, b, c, m[i + 10], 9, 38016083);
-      c = GG(c, d, a, b, m[i + 15], 14, -660478335);
-      b = GG(b, c, d, a, m[i + 4], 20, -405537848);
-      a = GG(a, b, c, d, m[i + 9], 5, 568446438);
-      d = GG(d, a, b, c, m[i + 14], 9, -1019803690);
-      c = GG(c, d, a, b, m[i + 3], 14, -187363961);
-      b = GG(b, c, d, a, m[i + 8], 20, 1163531501);
-      a = GG(a, b, c, d, m[i + 13], 5, -1444681467);
-      d = GG(d, a, b, c, m[i + 2], 9, -51403784);
-      c = GG(c, d, a, b, m[i + 7], 14, 1735328473);
-      b = GG(b, c, d, a, m[i + 12], 20, -1926607734);
-
-      a = HH(a, b, c, d, m[i + 5], 4, -378558);
-      d = HH(d, a, b, c, m[i + 8], 11, -2022574463);
-      c = HH(c, d, a, b, m[i + 11], 16, 1839030562);
-      b = HH(b, c, d, a, m[i + 14], 23, -35309556);
-      a = HH(a, b, c, d, m[i + 1], 4, -1530992060);
-      d = HH(d, a, b, c, m[i + 4], 11, 1272893353);
-      c = HH(c, d, a, b, m[i + 7], 16, -155497632);
-      b = HH(b, c, d, a, m[i + 10], 23, -1094730640);
-      a = HH(a, b, c, d, m[i + 13], 4, 681279174);
-      d = HH(d, a, b, c, m[i + 0], 11, -358537222);
-      c = HH(c, d, a, b, m[i + 3], 16, -722521979);
-      b = HH(b, c, d, a, m[i + 6], 23, 76029189);
-      a = HH(a, b, c, d, m[i + 9], 4, -640364487);
-      d = HH(d, a, b, c, m[i + 12], 11, -421815835);
-      c = HH(c, d, a, b, m[i + 15], 16, 530742520);
-      b = HH(b, c, d, a, m[i + 2], 23, -995338651);
-
-      a = II(a, b, c, d, m[i + 0], 6, -198630844);
-      d = II(d, a, b, c, m[i + 7], 10, 1126891415);
-      c = II(c, d, a, b, m[i + 14], 15, -1416354905);
-      b = II(b, c, d, a, m[i + 5], 21, -57434055);
-      a = II(a, b, c, d, m[i + 12], 6, 1700485571);
-      d = II(d, a, b, c, m[i + 3], 10, -1894986606);
-      c = II(c, d, a, b, m[i + 10], 15, -1051523);
-      b = II(b, c, d, a, m[i + 1], 21, -2054922799);
-      a = II(a, b, c, d, m[i + 8], 6, 1873313359);
-      d = II(d, a, b, c, m[i + 15], 10, -30611744);
-      c = II(c, d, a, b, m[i + 6], 15, -1560198380);
-      b = II(b, c, d, a, m[i + 13], 21, 1309151649);
-      a = II(a, b, c, d, m[i + 4], 6, -145523070);
-      d = II(d, a, b, c, m[i + 11], 10, -1120210379);
-      c = II(c, d, a, b, m[i + 2], 15, 718787259);
-      b = II(b, c, d, a, m[i + 9], 21, -343485551);
-
-      a = a + aa >>> 0;
-      b = b + bb >>> 0;
-      c = c + cc >>> 0;
-      d = d + dd >>> 0;
-    }
-
-    return crypt.endian([a, b, c, d]);
-  };
-
-  // Auxiliary functions
-  md5._ff = function (a, b, c, d, x, s, t) {
-    var n = a + (b & c | ~b & d) + (x >>> 0) + t;
-    return (n << s | n >>> 32 - s) + b;
-  };
-  md5._gg = function (a, b, c, d, x, s, t) {
-    var n = a + (b & d | c & ~d) + (x >>> 0) + t;
-    return (n << s | n >>> 32 - s) + b;
-  };
-  md5._hh = function (a, b, c, d, x, s, t) {
-    var n = a + (b ^ c ^ d) + (x >>> 0) + t;
-    return (n << s | n >>> 32 - s) + b;
-  };
-  md5._ii = function (a, b, c, d, x, s, t) {
-    var n = a + (c ^ (b | ~d)) + (x >>> 0) + t;
-    return (n << s | n >>> 32 - s) + b;
-  };
-
-  // Package private blocksize
-  md5._blocksize = 16;
-  md5._digestsize = 16;
-
-  module.exports = function (message, options) {
-    if (message === undefined || message === null)
-    throw new Error('Illegal argument ' + message);
-
-    var digestbytes = crypt.wordsToBytes(md5(message, options));
-    return options && options.asBytes ? digestbytes :
-    options && options.asString ? bin.bytesToString(digestbytes) :
-    crypt.bytesToHex(digestbytes);
-  };
-
-})();
-
-/***/ }),
-/* 28 */
-/*!**********************************************************************!*\
-  !*** D:/莹酱/project/智能客服/customerService/node_modules/crypt/crypt.js ***!
-  \**********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-(function () {
-  var base64map =
-  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/',
-
-  crypt = {
-    // Bit-wise rotation left
-    rotl: function rotl(n, b) {
-      return n << b | n >>> 32 - b;
-    },
-
-    // Bit-wise rotation right
-    rotr: function rotr(n, b) {
-      return n << 32 - b | n >>> b;
-    },
-
-    // Swap big-endian to little-endian and vice versa
-    endian: function endian(n) {
-      // If number given, swap endian
-      if (n.constructor == Number) {
-        return crypt.rotl(n, 8) & 0x00FF00FF | crypt.rotl(n, 24) & 0xFF00FF00;
-      }
-
-      // Else, assume array and swap all items
-      for (var i = 0; i < n.length; i++) {
-        n[i] = crypt.endian(n[i]);}
-      return n;
-    },
-
-    // Generate an array of any length of random bytes
-    randomBytes: function randomBytes(n) {
-      for (var bytes = []; n > 0; n--) {
-        bytes.push(Math.floor(Math.random() * 256));}
-      return bytes;
-    },
-
-    // Convert a byte array to big-endian 32-bit words
-    bytesToWords: function bytesToWords(bytes) {
-      for (var words = [], i = 0, b = 0; i < bytes.length; i++, b += 8) {
-        words[b >>> 5] |= bytes[i] << 24 - b % 32;}
-      return words;
-    },
-
-    // Convert big-endian 32-bit words to a byte array
-    wordsToBytes: function wordsToBytes(words) {
-      for (var bytes = [], b = 0; b < words.length * 32; b += 8) {
-        bytes.push(words[b >>> 5] >>> 24 - b % 32 & 0xFF);}
-      return bytes;
-    },
-
-    // Convert a byte array to a hex string
-    bytesToHex: function bytesToHex(bytes) {
-      for (var hex = [], i = 0; i < bytes.length; i++) {
-        hex.push((bytes[i] >>> 4).toString(16));
-        hex.push((bytes[i] & 0xF).toString(16));
-      }
-      return hex.join('');
-    },
-
-    // Convert a hex string to a byte array
-    hexToBytes: function hexToBytes(hex) {
-      for (var bytes = [], c = 0; c < hex.length; c += 2) {
-        bytes.push(parseInt(hex.substr(c, 2), 16));}
-      return bytes;
-    },
-
-    // Convert a byte array to a base-64 string
-    bytesToBase64: function bytesToBase64(bytes) {
-      for (var base64 = [], i = 0; i < bytes.length; i += 3) {
-        var triplet = bytes[i] << 16 | bytes[i + 1] << 8 | bytes[i + 2];
-        for (var j = 0; j < 4; j++) {
-          if (i * 8 + j * 6 <= bytes.length * 8)
-          base64.push(base64map.charAt(triplet >>> 6 * (3 - j) & 0x3F));else
-
-          base64.push('=');}
-      }
-      return base64.join('');
-    },
-
-    // Convert a base-64 string to a byte array
-    base64ToBytes: function base64ToBytes(base64) {
-      // Remove non-base-64 characters
-      base64 = base64.replace(/[^A-Z0-9+\/]/ig, '');
-
-      for (var bytes = [], i = 0, imod4 = 0; i < base64.length;
-      imod4 = ++i % 4) {
-        if (imod4 == 0) continue;
-        bytes.push((base64map.indexOf(base64.charAt(i - 1)) &
-        Math.pow(2, -2 * imod4 + 8) - 1) << imod4 * 2 |
-        base64map.indexOf(base64.charAt(i)) >>> 6 - imod4 * 2);
-      }
-      return bytes;
-    } };
-
-
-  module.exports = crypt;
-})();
-
-/***/ }),
-/* 29 */
-/*!**************************************************************************!*\
-  !*** D:/莹酱/project/智能客服/customerService/node_modules/charenc/charenc.js ***!
-  \**************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-var charenc = {
-  // UTF-8 encoding
-  utf8: {
-    // Convert a string to a byte array
-    stringToBytes: function stringToBytes(str) {
-      return charenc.bin.stringToBytes(unescape(encodeURIComponent(str)));
-    },
-
-    // Convert a byte array to a string
-    bytesToString: function bytesToString(bytes) {
-      return decodeURIComponent(escape(charenc.bin.bytesToString(bytes)));
-    } },
-
-
-  // Binary encoding
-  bin: {
-    // Convert a string to a byte array
-    stringToBytes: function stringToBytes(str) {
-      for (var bytes = [], i = 0; i < str.length; i++) {
-        bytes.push(str.charCodeAt(i) & 0xFF);}
-      return bytes;
-    },
-
-    // Convert a byte array to a string
-    bytesToString: function bytesToString(bytes) {
-      for (var str = [], i = 0; i < bytes.length; i++) {
-        str.push(String.fromCharCode(bytes[i]));}
-      return str.join('');
-    } } };
-
-
-
-module.exports = charenc;
-
-/***/ }),
-/* 30 */
-/*!*****************************************!*\
-  !*** ./node_modules/is-buffer/index.js ***!
-  \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/*!
- * Determine if an object is a Buffer
- *
- * @author   Feross Aboukhadijeh <https://feross.org>
- * @license  MIT
- */
-
-// The _isBuffer check is for Safari 5-7 support, because it's missing
-// Object.prototype.constructor. Remove this eventually
-module.exports = function (obj) {
-  return obj != null && (isBuffer(obj) || isSlowBuffer(obj) || !!obj._isBuffer)
-}
-
-function isBuffer (obj) {
-  return !!obj.constructor && typeof obj.constructor.isBuffer === 'function' && obj.constructor.isBuffer(obj)
-}
-
-// For Node v0.10 support. Remove this eventually.
-function isSlowBuffer (obj) {
-  return typeof obj.readFloatLE === 'function' && typeof obj.slice === 'function' && isBuffer(obj.slice(0, 0))
-}
-
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../../../downloads/HBuilderX/plugins/uniapp-cli/node_modules/webpack/buildin/global.js */ 3)))
 
 /***/ }),
 /* 31 */
-/*!********************************************************************!*\
-  !*** D:/莹酱/project/智能客服/customerService/pages/utils/js/request.js ***!
-  \********************************************************************/
+/*!*********************************************************************************!*\
+  !*** D:/莹酱/yunwen/无限极/wxjWechat/WuXianjiSmailProgram/pages/utils/js/request.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9636,15 +9633,15 @@ request;exports.default = _default;
 
 /***/ }),
 /* 32 */
-/*!*********************************************************************************!*\
-  !*** D:/莹酱/project/智能客服/customerService/pages/login/utils/ajax/interceptors.js ***!
-  \*********************************************************************************/
+/*!**********************************************************************************************!*\
+  !*** D:/莹酱/yunwen/无限极/wxjWechat/WuXianjiSmailProgram/pages/login/utils/ajax/interceptors.js ***!
+  \**********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _util = _interopRequireDefault(__webpack_require__(/*! ../util.js */ 26));
-var _env = __webpack_require__(/*! ../../../assets/js/env */ 24);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _util = _interopRequireDefault(__webpack_require__(/*! ../util.js */ 25));
+var _env = __webpack_require__(/*! ../../../assets/js/env */ 23);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
 
 var init = function init(params) {
   var obj = {
@@ -9839,15 +9836,15 @@ interceptor;exports.default = _default;
 
 /***/ }),
 /* 33 */
-/*!********************************************************************!*\
-  !*** D:/莹酱/project/智能客服/customerService/pages/assets/js/config.js ***!
-  \********************************************************************/
+/*!*********************************************************************************!*\
+  !*** D:/莹酱/yunwen/无限极/wxjWechat/WuXianjiSmailProgram/pages/assets/js/config.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _require =
-__webpack_require__(/*! ./domain */ 23),gatewayUrl = _require.gatewayUrl,mdealerUrl = _require.mdealerUrl,uim = _require.uim;
+__webpack_require__(/*! ./domain */ 22),gatewayUrl = _require.gatewayUrl,mdealerUrl = _require.mdealerUrl,uim = _require.uim,robotUrl = _require.robotUrl;
 
 var config = {
   /**
@@ -9866,23 +9863,23 @@ var config = {
   /**
                                                                                   * 智能小极
                                                                                   */
-  'xiaoJi': 'http://v4u.faqrobot.net/robot/infinitusWechat.html?sysNum=10000&&receiveId=&sourceId=3' };var _default =
+  'xiaoJi': robotUrl + '/robot/infinitusWechat.html?sysNum=3000000' };var _default =
 
 
 config;exports.default = _default;
 
 /***/ }),
 /* 34 */
-/*!*********************************************************************!*\
-  !*** D:/莹酱/project/智能客服/customerService/pages/login/utils/login.js ***!
-  \*********************************************************************/
+/*!**********************************************************************************!*\
+  !*** D:/莹酱/yunwen/无限极/wxjWechat/WuXianjiSmailProgram/pages/login/utils/login.js ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.getUserInfoData = exports.login = void 0;var _index = _interopRequireDefault(__webpack_require__(/*! ./ajax/index.js */ 25));
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.getUserInfoData = exports.login = void 0;var _index = _interopRequireDefault(__webpack_require__(/*! ./ajax/index.js */ 24));
 var _config = _interopRequireDefault(__webpack_require__(/*! ../../assets/js/config.js */ 33));
-var _common = _interopRequireDefault(__webpack_require__(/*! ../../../common/js/common.js */ 15));var _this = void 0;function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _common = _interopRequireDefault(__webpack_require__(/*! ../../../common/js/common.js */ 15));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 var login = function login(data, type, callback) {
   (0, _index.default)({
@@ -9921,13 +9918,16 @@ var login = function login(data, type, callback) {
       var mobile = data.error_mobile_no;
       var userName = data.error_username;
       if (type == 'wechatPhone' && mobile && userName) {
-        _this.common.openUrl({
+        uni.navigateTo({
           url: '/pages/login/loginCode?phoneVal=' + mobile });
 
       } else {
         var toastMsg = res.data.exception_code ? res.data.exception_code : res.data.error_msg;
         if (toastMsg) {
           _common.default.showToast(toastMsg);
+        }
+        if (type == 'wechatPhone') {
+          _common.default.showToast(res.data.error_msg);
         }
       }
     }
@@ -9943,30 +9943,34 @@ exports.login = login;var getUserInfoData = function getUserInfoData(token) {
     if (res.data.success) {
       var dealerNO = res.data.returnObject.name;
       var robotInitParams = _common.default.robotInitParams;
-      _common.default.openUrl({
-        url: _config.default.xiaoJi + '&dealerNO=' + dealerNO + robotInitParams,
-        type: 'redirect',
-        inWhiteList: true,
-        isExternal: true,
-        hideHomeButton: true });
+      var _url = _config.default.xiaoJi + '&dealerNO=' + dealerNO + robotInitParams;
+      if (dealerNO) {
+        _common.default.openUrl({
+          url: _url,
+          type: 'redirect',
+          hideHomeButton: true });
 
+      } else {
+        uni.removeStorageSync('token');
+        uni.removeStorageSync('expirationTime');
+        _common.default.showToast('登录失败！请重新登录');
+        uni.redirectTo({
+          url: '../login' });
+
+      }
     } else {
       uni.removeStorageSync('token');
       uni.removeStorageSync('expirationTime');
       _common.default.showToast('没有该用户的会员信息！请重新登录');
-      _common.default.openUrl({
-        url: '../login',
-        type: 'redirect',
-        hideHomeButton: true });
+      uni.redirectTo({
+        url: '../login' });
 
     }
   }).catch(function (e) {
     uni.removeStorageSync('token');
     uni.removeStorageSync('expirationTime');
-    _common.default.openUrl({
-      url: '../login',
-      type: 'redirect',
-      hideHomeButton: true });
+    uni.redirectTo({
+      url: '../login' });
 
   });
 };exports.getUserInfoData = getUserInfoData;
@@ -10010,10 +10014,16 @@ exports.login = login;var getUserInfoData = function getUserInfoData(token) {
 /* 69 */,
 /* 70 */,
 /* 71 */,
-/* 72 */
-/*!************************************************************************!*\
-  !*** D:/莹酱/project/智能客服/customerService/components/uni-icons/icons.js ***!
-  \************************************************************************/
+/* 72 */,
+/* 73 */,
+/* 74 */,
+/* 75 */,
+/* 76 */,
+/* 77 */,
+/* 78 */
+/*!*************************************************************************************!*\
+  !*** D:/莹酱/yunwen/无限极/wxjWechat/WuXianjiSmailProgram/components/uni-icons/icons.js ***!
+  \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

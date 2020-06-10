@@ -1,5 +1,5 @@
 
-const { gatewayUrl, mdealerUrl, uim } = require('./domain');
+const { gatewayUrl, mdealerUrl, uim, robotUrl } = require('./domain');
 
 const config = {
   /**
@@ -18,7 +18,7 @@ const config = {
 	/**
 	   * 智能小极
 	   */
-	'xiaoJi': 'http://v4u.faqrobot.net/robot/infinitusWechat.html?sysNum=10000&&receiveId=&sourceId=3'
+	'xiaoJi': robotUrl + '/robot/infinitusWechat.html?sysNum=3000000'
 };
 
 export default config 

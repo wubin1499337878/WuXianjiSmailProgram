@@ -1,4 +1,4 @@
-.btn.data-v-4050888f {
+.btn.data-v-89b1c52e {
   width: 650rpx;
   margin: 130rpx auto 30% auto;
   height: 88rpx;
@@ -9,16 +9,16 @@
   border-radius: 44rpx;
   font-size: 32rpx;
 }
-.btn.disable.data-v-4050888f {
+.btn.disable.data-v-89b1c52e {
   background: #E16D6B;
   pointer-events: none;
 }
-.login-box.data-v-4050888f {
+.login-box.data-v-89b1c52e {
   width: 100%;
   margin-top: 150rpx;
   position: relative;
 }
-.login-box .stroge-phone.data-v-4050888f {
+.login-box .stroge-phone.data-v-89b1c52e {
   width: 100%;
   background: #fff;
   position: absolute;
@@ -26,7 +26,7 @@
   top: 120rpx;
   z-index: 5;
 }
-.login-box .stroge-phone .list.data-v-4050888f {
+.login-box .stroge-phone .list.data-v-89b1c52e {
   width: 560rpx;
   height: 88rpx;
   margin: 0 auto;
@@ -40,7 +40,7 @@
   -webkit-align-items: center;
           align-items: center;
 }
-.login-box .stroge-phone .list .left.data-v-4050888f {
+.login-box .stroge-phone .list .left.data-v-89b1c52e {
   font-size: 34rpx;
   color: #888888;
   display: -webkit-box;
@@ -53,10 +53,10 @@
   -webkit-align-items: center;
           align-items: center;
 }
-.login-box .stroge-phone .list .phone-num.data-v-4050888f {
+.login-box .stroge-phone .list .phone-num.data-v-89b1c52e {
   margin-right: 15rpx;
 }
-.login-box-item.data-v-4050888f {
+.login-box-item.data-v-89b1c52e {
   width: 560rpx;
   height: 120rpx;
   margin: 0 auto;
@@ -64,7 +64,7 @@
   margin-bottom: 6rpx;
   position: relative;
 }
-.login-box-item .input-clum.data-v-4050888f {
+.login-box-item .input-clum.data-v-89b1c52e {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -75,7 +75,7 @@
   -webkit-align-items: center;
           align-items: center;
 }
-.login-box-item .input-clum .right.data-v-4050888f {
+.login-box-item .input-clum .right.data-v-89b1c52e {
   width: 200rpx;
   display: -webkit-box;
   display: -webkit-flex;
@@ -87,45 +87,45 @@
   -webkit-align-items: center;
           align-items: center;
 }
-.login-box-item .input-clum .right .forget.data-v-4050888f {
+.login-box-item .input-clum .right .forget.data-v-89b1c52e {
   color: #bc2826;
   width: 100%;
   text-align: center;
   margin-bottom: 10px;
 }
-.login-box-item .find-password.data-v-4050888f {
+.login-box-item .find-password.data-v-89b1c52e {
   padding-left: 20rpx;
   border-left: 2rpx solid #CCCCCC;
   font-size: 28rpx;
   color: #666666;
   margin-top: -15rpx;
 }
-.login-box-item .arrow.data-v-4050888f {
+.login-box-item .arrow.data-v-89b1c52e {
   position: absolute;
   right: 0;
   top: 35rpx;
   color: #666666;
 }
-.login-box-item .input.data-v-4050888f {
+.login-box-item .input.data-v-89b1c52e {
   width: 100%;
   height: 60rpx;
   line-height: 60rpx;
   font-size: 28rpx;
 }
-.login-box-item .input-password.data-v-4050888f {
+.login-box-item .input-password.data-v-89b1c52e {
   width: 300rpx;
 }
-.login-box-item .title.data-v-4050888f {
+.login-box-item .title.data-v-89b1c52e {
   width: 100%;
   height: 50rpx;
   line-height: 50rpx;
   text-align: left;
 }
-.login-box-item .title text.data-v-4050888f {
+.login-box-item .title text.data-v-89b1c52e {
   font-size: 28rpx;
   color: #888888;
 }
-.login-box-item .nav_icon.data-v-4050888f {
+.login-box-item .nav_icon.data-v-89b1c52e {
   width: 55rpx;
   margin-top: -15rpx;
   color: #666666;
