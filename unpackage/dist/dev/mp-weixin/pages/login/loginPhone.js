@@ -159,8 +159,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _index = _interopRequireDefault(__webpack_require__(/*! ./utils/ajax/index.js */ 24));
-var _config = _interopRequireDefault(__webpack_require__(/*! ../assets/js/config.js */ 33));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
+var _index = _interopRequireDefault(__webpack_require__(/*! ./utils/ajax/index.js */ 23));
+var _config = _interopRequireDefault(__webpack_require__(/*! ../assets/js/config.js */ 32));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
 //
 //
 //
@@ -185,7 +185,7 @@ var _config = _interopRequireDefault(__webpack_require__(/*! ../assets/js/config
 //
 //
 //
-var logo = function logo() {return __webpack_require__.e(/*! import() | pages/login/components/logo */ "pages/login/components/logo").then(__webpack_require__.bind(null, /*! ./components/logo.vue */ 81));};var userAgree = function userAgree() {return __webpack_require__.e(/*! import() | pages/login/components/userAgree */ "pages/login/components/userAgree").then(__webpack_require__.bind(null, /*! ./components/userAgree.vue */ 88));};var storageAccount = function storageAccount() {return __webpack_require__.e(/*! import() | pages/login/components/storageAccount */ "pages/login/components/storageAccount").then(__webpack_require__.bind(null, /*! ./components/storageAccount.vue */ 95));};var _default = { components: { logo: logo, userAgree: userAgree, storageAccount: storageAccount }, data: function data() {return { phoneVal: '', IsAccount: false };}, methods: { bindFocus: function bindFocus() {var that = this;setTimeout(function () {that.IsAccount = that.phoneVal == '' ? true : false;});}, bindinput: function bindinput(e, type) {var phoneVal = this.phoneVal = e.detail.value;
+var logo = function logo() {return __webpack_require__.e(/*! import() | pages/login/components/logo */ "pages/login/components/logo").then(__webpack_require__.bind(null, /*! ./components/logo.vue */ 81));};var userAgree = function userAgree() {return __webpack_require__.e(/*! import() | pages/login/components/userAgree */ "pages/login/components/userAgree").then(__webpack_require__.bind(null, /*! ./components/userAgree.vue */ 88));};var storageAccount = function storageAccount() {return __webpack_require__.e(/*! import() | pages/login/components/storageAccount */ "pages/login/components/storageAccount").then(__webpack_require__.bind(null, /*! ./components/storageAccount.vue */ 102));};var _default = { components: { logo: logo, userAgree: userAgree, storageAccount: storageAccount }, data: function data() {return { phoneVal: '', IsAccount: false };}, methods: { bindFocus: function bindFocus() {var that = this;setTimeout(function () {that.IsAccount = that.phoneVal == '' ? true : false;});}, bindinput: function bindinput(e, type) {var phoneVal = this.phoneVal = e.detail.value;
       this.IsAccount = phoneVal == '' ? true : false;
       var phoneLength = phoneVal.toString().length;
       if (phoneLength == 11) {
