@@ -7611,9 +7611,9 @@ module.exports = g;
 
 /***/ }),
 /* 4 */
-/*!*****************************************************!*\
-  !*** D:/莹酱/project/智能客服/customerService/pages.json ***!
-  \*****************************************************/
+/*!******************************************************************!*\
+  !*** D:/莹酱/yunwen/无限极/wxjWechat/WuXianjiSmailProgram/pages.json ***!
+  \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8518,20 +8518,20 @@ module.exports = {"_from":"@dcloudio/uni-stat@next","_id":"@dcloudio/uni-stat@2.
 
 /***/ }),
 /* 7 */
-/*!**********************************************************************!*\
-  !*** D:/莹酱/project/智能客服/customerService/pages.json?{"type":"style"} ***!
-  \**********************************************************************/
+/*!***********************************************************************************!*\
+  !*** D:/莹酱/yunwen/无限极/wxjWechat/WuXianjiSmailProgram/pages.json?{"type":"style"} ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/login/login": { "navigationBarTitleText": "登录" }, "pages/login/loginAccount": { "navigationBarTitleText": "账号登录" }, "pages/login/loginPhone": { "navigationBarTitleText": "手机号登录" }, "pages/login/loginCode": { "navigationBarTitleText": "手机号登录" }, "pages/subPages/web-view/web-view": { "navigationBarTitleText": "" } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#F8F8F8", "backgroundColor": "#F8F8F8" } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/login/login": { "navigationBarTitleText": "登录", "usingComponents": { "logo": "/pages/login/components/logo", "uni-icons": "/components/uni-icons/uni-icons", "user-agree": "/pages/login/components/userAgree", "auth-frame": "/pages/login/components/authFrame" }, "usingAutoImportComponents": { "uni-icons": "/components/uni-icons/uni-icons" } }, "pages/login/loginAccount": { "navigationBarTitleText": "账号登录", "usingComponents": { "logo": "/pages/login/components/logo", "uni-icons": "/components/uni-icons/uni-icons", "user-agree": "/pages/login/components/userAgree", "storage-account": "/pages/login/components/storageAccount" }, "usingAutoImportComponents": { "uni-icons": "/components/uni-icons/uni-icons" } }, "pages/login/loginPhone": { "navigationBarTitleText": "手机号登录", "usingComponents": { "logo": "/pages/login/components/logo", "user-agree": "/pages/login/components/userAgree", "storage-account": "/pages/login/components/storageAccount" }, "usingAutoImportComponents": {} }, "pages/login/loginCode": { "navigationBarTitleText": "手机号登录", "usingComponents": { "logo": "/pages/login/components/logo", "user-agree": "/pages/login/components/userAgree" }, "usingAutoImportComponents": {} }, "pages/xiaoJi/xiaoJi": { "navigationBarTitleText": "", "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/subPages/web-view/web-view": { "navigationBarTitleText": "", "usingComponents": {}, "usingAutoImportComponents": {} } }, "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#F8F8F8", "backgroundColor": "#F8F8F8" } };exports.default = _default;
 
 /***/ }),
 /* 8 */
-/*!*********************************************************************!*\
-  !*** D:/莹酱/project/智能客服/customerService/pages.json?{"type":"stat"} ***!
-  \*********************************************************************/
+/*!**********************************************************************************!*\
+  !*** D:/莹酱/yunwen/无限极/wxjWechat/WuXianjiSmailProgram/pages.json?{"type":"stat"} ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8665,19 +8665,16 @@ function normalizeComponent (
 
 /***/ }),
 /* 15 */
-/*!**************************************************************!*\
-  !*** D:/莹酱/project/智能客服/customerService/common/js/common.js ***!
-  \**************************************************************/
+/*!***************************************************************************!*\
+  !*** D:/莹酱/yunwen/无限极/wxjWechat/WuXianjiSmailProgram/common/js/common.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //打开外部链接
 var openUrl = function openUrl(obj) {var _obj$url =
-  obj.url,url = _obj$url === void 0 ? '' : _obj$url,_obj$inWhiteList = obj.inWhiteList,inWhiteList = _obj$inWhiteList === void 0 ? '' : _obj$inWhiteList,_obj$isExternal = obj.isExternal,isExternal = _obj$isExternal === void 0 ? '' : _obj$isExternal,_obj$type = obj.type,type = _obj$type === void 0 ? 'navigate' : _obj$type,_obj$title = obj.title,title = _obj$title === void 0 ? '' : _obj$title;
-
-  // type = type == 'redirect' ? 'redirect' : 'navigate'
-  if (isExternal) {
+  obj.url,url = _obj$url === void 0 ? '' : _obj$url,_obj$inWhiteList = obj.inWhiteList,inWhiteList = _obj$inWhiteList === void 0 ? true : _obj$inWhiteList,_obj$type = obj.type,type = _obj$type === void 0 ? 'navigate' : _obj$type,_obj$title = obj.title,title = _obj$title === void 0 ? '' : _obj$title,_obj$hideHomeButton = obj.hideHomeButton,hideHomeButton = _obj$hideHomeButton === void 0 ? false : _obj$hideHomeButton;
 
 
 
@@ -8685,27 +8682,21 @@ var openUrl = function openUrl(obj) {var _obj$url =
 
 
 
-
-    if (inWhiteList) {//如果在小程序的网址白名单中，会走内置webview打开，否则会复制网址提示在外部浏览器打开
-
-      uni[type + 'To']({
-        url: '/pages/subPages/web-view/web-view?url=' + encodeURIComponent(JSON.stringify(url)) + '&title=' + title });
-
-    } else {
-      uni.setClipboardData({
-        data: url });
-
-      uni.showModal({
-        content: '本网址无法直接在小程序内打开。已自动复制网址，请在手机浏览器里粘贴该网址',
-        showCancel: false });
-
-    }
+  if (inWhiteList) {//如果在小程序的网址白名单中，会走内置webview打开，否则会复制网址提示在外部浏览器打开
+    uni[type + 'To']({
+      url: '/pages/subPages/web-view/web-view?url=' + encodeURIComponent(JSON.stringify(url)) + '&title=' + title +
+      '&hideHomeButton=' + hideHomeButton });
 
   } else {
-    uni[type + 'To']({
-      url: url });
+    uni.setClipboardData({
+      data: url });
+
+    uni.showModal({
+      content: '本网址无法直接在小程序内打开。已自动复制网址，请在手机浏览器里粘贴该网址',
+      showCancel: false });
 
   }
+
 };
 
 var showToast = function showToast(title) {
@@ -8732,16 +8723,16 @@ common;exports.default = _default;
 /* 20 */,
 /* 21 */,
 /* 22 */
-/*!*****************************************************************!*\
-  !*** D:/莹酱/project/智能客服/customerService/pages/assets/js/env.js ***!
-  \*****************************************************************/
+/*!******************************************************************************!*\
+  !*** D:/莹酱/yunwen/无限极/wxjWechat/WuXianjiSmailProgram/pages/assets/js/env.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.baseImagesUrlpublic = exports.baseImagesUrl = exports.appKeyUim = exports.appKeyGataway = exports.addressKey = exports.weappAppId = exports.gatawaySignKey = exports.uimSignKey = exports.staticDomain = exports.token = exports.wwwPwd = exports.domain = void 0; /**
-                                                                                                                                                                                                                                                                                                                                                       * @type {string} domain 为所有域名变量
-                                                                                                                                                                                                                                                                                                                                                       */
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.robotUrl = exports.baseImagesUrlpublic = exports.baseImagesUrl = exports.appKeyUim = exports.appKeyGataway = exports.addressKey = exports.weappAppId = exports.gatawaySignKey = exports.uimSignKey = exports.staticDomain = exports.token = exports.wwwPwd = exports.domain = void 0; /**
+                                                                                                                                                                                                                                                                                                                                                                          * @type {string} domain 为所有域名变量
+                                                                                                                                                                                                                                                                                                                                                                          */
 
 // 生产
 
@@ -8756,11 +8747,12 @@ var wwwPwd = 'password123';exports.wwwPwd = wwwPwd;
 var staticDomain = 'https://static-cdn.infinitus.com.cn';exports.staticDomain = staticDomain;
 var token = '2eaffc2a031340cbbef51bb120c27718';exports.token = token;
 var baseImagesUrl = 'https://storageqn-staging.infinitus.com.cn/dlpm-public/jf/img/applet/';exports.baseImagesUrl = baseImagesUrl;
-var baseImagesUrlpublic = 'https://storageqn-staging.infinitus.com.cn/dlpm-public/jf/img/';
+var baseImagesUrlpublic = 'https://storageqn-staging.infinitus.com.cn/dlpm-public/jf/img/';exports.baseImagesUrlpublic = baseImagesUrlpublic;
+var robotUrl = 'https://robot-staging.infinitus.com.cn';
 
 // 签名key
 //uim key
-exports.baseImagesUrlpublic = baseImagesUrlpublic;var appKeyUim = 'openapi_cc';exports.appKeyUim = appKeyUim;
+exports.robotUrl = robotUrl;var appKeyUim = 'openapi_cc';exports.appKeyUim = appKeyUim;
 var uimSignKey = 'openapi_cc';
 //gateway key
 exports.uimSignKey = uimSignKey;var appKeyGataway = 'openapi_cc';exports.appKeyGataway = appKeyGataway;
@@ -8795,6 +8787,7 @@ switch (env) {
     exports.gatawaySignKey = gatawaySignKey = "5OOD}wUd-9}73iJU7xDe:t]g'0rSFt";
     exports.weappAppId = weappAppId = appidType[env];
     exports.addressKey = addressKey = 'OEXBZ-TH5WX-YY347-7EJVK-FSCKQ-QEFL6';
+    exports.robotUrl = robotUrl = 'https://robot-staging.infinitus.com.cn';
     break;
   // case 'test': // 测试环境
   //   domain = 'https://mdealer-test.infinitus.com.cn';
@@ -8826,9 +8819,9 @@ switch (env) {
 
 /***/ }),
 /* 23 */
-/*!**************************************************************************!*\
-  !*** D:/莹酱/project/智能客服/customerService/pages/login/utils/ajax/index.js ***!
-  \**************************************************************************/
+/*!***************************************************************************************!*\
+  !*** D:/莹酱/yunwen/无限极/wxjWechat/WuXianjiSmailProgram/pages/login/utils/ajax/index.js ***!
+  \***************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8895,9 +8888,9 @@ Ajax;exports.default = _default;
 
 /***/ }),
 /* 24 */
-/*!********************************************************************!*\
-  !*** D:/莹酱/project/智能客服/customerService/pages/login/utils/util.js ***!
-  \********************************************************************/
+/*!*********************************************************************************!*\
+  !*** D:/莹酱/yunwen/无限极/wxjWechat/WuXianjiSmailProgram/pages/login/utils/util.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8994,9 +8987,9 @@ util;exports.default = _default;
 
 /***/ }),
 /* 25 */
-/*!******************************************************************!*\
-  !*** D:/莹酱/project/智能客服/customerService/node_modules/md5/md5.js ***!
-  \******************************************************************/
+/*!*******************************************************************************!*\
+  !*** D:/莹酱/yunwen/无限极/wxjWechat/WuXianjiSmailProgram/node_modules/md5/md5.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9164,9 +9157,9 @@ util;exports.default = _default;
 
 /***/ }),
 /* 26 */
-/*!**********************************************************************!*\
-  !*** D:/莹酱/project/智能客服/customerService/node_modules/crypt/crypt.js ***!
-  \**********************************************************************/
+/*!***********************************************************************************!*\
+  !*** D:/莹酱/yunwen/无限极/wxjWechat/WuXianjiSmailProgram/node_modules/crypt/crypt.js ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9270,9 +9263,9 @@ util;exports.default = _default;
 
 /***/ }),
 /* 27 */
-/*!**************************************************************************!*\
-  !*** D:/莹酱/project/智能客服/customerService/node_modules/charenc/charenc.js ***!
-  \**************************************************************************/
+/*!***************************************************************************************!*\
+  !*** D:/莹酱/yunwen/无限极/wxjWechat/WuXianjiSmailProgram/node_modules/charenc/charenc.js ***!
+  \***************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9344,9 +9337,9 @@ function isSlowBuffer (obj) {
 
 /***/ }),
 /* 29 */
-/*!***************************************************************************!*\
-  !*** D:/莹酱/project/智能客服/customerService/node_modules/js-base64/base64.js ***!
-  \***************************************************************************/
+/*!****************************************************************************************!*\
+  !*** D:/莹酱/yunwen/无限极/wxjWechat/WuXianjiSmailProgram/node_modules/js-base64/base64.js ***!
+  \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9575,13 +9568,13 @@ function (global) {
   // that's it!
   return { Base64: global.Base64 };
 });
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../../downloads/HBuilderX/plugins/uniapp-cli/node_modules/webpack/buildin/global.js */ 3)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../../../downloads/HBuilderX/plugins/uniapp-cli/node_modules/webpack/buildin/global.js */ 3)))
 
 /***/ }),
 /* 30 */
-/*!********************************************************************!*\
-  !*** D:/莹酱/project/智能客服/customerService/pages/utils/js/request.js ***!
-  \********************************************************************/
+/*!*********************************************************************************!*\
+  !*** D:/莹酱/yunwen/无限极/wxjWechat/WuXianjiSmailProgram/pages/utils/js/request.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9620,9 +9613,9 @@ request;exports.default = _default;
 
 /***/ }),
 /* 31 */
-/*!*********************************************************************************!*\
-  !*** D:/莹酱/project/智能客服/customerService/pages/login/utils/ajax/interceptors.js ***!
-  \*********************************************************************************/
+/*!**********************************************************************************************!*\
+  !*** D:/莹酱/yunwen/无限极/wxjWechat/WuXianjiSmailProgram/pages/login/utils/ajax/interceptors.js ***!
+  \**********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9823,15 +9816,15 @@ interceptor;exports.default = _default;
 
 /***/ }),
 /* 32 */
-/*!********************************************************************!*\
-  !*** D:/莹酱/project/智能客服/customerService/pages/assets/js/config.js ***!
-  \********************************************************************/
+/*!*********************************************************************************!*\
+  !*** D:/莹酱/yunwen/无限极/wxjWechat/WuXianjiSmailProgram/pages/assets/js/config.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _require =
-__webpack_require__(/*! ./domain */ 33),gatewayUrl = _require.gatewayUrl,mdealerUrl = _require.mdealerUrl,uim = _require.uim;
+__webpack_require__(/*! ./domain */ 33),gatewayUrl = _require.gatewayUrl,mdealerUrl = _require.mdealerUrl,uim = _require.uim,robotUrl = _require.robotUrl;
 
 var config = {
   /**
@@ -9850,21 +9843,21 @@ var config = {
   /**
                                                                                   * 智能小极
                                                                                   */
-  'xiaoJi': 'http://v4u.faqrobot.net/robot/infinitusWechat.html?sysNum=3000000&&receiveId=&sourceId=3' };var _default =
+  'xiaoJi': robotUrl + '/robot/infinitusWechat.html?sysNum=3000000' };var _default =
 
 
 config;exports.default = _default;
 
 /***/ }),
 /* 33 */
-/*!********************************************************************!*\
-  !*** D:/莹酱/project/智能客服/customerService/pages/assets/js/domain.js ***!
-  \********************************************************************/
+/*!*********************************************************************************!*\
+  !*** D:/莹酱/yunwen/无限极/wxjWechat/WuXianjiSmailProgram/pages/assets/js/domain.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-var _require = __webpack_require__(/*! ./env */ 22),domain = _require.domain,token = _require.token,wwwPwd = _require.wwwPwd;
+var _require = __webpack_require__(/*! ./env */ 22),domain = _require.domain,token = _require.token,wwwPwd = _require.wwwPwd,robotUrl = _require.robotUrl;
 var mdealerUrl = domain;
 var gatewayUrl = mdealerUrl.replace('//mdealer', '//gateway');
 var uim = mdealerUrl.replace('//mdealer', '//uim');
@@ -9872,22 +9865,23 @@ module.exports = {
   gatewayUrl: gatewayUrl,
   mdealerUrl: mdealerUrl,
   token: token,
-  uim: uim };
+  uim: uim,
+  robotUrl: robotUrl };
 
 /***/ }),
 /* 34 */
-/*!*********************************************************************!*\
-  !*** D:/莹酱/project/智能客服/customerService/pages/login/utils/login.js ***!
-  \*********************************************************************/
+/*!**********************************************************************************!*\
+  !*** D:/莹酱/yunwen/无限极/wxjWechat/WuXianjiSmailProgram/pages/login/utils/login.js ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.getUserInfoData = exports.login = void 0;var _index = _interopRequireDefault(__webpack_require__(/*! ./ajax/index.js */ 23));
 var _config = _interopRequireDefault(__webpack_require__(/*! ../../assets/js/config.js */ 32));
-var _common = _interopRequireDefault(__webpack_require__(/*! ../../../common/js/common.js */ 15));var _this = void 0;function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _common = _interopRequireDefault(__webpack_require__(/*! ../../../common/js/common.js */ 15));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
-var login = function login(data, type) {
+var login = function login(data, type, callback) {
   (0, _index.default)({
     url: _config.default.login,
     method: 'post',
@@ -9924,13 +9918,16 @@ var login = function login(data, type) {
       var mobile = data.error_mobile_no;
       var userName = data.error_username;
       if (type == 'wechatPhone' && mobile && userName) {
-        _this.common.openUrl({
+        uni.navigateTo({
           url: '/pages/login/loginCode?phoneVal=' + mobile });
 
       } else {
         var toastMsg = res.data.exception_code ? res.data.exception_code : res.data.error_msg;
         if (toastMsg) {
           _common.default.showToast(toastMsg);
+        }
+        if (type == 'wechatPhone') {
+          _common.default.showToast(res.data.error_msg);
         }
       }
     }
@@ -9946,28 +9943,34 @@ exports.login = login;var getUserInfoData = function getUserInfoData(token) {
     if (res.data.success) {
       var dealerNO = res.data.returnObject.name;
       var robotInitParams = _common.default.robotInitParams;
-      _common.default.openUrl({
-        url: _config.default.xiaoJi + '&dealerNO=' + dealerNO + robotInitParams,
-        type: 'redirect',
-        title: '',
-        inWhiteList: true,
-        isExternal: true });
+      var _url = _config.default.xiaoJi + '&dealerNO=' + dealerNO + robotInitParams;
+      if (dealerNO) {
+        _common.default.openUrl({
+          url: _url,
+          type: 'redirect',
+          hideHomeButton: true });
 
+      } else {
+        uni.removeStorageSync('token');
+        uni.removeStorageSync('expirationTime');
+        _common.default.showToast('登录失败！请重新登录');
+        uni.redirectTo({
+          url: '../login' });
+
+      }
     } else {
       uni.removeStorageSync('token');
       uni.removeStorageSync('expirationTime');
       _common.default.showToast('没有该用户的会员信息！请重新登录');
-      _common.default.openUrl({
-        url: '../login',
-        type: 'redirect' });
+      uni.redirectTo({
+        url: '../login' });
 
     }
   }).catch(function (e) {
     uni.removeStorageSync('token');
     uni.removeStorageSync('expirationTime');
-    _common.default.openUrl({
-      url: '../login',
-      type: 'redirect' });
+    uni.redirectTo({
+      url: '../login' });
 
   });
 };exports.getUserInfoData = getUserInfoData;
@@ -10011,10 +10014,16 @@ exports.login = login;var getUserInfoData = function getUserInfoData(token) {
 /* 69 */,
 /* 70 */,
 /* 71 */,
-/* 72 */
-/*!************************************************************************!*\
-  !*** D:/莹酱/project/智能客服/customerService/components/uni-icons/icons.js ***!
-  \************************************************************************/
+/* 72 */,
+/* 73 */,
+/* 74 */,
+/* 75 */,
+/* 76 */,
+/* 77 */,
+/* 78 */
+/*!*************************************************************************************!*\
+  !*** D:/莹酱/yunwen/无限极/wxjWechat/WuXianjiSmailProgram/components/uni-icons/icons.js ***!
+  \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

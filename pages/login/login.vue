@@ -6,14 +6,14 @@
 				<uni-icons type="weixin" color="#fff" size="20" class="WeChat" name="WeChat"></uni-icons>
 				<text class="phoneName">微信手机号登录</text>
 			</button>
-			<button v-else @click="this.common.openUrl({url:'./loginPhone'})" data-type='phone' class="btn">手机号登录</button>
+			<button v-else @click="jump('./loginPhone')" class="btn">手机号登录</button>
 			<view class="login_or"><text class="x" selectable="false" space="false" decode="false">或</text></view>
 			<view class="login_num" :class="!infoModel?'justifyCenter':''">
-				<view class="left" @click="this.common.openUrl({url:'./loginPhone'})" v-if="infoModel">
+				<view class="left" @click="jump('./loginPhone')" v-if="infoModel">
 					<img :src="urlImage.phone_icon" class="icon" />
 					<text class="phone">其他手机号</text>
 				</view>
-				<view class="right" @click="this.common.openUrl({url:'./loginAccount'})">
+				<view class="right" @click="jump('./loginAccount')">
 					<img :src="urlImage.lock_icon" class="icon" />
 					<text class="account">账号密码</text>
 				</view>
@@ -25,9 +25,10 @@
 </template>
 
 <script>
-	import { staticDomain } from '../assets/js/env';
+	import { gatewayUrl } from '../assets/js/domain.js';
+	import { staticDomain,weappAppId } from '../assets/js/env';
 	import Ajax from './utils/ajax/index.js'
-	import {login, getUserInfoData} from './utils/login.js'
+	import { login,getUserInfoData } from './utils/login.js'
 	import uniIcons from '@/components/uni-icons/uni-icons.vue'
 	import logo from './components/logo.vue'
 	import userAgree from './components/userAgree.vue'
@@ -49,64 +50,108 @@
 		onLoad: function(options) {
 			this.init(options)
 		},
-		methods:{
-			init(options){
-				// 判断是否为企业微信
-				try {
-				  const res = uni.getSystemInfoSync()
-				  this.infoModel = res.environment ? false : true		
-				} catch (e) {
-				  console.log(e)
-				}
-				
+		onShow: function() {
+			uni.hideHomeButton()
+		},
+		methods: {
+			init(options) {
 				//获取机器人动态字段
 				let robotInitParams = ''
 				for (let key in options) {
 					robotInitParams += '&' + (key + '=' + options[key])
 				}
 				this.common.robotInitParams = robotInitParams
-				
+				// 判断是否为企业微信
+				const res = uni.getSystemInfoSync()
+				if (uni.getSystemInfoSync().environment) {
+					this.infoModel = false
+					this.common.robotInitParams += '&sourceId=102'
+				} else {
+					this.infoModel = true
+					this.common.robotInitParams += '&sourceId=101'
+				}
+
 				//获取openid
 				this.getOpenId()
 				//判断是否重新登陆
-				// let expirationTime = uni.getStorageSync('expirationTime')
-				// let nowTime = Date.parse(new Date())
-				// let tokenIsVaild = nowTime > expirationTime ? false : true
-				// if(uni.getStorageSync('token') && tokenIsVaild){
-				// 	getUserInfoData(uni.getStorageSync('token'));
-				// }
-			},
-			onGetPhoneNumber(e) {
-			  // 事件回调获取到微信服务器返回的加密数据， 然后在第三方服务端结合 session_key 以及 app_id 进行解密获取手机号。
-			  // console.log(e.detail.errMsg);
-			  // console.log(e.detail.iv);
-			  // console.log(e.detail.encryptedData);
-			  const encryptedData = e.detail.encryptedData;
-			  const iv = e.detail.iv;
-			  if (!encryptedData) {
-					this.common.showToast('授权失败，请同意授权')
-			    return;
-			  }else{
-					this.common.showToast('授权成功')
-					let data = {
-					  wxEncryptedData: encryptedData,
-					  username: uni.getStorageSync('wx_openid'),
-					  password: 'password',
-					  terminalType: 'WEAPP',
-					  rememberMe: true,
-					  loginType: 'wechat_phone_one_touch',
-					  wxIv: iv
-					}
-					login(data,'wechatPhone')
+				let expirationTime = uni.getStorageSync('expirationTime')
+				let nowTime = Date.parse(new Date())
+				let tokenIsVaild = nowTime > expirationTime ? false : true
+				if (uni.getStorageSync('token') && tokenIsVaild) {
+					getUserInfoData(uni.getStorageSync('token'));
 				}
 			},
-			getOpenId(){
+			onGetPhoneNumber(e) {
+				// 事件回调获取到微信服务器返回的加密数据， 然后在第三方服务端结合 session_key 以及 app_id 进行解密获取手机号。
+				// console.log(e.detail.errMsg);
+				// console.log(e.detail.iv);
+				// console.log(e.detail.encryptedData);
+				const encryptedData = e.detail.encryptedData;
+				const iv = e.detail.iv;
+				if (!encryptedData) {
+					this.common.showToast('授权失败，请同意授权')
+					return;
+				} else {
+					this.common.showToast('授权成功')
+					this.login(function() {
+						this.wechatLogin(encryptedData, iv)
+					});
+				}
+			},
+			wechatLogin(wxEncryptedData, wxIv) {
+				let data = {
+					wxEncryptedData: wxEncryptedData,
+					username: uni.getStorageSync('wx_openid'),
+					password: 'password',
+					terminalType: 'WEAPP',
+					rememberMe: true,
+					loginType: 'wechat_phone_one_touch',
+					wxIv: wxIv
+				}
+				login(data, 'wechatPhone')
+			},
+			getOpenId() {
 				wx.cloud.init();
 				wx.cloud.callFunction({
-				  name: 'add',
-				  complete: res => {
-						uni.setStorageSync('wx_openid',res.result.openid)
+					name: 'add',
+					complete: res => {
+						uni.setStorageSync('wx_openid', res.result.openid)
 					},
+				})
+			},
+			// 登录
+			login(callback) {
+				// 登录
+				wx.login({
+					success: res => {
+						// 发送 res.code 到后台换取 openId, sessionKey, unionId
+						// 通知gatway
+						if (res.code) {
+							// 发起网络请求
+							Ajax.get(`${gatewayUrl}/api/common/wechat/weapp/code2session/${res.code}`, {
+								weappAppId
+							}, {
+								returnAll: true
+							}).then(resd => {
+								if (resd.data.success) {
+									if (resd.data.returnObject.openId) {
+										if (callback) callback();
+									} else {
+										this.common.showToast('微信一键登录失败');
+									}
+								} else {
+									this.common.showToast('微信一键登录失败');
+								}
+							});
+						} else {
+							this.common.showToast('微信一键登录失败');
+						}
+					}
+				});
+			},
+			jump(url) {
+				uni.navigateTo({
+					url:url
 				})
 			}
 		}

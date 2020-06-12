@@ -9,21 +9,26 @@
 		data() {
 			return {
 				url: '',
-				title: ''
+				options: ''
 			}
 		},
 		onLoad(options) {
+			this.options = options
 			if (options && options.url) {
 				this.url = JSON.parse(decodeURIComponent(options.url));
 			}
-			if(options.title){
-				this.title = options.title
+		},
+		onReady() {
+			if(this.options.title){
+				uni.setNavigationBarTitle({
+					title: this.options.title
+				});
 			}
 		},
-		onReady(){
-			uni.setNavigationBarTitle({
-				title: this.title
-			});
+		onShow() {
+			if (this.options.hideHomeButton) {
+				uni.hideHomeButton()
+			}
 		},
 		methods: {
 			getMessage(event) {

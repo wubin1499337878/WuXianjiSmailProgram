@@ -1,4 +1,4 @@
-.info.data-v-62307af3 {
+.info.data-v-797995cd {
   color: #333333;
   width: 100%;
   position: absolute;
@@ -7,14 +7,14 @@
   font-size: 28rpx;
   text-align: center;
 }
-.info .info_break.data-v-62307af3 {
+.info .info_break.data-v-797995cd {
   margin-right: 5px;
 }
-.info .info_type.word.data-v-62307af3 {
+.info .info_type.word.data-v-797995cd {
   color: #BC2826;
   text-decoration: underline;
 }
-.info .red.data-v-62307af3 {
+.info .red.data-v-797995cd {
   color: #BC2826;
 }
 

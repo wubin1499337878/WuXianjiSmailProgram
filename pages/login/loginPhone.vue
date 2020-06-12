@@ -50,27 +50,17 @@
 				})
 			},
 			bindinput(e, type) {
-				this.setValue(type, e.detail.value);
 				let phoneVal = this.phoneVal = e.detail.value
-				let isPhoneVal = /^1{1}/.test(phoneVal);
 				this.IsAccount = phoneVal == '' ? true : false
-				let phoneLength = phoneVal.toString().length == 11 ? false : true;
-				if (!phoneLength) {
+				let phoneLength = phoneVal.toString().length;
+				if (phoneLength == 11) {
 					var phoneValData = phoneVal.substr(0, 3) + " " + phoneVal.substr(3, 4) + " " + phoneVal.substr(7, 4);
+				} else if(phoneLength == 13){
+					var phoneValData = phoneVal;
 				} else {
 					var phoneValData = phoneVal.replace(/\s*/g, "");
 				}
 				this.phoneVal = phoneValData
-			},
-			// 按钮显示隐藏&赋值
-			setValue(type, value) {
-				const close_key = `${type}Close`;
-				const val_key = `${type}Val`;
-				this[close_key] = true
-				this[val_key] = value
-				if (value.length == 0) {
-					this[close_key] = false
-				}
 			},
 			bindblurHander() {
 				this.IsAccount = false
@@ -99,7 +89,7 @@
 					returnAll: true,
 				}).then(res => {
 					if (res.data.returnObject) { // 该手机号码注册
-						this.common.openUrl({
+						uni.navigateTo({
 							url:`/pages/login/loginCode?phoneVal=${mobileNo}`
 						})
 					} else { // 该手机没注册

@@ -1,10 +1,10 @@
-.login-phone-box.data-v-3e38abfb {
+.login-phone-box.data-v-5c53d561 {
   width: 650rpx;
   height: 200rpx;
   margin: 0 auto;
   border-bottom: none;
 }
-.login-phone-box .code-box.data-v-3e38abfb {
+.login-phone-box .code-box.data-v-5c53d561 {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -18,12 +18,12 @@
   margin-top: 30rpx;
   position: relative;
 }
-.login-phone-box .code-box .input-box.data-v-3e38abfb {
+.login-phone-box .code-box .input-box.data-v-5c53d561 {
   width: 430rpx;
   height: 60rpx;
   border-bottom: 1rpx solid #DFDFDD;
 }
-.login-phone-box .code-box .input-box input.input-value.data-v-3e38abfb {
+.login-phone-box .code-box .input-box input.input-value.data-v-5c53d561 {
   position: absolute;
   width: 430rpx;
   height: 60rpx;
@@ -34,11 +34,11 @@
   bottom: 0;
   z-index: 2;
 }
-.login-phone-box .code-box .text.data-v-3e38abfb {
+.login-phone-box .code-box .text.data-v-5c53d561 {
   font-size: 32rpx;
   line-height: 40rpx;
 }
-.code-btn.data-v-3e38abfb {
+.code-btn.data-v-5c53d561 {
   width: 190rpx;
   height: 68rpx;
   background-color: #E4BB91;
@@ -48,11 +48,11 @@
   text-align: center;
   line-height: 68rpx;
 }
-.code-btn.disable.data-v-3e38abfb {
+.code-btn.disable.data-v-5c53d561 {
   pointer-events: none;
   background: #888888;
 }
-.btn.data-v-3e38abfb {
+.btn.data-v-5c53d561 {
   width: 650rpx;
   height: 88rpx;
   background: #bc2826;
@@ -63,7 +63,7 @@
   font-size: 32rpx;
   margin: 50rpx auto 0 auto;
 }
-.btn.disable.data-v-3e38abfb {
+.btn.disable.data-v-5c53d561 {
   pointer-events: none;
   background: #E16D6B;
 }

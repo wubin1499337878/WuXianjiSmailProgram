@@ -1,4 +1,4 @@
-.btn.data-v-347ab36e {
+.btn.data-v-6bbe7fd4 {
   width: 650rpx;
   height: 88rpx;
   background: #04C060;
@@ -18,24 +18,24 @@
   -webkit-align-items: center;
           align-items: center;
 }
-.btn .WeChat.data-v-347ab36e {
+.btn .WeChat.data-v-6bbe7fd4 {
   margin-right: 16rpx;
   color: #fff;
   margin-top: 8rpx;
 }
-.btn.disabled.data-v-347ab36e {
+.btn.disabled.data-v-6bbe7fd4 {
   background: #dfdfdd;
   pointer-events: none;
 }
-.login_or.data-v-347ab36e {
+.login_or.data-v-6bbe7fd4 {
   margin-bottom: 25px;
   text-align: center;
 }
-.login_or .x.data-v-347ab36e {
+.login_or .x.data-v-6bbe7fd4 {
   color: #666666;
   font-size: 28rpx;
 }
-.login_num.data-v-347ab36e {
+.login_num.data-v-6bbe7fd4 {
   width: 500rpx;
   margin: 0 auto;
   text-align: center;
@@ -47,13 +47,13 @@
   -webkit-justify-content: space-between;
           justify-content: space-between;
 }
-.login_num .phone.data-v-347ab36e,
-.login_num .account.data-v-347ab36e {
+.login_num .phone.data-v-6bbe7fd4,
+.login_num .account.data-v-6bbe7fd4 {
   font-size: 28rpx;
   color: #666666;
 }
-.login_num .left.data-v-347ab36e,
-.login_num .right.data-v-347ab36e {
+.login_num .left.data-v-6bbe7fd4,
+.login_num .right.data-v-6bbe7fd4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -68,13 +68,13 @@
   -webkit-align-items: center;
           align-items: center;
 }
-.login_num .icon.data-v-347ab36e {
+.login_num .icon.data-v-6bbe7fd4 {
   width: 90rpx;
   height: 90rpx;
   display: block;
   margin-bottom: 10rpx;
 }
-.justifyCenter.data-v-347ab36e {
+.justifyCenter.data-v-6bbe7fd4 {
   -webkit-box-pack: center;
   -webkit-justify-content: center;
           justify-content: center;

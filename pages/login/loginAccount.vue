@@ -70,31 +70,22 @@
 			},
 			bindinput(e, type) {
 				this[`${type}Val`] = e.detail.value
-				this.setValue(type, this[`${type}Val`]);
-				let accountVal = e.detail.value;
 				if (type == 'account') {
-						let phoneLength = accountVal.toString().length;
-						if (phoneLength == '11') {
-							var phoneValData = accountVal.substr(0, 3) + " " + accountVal.substr(3, 4) + " " + accountVal.substr(7, 4);
-						} else if (phoneLength == '9') {
-							var phoneValData = accountVal.substr(0, 3) + " " + accountVal.substr(3, 3) + " " + accountVal.substr(6, 3);
+						let accountVal = this.accountVal
+						let accountLength = accountVal.toString().length;
+						if (accountLength == '9') {
+							var accountValData = accountVal.substr(0, 3) + " " + accountVal.substr(3, 3) + " " + accountVal.substr(6, 3);
+						} else if (accountLength == '11') {
+							var accountValData = accountVal.substr(0, 3) + " " + accountVal.substr(3, 4) + " " + accountVal.substr(7, 4);
+						} else if (accountLength == '13') {
+							var accountValData = accountVal
 						} else {
-							var phoneValData = accountVal.replace(/\s*/g, "");
+							var accountValData = accountVal.replace(/\s*/g, "");
 						}				
-						this.accountVal = phoneValData
+						this.accountVal = accountValData
 						this.IsAccount = this.accountVal == '' ? true : false
 					} else {
 					this.IsAccount = false
-				}
-			},
-			// 按钮显示隐藏&赋值
-			setValue(type, value) {
-				const close_key = `${type}Close`;
-				const val_key = `${type}Val`;
-				this[close_key] = true
-				this[val_key] = value
-				if (value.length == 0) {
-					this[close_key] = false
 				}
 			},
 			isPassWordShow() {
@@ -104,10 +95,8 @@
 				const anyMouseToken = util.getAnonymousToken();
 				const url = `${mdealerUrl}/html/dealerMember/password.html#/beforeForgetPassword?miniToken=${anyMouseToken}&fromWhere=wxminiProgram`;
 				this.common.openUrl({
-					url:url,
-					inWhiteList:true,
-					isExternal:true
-					})
+					url:url
+				})
 			},
 			checkInfo() {
 				let passwordVal = this.passwordVal

@@ -16,6 +16,7 @@ let staticDomain = 'https://static-cdn.infinitus.com.cn';
 let token = '2eaffc2a031340cbbef51bb120c27718';
 let baseImagesUrl = 'https://storageqn-staging.infinitus.com.cn/dlpm-public/jf/img/applet/'
 let baseImagesUrlpublic = 'https://storageqn-staging.infinitus.com.cn/dlpm-public/jf/img/'
+let robotUrl = 'https://robot-staging.infinitus.com.cn'
 
 // 签名key
 //uim key
@@ -54,6 +55,7 @@ switch (env) {
 		gatawaySignKey = "5OOD}wUd-9}73iJU7xDe:t]g'0rSFt";
 		weappAppId = appidType[env];
 		addressKey = 'OEXBZ-TH5WX-YY347-7EJVK-FSCKQ-QEFL6';
+		robotUrl = 'https://robot-staging.infinitus.com.cn'
 		break;
 		// case 'test': // 测试环境
 		//   domain = 'https://mdealer-test.infinitus.com.cn';
@@ -94,5 +96,6 @@ export {
 	appKeyGataway,
 	appKeyUim,
 	baseImagesUrl,
-	baseImagesUrlpublic
+	baseImagesUrlpublic,
+	robotUrl
 };
